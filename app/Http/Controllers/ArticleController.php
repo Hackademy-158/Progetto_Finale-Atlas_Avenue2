@@ -13,7 +13,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        $articles = Article::all();
+        return view('article.index', compact('articles'));
     }
 
     /**
@@ -29,7 +30,11 @@ class ArticleController extends Controller
      */
     public function store(StoreArticleRequest $request)
     {
-        //
+        Article::create([
+            'title' => $request->title,
+            'price' => $request->price,
+            'description' => $request->description
+        ]);
     }
 
     /**
