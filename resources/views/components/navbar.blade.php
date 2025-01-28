@@ -12,10 +12,10 @@
                 </li>
                 @auth
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
+                        <a class="nav-link" href="{{ route('article.index') }}">Catalogo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('article.create')}}">Inserisci articolo</a>
+                        <a class="nav-link" href="{{ route('article.create') }}">Inserisci articolo</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"

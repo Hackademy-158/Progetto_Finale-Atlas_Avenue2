@@ -3,14 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreArticleRequest;
 use App\Http\Requests\UpdateArticleRequest;
+use Illuminate\Routing\Controllers\Middleware;
+use Illuminate\Routing\Controllers\HasMiddleware;
 
-class ArticleController extends Controller
+class ArticleController extends Controller //implements HasMiddleware
 {
-    /**
-     * Display a listing of the resource.
-     */
+    // public static function middleware()
+    // {
+    //     return [
+    //         new Middleware('auth', only: ['index'])
+    //     ];
+    // }
     public function index()
     {
         $articles = Article::all();
@@ -33,7 +39,8 @@ class ArticleController extends Controller
         Article::create([
             'title' => $request->title,
             'price' => $request->price,
-            'description' => $request->description
+            'description' => $request->description,
+            'user_id' => Auth::user()->id
         ]);
     }
 
