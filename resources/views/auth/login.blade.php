@@ -28,10 +28,13 @@
                         <label for="password" class="form-label">Password</label>
                         <input type="password" class="form-control" id="password" name='password'>
                     </div>
+                    <div class="form-check text-start my-3">
+                        <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">Ricordami</label>
+                    </div>
                     <button type="submit" class="btn btn-primary">Accedi</button>
-                    <span class="ms-3">Non sei ancora registrato? <a
-                            class="text-dark"href="{{ route('register') }}">Registrati</a></span>
-                </form>
+                    <span class="ms-3">Non sei ancora registrato? <a class="text-dark"
+                            href="{{ route('register') }}">Registrati</a></span>
                 </form>
             </div>
         </div>

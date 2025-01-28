@@ -1,7 +1,7 @@
 <x-layout>
     <div class="container">
         <div class="row">
-            <div class="col-12 text-center mt-5">
+            <div class="col-12 text-center mt-5 mb-5">
                 <h1>Articoli</h1>
             </div>
         </div>
@@ -11,21 +11,40 @@
             @forelse ($articles as $article)
                 <div class="col-12 col-md-6">
                     <div class="card mb-3">
-                        <div class="card-body">
+                        <div class="card-body ">
                             <h5 class="card-title">{{ $article->title }}</h5>
                             <p class="card-text">{{ $article->category->name ?? 'N/A' }}</p>
                             <p class="card-text">{{ $article->price }}</p>
                         </div>
+                        <div class="card-footer">
+                            <a href="{{ route('article.show', $article) }}" class="btn btn-primary">Vedi altro</a>
+                        </div>
                     </div>
-                        <a href="{{ route('article.show', $article) }}" class="btn btn-primary">Vedi altro</a>
                 </div>
             @empty
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 text-center mt-3 mb-3">
+                            <div class="col-12">
+                            @auth
+                                <p>Non ci sono articoli al momento disponibili.</p>
+                                <a class="text-primary" href="{{ route('article.create') }}">Creane Uno!</a>
+                            @endauth
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 text-center mt-3 mb-3">
+                            <div class="col-12">
+                            @guest
+                                <p>Non ci sono articoli al momento disponibili.</p>
+                                <a class="text-primary" href="{{ route('register') }}">Creane uno!</a>
+                            @endguest
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
-    <div class="col-12">
-        <p>Non ci sono articoli</p>
-    </div>
     @endforelse
-    </div>
-    </div>
 </x-layout>

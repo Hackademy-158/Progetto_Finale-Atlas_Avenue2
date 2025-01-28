@@ -3,13 +3,15 @@
 namespace App\Livewire;
 
 use App\Models\Article;
+use App\Models\Category;
 use Livewire\Component;
 use Livewire\Attributes\Validate;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Category;
 
-class ArticleCreate extends Component
+class ArticleEdit extends Component
 {
+    public $article;
+
     #[Validate('required|min:4|max:20')]
     public $title;
     
@@ -26,9 +28,9 @@ class ArticleCreate extends Component
     public $quantity;
 
     #[Validate('required')]
-    public $currency = 'EUR'; // valore di default per la valuta
+    public $currency = 'EUR';
 
-    public $categories = [];  // Inizializza come array vuoto invece di null
+    public $categories;
 
     public function messages()
     {
@@ -40,50 +42,50 @@ class ArticleCreate extends Component
             'price.min' => 'Il prezzo deve essere almeno €0.01.',
             'description.required' => 'La descrizione è obbligatoria.',
             'description.min' => 'La descrizione deve avere almeno 10 caratteri.',
-            'description.max' => 'La descrizione non può avere più di 50 caratteri.',
+            'description.max' => 'La descrizione non può avere più di 120 caratteri.',
             'category_id.required' => 'Inserire una categoria.',
             'quantity.required' => 'La quantità è obbligatoria.',
+            'quantity.min' => 'La quantità deve essere almeno 1.',
+            'quantity.max' => 'La quantità non può superare 10.',
             'currency.required' => 'Selezionare una valuta.',
         ];
     }
-    
-    public function store()
+
+    public function mount()
+    {
+        $this->categories = Category::all();
+        $this->title = $this->article->title;
+        $this->price = $this->article->price;
+        $this->description = $this->article->description;
+        $this->category_id = $this->article->category_id;
+        $this->quantity = $this->article->quantity;
+        $this->currency = $this->article->currency;
+    }
+
+    public function update()
     {
         $this->validate();
-        Auth::user()->articles()->create([
+
+        if ($this->article->user_id !== Auth::id()) {
+            session()->flash('error', 'Non sei autorizzato a modificare questo articolo.');
+            return redirect()->route('article.index');
+        }
+
+        $this->article->update([
             'title' => $this->title,
             'price' => $this->price,
             'description' => $this->description,
-            'user_id' => Auth::user()->id,
             'category_id' => $this->category_id,
             'quantity' => $this->quantity,
             'currency' => $this->currency
         ]);
-        
-        session()->flash('success', 'Articolo creato correttamente!');
-        $this->reset();
-        return redirect()->route('article.index');
-    }
-    
-    public function mount()
-    {
-        try {
-            $categories = Category::all();
-            if ($categories->isEmpty()) {
-                session()->flash('error', 'Nessuna categoria trovata nel database.');
-            }
-            $this->categories = $categories;
-        } catch (\Exception $e) {
-            session()->flash('error', 'Errore nel caricamento delle categorie: ' . $e->getMessage());
-            $this->categories = collect([]);  // Inizializza come collection vuota
-        }
+
+        session()->flash('success', 'Articolo aggiornato con successo!');
+        return redirect()->route('article.show', $this->article);
     }
 
     public function render()
     {
-        if (!$this->categories) {
-            $this->categories = collect([]); // Assicurati che categories non sia mai null
-        }
-        return view('livewire.article-create');
+        return view('livewire.article-edit');
     }
 }
