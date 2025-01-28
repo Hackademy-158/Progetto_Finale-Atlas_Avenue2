@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreArticleRequest;
 use App\Http\Requests\UpdateArticleRequest;
@@ -52,7 +53,10 @@ class ArticleController extends Controller //implements HasMiddleware
     {
         return view('article.show', compact('article'));
     }
-
+    public function byCategory(Category $category)
+    {
+        return view('article.byCategory', ['articles'=>$category->articles, 'category'=>$category]);
+    }
     /**
      * Show the form for editing the specified resource.
      */

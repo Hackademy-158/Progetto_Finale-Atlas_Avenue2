@@ -34,6 +34,8 @@ class ArticleCreate extends Component
             'category.required' => 'Inserire una categoria.',
         ];
     }
+    
+    public $categories;
     public function store()
     {
         $this->validate();
