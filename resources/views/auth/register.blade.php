@@ -21,25 +21,28 @@
                         </div>
                     @endif
                     <div class="mb-3">
-                        <label for="name" class="form-label">Nome Utente</label>
-                        <input type="text" class="form-control" id="name" name='name'>
+                        <label for="name" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="name" name='name' value="{{ old('name') }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="surname" class="form-label">Cognome</label>
+                        <input type="text" class="form-control" id="surname" name='surname' value="{{ old('surname') }}">
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="email" name='email'>
+                        <input type="email" class="form-control" id="email" name='email' value="{{ old('email') }}">
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password" name='password'>
+                        <input type="password" class="form-control" id="password" name='password' value="{{ old('password') }}">
                     </div>
                     <div class="mb-3">
-                        <label for="password_confirmation" class="form-label">conferma password</label>
-                        <input type="password" class="form-control" id="password_confirmation"
-                            name='password_confirmation'>
+                        <label for="password_confirmation" class="form-label">Conferma Password</label>
+                        <input type="password" class="form-control" id="password_confirmation" name='password_confirmation' value="{{ old('password_confirmation') }}">
                     </div>
                     <button type="submit" class="btn btn-primary">Registrati</button>
                     <span class="ms-3">Sei già registrato? <a class="text-dark"
-                            href="{{ route('login') }}">Accedi</a></span>
+                            href="{{ route('login') }}">Accedi!</a></span>
             </div>
         </div>
     </div>

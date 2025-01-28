@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1>Inserisci un nuovo articolo</h1>
+                <h1>Crea un nuovo annuncio!</h1>
             </div>
         </div>
     </div>
