@@ -48,8 +48,10 @@
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>
-                <button type="submit" class="btn btn-success">Modifica Annuncio</button>
-                <a wire:click='destroy' class="btn btn-primary">Elimina</a>
+                <div class="d-flex justify-content-between mt-3">
+                    <button type="submit" class="btn btn-success me-2">Modifica Annuncio</button>
+                    <button type="button" wire:click='destroy' class="btn btn-danger">Elimina</button>
+                </div>
             </form>
         </div>
     </div>

@@ -26,7 +26,7 @@
                                 <a rel="noopener noreferrer" href="#">Hai dimenticato la password?</a>
                             </div>
                         </div>
-                        <button class="sign">Sign in</button>
+                        <button class="sign">Accedi</button>
                     </form>
                     @csrf
                     <div class="social-message">

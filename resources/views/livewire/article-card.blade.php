@@ -10,13 +10,14 @@
                         <p class="card-text">{{ $article->price }}</p>
                     </div>
                     <form wire:submit='update'>
-                        <div class="card-footer d-flex justify-content-between right">
-                            <a href="{{ route('article.index') }}" class="btn btn-primary">Torna al catalogo</a>
+                        <div class="card-footer d-flex justify-content-between align-items-center p-3">
                             <a href="{{ route('article.edit', $article) }}" class="btn btn-primary">Modifica</a>
+                            <a href="{{ route('article.index') }}" class="btn btn-primary me-2">Indietro</a>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
 </div>
