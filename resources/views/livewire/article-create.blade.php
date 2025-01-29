@@ -1,4 +1,4 @@
-<div class="container col-12 py-5">
+<div class="container col-12 py-3">
     <div class="row justify-content-center">
         <div class="col-12 col-md-6">
             <form wire:submit="store">
@@ -12,7 +12,9 @@
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label">Descrizione:</label>
-                    <input type="text" class="form-control" id="description" wire:model.live="description">
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" wire:model.live="description"></textarea>
+                    </div>
                     @error('description')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror

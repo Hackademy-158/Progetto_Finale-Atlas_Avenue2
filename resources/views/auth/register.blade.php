@@ -7,12 +7,8 @@
                     <form class="form" method="POST" action="{{ route('register') }}">
                         @csrf
                         <div class="input-group">
-                            <label for="name">Name</label>
+                            <label for="name">Nome Utente</label>
                             <input placeholder="" id="name" name="name" type="text" />
-                        </div>
-                        <div class="input-group">
-                            <label for="surname">Cognome</label>
-                            <input placeholder="" id="surname" name="surname" type="text" />
                             <label for="email">Email</label>
                             <input placeholder="" id="email" name="email" type="email" />
                             <label for="password">Password</label>
@@ -25,7 +21,8 @@
                     </form>
                     <div class="social-message">
                         <div class="line"></div>
-                        <p class="message">Accedi Con</p>
+                        <p class="message"><a rel="noopener noreferrer" href="{{ route('login') }}"
+                                class="">Accedi</a> Con</p>
                         <div class="line"></div>
                     </div>
                     <div class="social-icons">

@@ -44,13 +44,14 @@
                             Categorie
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="#" class="dropdown-item">Sport</a></li>
-                            <li><a href="#" class="dropdown-item">Fai da Te</a></li>
-                            <li><a href="#" class="dropdown-item">Moda</a></li>
-                            <li><a href="#" class="dropdown-item">Intrattenimento</a></li>
-                            <li><a href="#" class="dropdown-item">Arredamento</a></li>
-                            <li><a href="#" class="dropdown-item">Benessere</a></li>
-                            <li><a href="#" class="dropdown-item">Tecnologia</a></li>
+                            @foreach ($categories as $category)
+                                <li><a class="dropdown-item"
+                                        href="{{ route('byCategory', ['category' => $category]) }}">{{ $category->name }}</a>
+                                </li>
+                                @if (!$loop->last)
+                                    <hr class="dropdown-divider">
+                                @endif
+                            @endforeach
                         </ul>
                     </li>
                 @endauth
