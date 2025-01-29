@@ -38,7 +38,7 @@
                             </div>
                             
                             <div class="flex-row">
-                                <button type="button" class="btn google">
+                                <a href="{{ route('google.login') }}" class="btn btn-primary">
                                     <svg xml:space="preserve" style="enable-background:new 0 0 512 512;"
                                         viewBox="0 0 512 512" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink"
                                         xmlns="http://www.w3.org/2000/svg" id="Layer_1" width="20" version="1.1">
@@ -57,7 +57,7 @@
                                             C318.115,0,375.068,22.126,419.404,58.936z" style="fill:#F14336;"></path>
                                     </svg>
                                     Accedi con Google
-                                </button>
+                                </a>
                             </div>
                         </form>
                     </div>

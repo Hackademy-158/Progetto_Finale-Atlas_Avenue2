@@ -64,3 +64,52 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+
+## Google with other Platforms
+
+1. Installazione Socialite:
+```bash
+composer require laravel/socialite
+```
+
+2. Ora dobbiamo configurare le credenziali di Google. 
+Per farlo, devi: 
+a. Andare sulla Google Cloud Console;
+b. Creare un nuovo progetto o selezionarne uno esistente 
+c. Abilitare le Google+ API 
+d. In "Credenziali", creare delle nuove credenziali OAuth 2.0 
+e. Configurare gli URI di reindirizzamento autorizzati aggiungendo: http://localhost:8000/auth/google/callback
+Una volta ottenute le credenziali, dobbiamo aggiungere al file .env le variabili d'ambiente necessarie:
+
+```env
+GOOGLE_CLIENT_ID=il_tuo_client_id
+GOOGLE_CLIENT_SECRET=il_tuo_client_secret
+GOOGLE_REDIRECT=http://localhost:8000/auth/google/callback
+```
+
+3. Ora configureremo il servizio in config/services.php.
+
+'google' => [
+    'client_id' => env('GOOGLE_CLIENT_ID'),
+    'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+    'redirect' => env('GOOGLE_REDIRECT'),
+],
+
+4. Ora dobbiamo aggiungere il provider nel file config/auth.php.
+
+'google' => [
+    'driver' => 'socialite',
+    'client_id' => env('GOOGLE_CLIENT_ID'),
+    'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+    'redirect' => env('GOOGLE_REDIRECT'),
+],
+
+5. php artisan make:controller GoogleController
+
+6. php artisan make:migration add_google_id_to_users_table --table=users.
+
+7. php artisan migrate.
+
+8. web.php

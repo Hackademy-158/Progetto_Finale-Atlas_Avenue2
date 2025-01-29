@@ -18,3 +18,5 @@ class IsRevisor
         return redirect()->route('home')->with('errorMessage', 'Zona riservata ai revisori');
     }
 }
+
+
