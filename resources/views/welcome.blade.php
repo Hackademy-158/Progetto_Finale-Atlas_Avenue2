@@ -6,20 +6,18 @@
             </div>
         </div>
     </div>
-    <div class="container col-12 py-5">
+    <div class="container my-5">
         <div class="row justify-content-center">
             @forelse ($articles as $article)
-                <div class="col-12 col-md-6 mb-2">
-
-                        <div class="card-body p-4">
-                            <livewire:article-card :article="$article" />
-                        </div>
-                </div>
+            <div class="col-12 col-sm-6 col-md-3 m-1"> 
+                <livewire:article-card :article="$article" />
+            </div>
             @empty
-                <div class="col-12">
-                    <p>Non ci sono articoli</p>
-                </div>
+            <div class="col-12">
+                <p>Non ci sono articoli</p>
+            </div>
             @endforelse
         </div>
     </div>
+</div>
 </x-layout>

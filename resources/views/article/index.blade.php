@@ -7,19 +7,10 @@
         </div>
     </div>
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
             @forelse ($articles as $article)
-                <div class="col-12 col-md-6">
-                    <div class="card mb-3">
-                        <div class="card-body ">
-                            <h5 class="card-title">{{ $article->title }}</h5>
-                            <p class="card-text">{{ $article->category->name ?? 'N/A' }}</p>
-                            <p class="card-text">{{ $article->price }}</p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="{{ route('article.show', $article) }}" class="btn btn-primary">Vedi altro</a>
-                        </div>
-                    </div>
+                <div class="col-12 col-sm-6 col-md-3 m-1"> 
+                    <livewire:article-card :article="$article" />
                 </div>
             @empty
                 <div class="container">
