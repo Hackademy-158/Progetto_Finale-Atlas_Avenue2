@@ -23,4 +23,8 @@ class Article extends Model
         $this->save();
         return true;
     }
+
+    public static function ToBeRevisedCount() {
+        return Article::where('is_accepted', null)->count();
+    }
 }
