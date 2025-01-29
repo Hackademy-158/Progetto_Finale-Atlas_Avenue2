@@ -67,7 +67,7 @@ class ArticleEdit extends Component
     public function destroy()
     {
         $this->article->delete();
-        return redirect(route('article.create'))->with('success', 'Articolo eliminato con successo!');
+        return redirect(route('article.index'))->with('success', 'Articolo eliminato con successo!');
     }
     public function mount()
     {

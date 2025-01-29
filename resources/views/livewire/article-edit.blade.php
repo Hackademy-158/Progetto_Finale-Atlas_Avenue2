@@ -49,7 +49,7 @@
                     @enderror
                 </div>
                 <button type="submit" class="btn btn-success">Modifica Annuncio</button>
-                <a wire:click='destroy' href="{{ route('article.index') }}" class="btn btn-primary">Elimina</a>
+                <a wire:click='destroy' class="btn btn-primary">Elimina</a>
             </form>
         </div>
     </div>
