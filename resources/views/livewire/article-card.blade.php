@@ -14,7 +14,7 @@
                 </div>
                 <form wire:submit='update'>
                     <div class="card-footer d-flex justify-content-between align-items-center p-3">
-                        <a href="{{ route('article.edit', $article) }}" class="btn btn-primary">Modifica</a>
+                        <a href="{{ route('article.show', $article) }}" class="btn btn-primary">Dettaglio</a>
                         <a href="{{ route('article.index') }}" class="btn btn-primary me-2">Indietro</a>
                     </div>  
                 </form>
