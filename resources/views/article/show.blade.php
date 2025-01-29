@@ -1,3 +1,3 @@
 <x-layout>
-    <livewire:article-card :article="$article"/>
+    <livewire:article-show :article='$article' />
 </x-layout>

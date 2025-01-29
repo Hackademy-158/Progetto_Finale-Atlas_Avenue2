@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\RevisorController;
 
 
 
@@ -29,6 +30,10 @@ Route::get('/article/index', [ArticleController::class, 'index'])->name('article
 Route::get('/article/show/{article}', [ArticleController::class, 'show'])->name('article.show');
 Route::get('/article/edit/{article}', [ArticleController::class, 'edit'])->name('article.edit');
 Route::get('/category/{category}', [ArticleController::class, 'byCategory'])->name('byCategory');
+
+Route::get('/revisor/index', [RevisorController::class, 'index'])->name('revisor.index');
+Route::patch('/accept/{article}', [RevisorController::class, 'accept'])->name('accept');
+Route::patch('/reject/{article}', [RevisorController::class, 'reject'])->name('reject');
 
 // User Section
 // Route::get('/dashboard')
