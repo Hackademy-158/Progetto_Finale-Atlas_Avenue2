@@ -12,7 +12,7 @@ class ArticleCreate extends Component
 {
     #[Validate('required|min:4|max:20')]
     public $title;
-    
+
     #[Validate('required|min:0')]
     public $price;
 
@@ -21,9 +21,6 @@ class ArticleCreate extends Component
 
     #[Validate('required')]
     public $category_id;
-
-    #[Validate('required|min:1|max:10')]
-    public $quantity;
 
     #[Validate('required')]
     public $currency = 'EUR'; // valore di default per la valuta
@@ -46,7 +43,7 @@ class ArticleCreate extends Component
             'currency.required' => 'Selezionare una valuta.',
         ];
     }
-    
+
     public function store()
     {
         $this->validate();
@@ -56,15 +53,14 @@ class ArticleCreate extends Component
             'description' => $this->description,
             'user_id' => Auth::user()->id,
             'category_id' => $this->category_id,
-            'quantity' => $this->quantity,
             'currency' => $this->currency
         ]);
-        
+
         session()->flash('success', 'Articolo creato correttamente!');
         $this->reset();
         return redirect()->route('article.index');
     }
-    
+
     public function mount()
     {
         try {

@@ -14,7 +14,7 @@ class ArticleEdit extends Component
 
     #[Validate('required|min:4|max:20')]
     public $title;
-    
+
     #[Validate('required|min:0')]
     public $price;
 
@@ -23,9 +23,6 @@ class ArticleEdit extends Component
 
     #[Validate('required')]
     public $category_id;
-
-    #[Validate('required|min:1|max:10')]
-    public $quantity;
 
     #[Validate('required')]
     public $currency = 'EUR';
@@ -51,6 +48,27 @@ class ArticleEdit extends Component
         ];
     }
 
+
+    public function update()
+    {
+        $this->validate();
+        $this->article->update([
+            'title' => $this->title,
+            'price' => $this->price,
+            'description' => $this->description,
+            'category_id' => $this->category_id,
+            'currency' => $this->currency
+        ]);
+
+        session()->flash('success', 'Articolo aggiornato con successo!');
+        return redirect()->route('article.show', $this->article);
+    }
+
+    public function destroy()
+    {
+        $this->article->delete();
+        return redirect(route('article.create'))->with('success', 'Articolo eliminato con successo!');
+    }
     public function mount()
     {
         $this->categories = Category::all();
@@ -58,30 +76,7 @@ class ArticleEdit extends Component
         $this->price = $this->article->price;
         $this->description = $this->article->description;
         $this->category_id = $this->article->category_id;
-        $this->quantity = $this->article->quantity;
         $this->currency = $this->article->currency;
-    }
-
-    public function update()
-    {
-        $this->validate();
-
-        if ($this->article->user_id !== Auth::id()) {
-            session()->flash('error', 'Non sei autorizzato a modificare questo articolo.');
-            return redirect()->route('article.index');
-        }
-
-        $this->article->update([
-            'title' => $this->title,
-            'price' => $this->price,
-            'description' => $this->description,
-            'category_id' => $this->category_id,
-            'quantity' => $this->quantity,
-            'currency' => $this->currency
-        ]);
-
-        session()->flash('success', 'Articolo aggiornato con successo!');
-        return redirect()->route('article.show', $this->article);
     }
 
     public function render()

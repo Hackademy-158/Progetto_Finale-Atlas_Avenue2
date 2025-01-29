@@ -10,9 +10,16 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('article.index') }}">Catalogo</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('article.create') }}">Crea un Annuncio</a>
-                </li>
+                @guest
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('register') }}">Crea un Annuncio</a>
+                    </li>
+                @endguest
+                @auth
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('article.create') }}">Crea un Annuncio</a>
+                    </li>
+                @endauth
                 @auth
 
                     <!-- Tendina Utente -->

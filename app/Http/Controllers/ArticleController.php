@@ -53,10 +53,10 @@ class ArticleController extends Controller //implements HasMiddleware
     {
         return view('article.show', compact('article'));
     }
-    public function byCategory(Category $category)
-    {
-        return view('article.byCategory', ['articles'=>$category->articles, 'category'=>$category]);
-    }
+    // public function byCategory(Category $category)
+    // {
+    //     return view('article.byCategory', ['articles' => $category->articles, 'category' => $category]);
+    // }
     /**
      * Show the form for editing the specified resource.
      */
@@ -64,6 +64,4 @@ class ArticleController extends Controller //implements HasMiddleware
     {
         return view('article.edit', compact('article'));
     }
-
-
 }

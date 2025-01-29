@@ -4,7 +4,8 @@
             <form wire:submit="store">
                 <div class="mb-3">
                     <label for="title" class="form-label">Titolo:</label>
-                    <input type="text" class="form-control" id="title" wire:model.live="title" placeholder="es. TV, fiat 500, iPhone">
+                    <input type="text" class="form-control" id="title" wire:model.live="title"
+                        placeholder="es. TV, fiat 500, iPhone">
                     @error('title')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -31,16 +32,10 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="quantity" class="form-label">Quantità:</label>
-                    <input type="number" class="form-control" id="quantity"wire:model.live="quantity">
-                    @error('quantity')
-                        <span class="text-danger">{{ $message }}</span>
-                    @enderror
-                </div>
-                <div class="mb-3">
                     <label for="price" class="form-label">Prezzo:</label>
                     <div class="input-group">
-                        <input type="number" class="form-control" step="0.01" id="price" wire:model.live="price" placeholder="0.00">
+                        <input type="number" class="form-control" step="0.01" id="price" wire:model.live="price"
+                            placeholder="0.00">
                         <select class="form-select" id="currency" wire:model.live="currency">
                             <option value="EUR">EUR</option>
                             <option value="USD">USD</option>
@@ -53,7 +48,7 @@
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>
-                <button type="submit" class="btn btn-success">Modifica Annuncio</button>
+                <button type="submit" class="btn btn-success">Aggiungi Annuncio</button>
             </form>
         </div>
     </div>
