@@ -7,18 +7,22 @@
                     <form class="form" method="POST" action="{{ route('register') }}">
                         @csrf
                         <div class="input-group">
+                            <label for="name">Nome Utente</label>
+                            <input placeholder="" id="name" name="name" type="text" />
                             <label for="email">Email</label>
                             <input placeholder="" id="email" name="email" type="email" />
                             <label for="password">Password</label>
                             <input placeholder="" id="password" name="password" type="password" />
                             <label for="password_confirmation">Conferma la tua password</label>
-                            <input placeholder="" id="password_confirmation" name="password_confirmation" type="password" />
+                            <input placeholder="" id="password_confirmation" name="password_confirmation"
+                                type="password" />
                         </div>
                         <button style="margin-top:6%;" class="sign">Registrati</button>
                     </form>
                     <div class="social-message">
                         <div class="line"></div>
-                        <p class="message"><a rel="noopener noreferrer" href="{{ route('login') }}" class="">Accedi</a> Con</p>
+                        <p class="message"><a rel="noopener noreferrer" href="{{ route('login') }}"
+                                class="">Accedi</a> Con</p>
                         <div class="line"></div>
                     </div>
                     <div class="social-icons">
