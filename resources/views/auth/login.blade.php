@@ -2,7 +2,7 @@
     <section class="bgPage1 vh-100">
         <div class="container ">
             <div class="row justify-content-center ">
-                <div class="form-container mt-5" style="margin-top: 195px !important">
+                <div class="form-container mt-5" style="margin-top: 55px !important">
                     <p class="title">Login</p>
                     <form class="form" method="POST" action="{{ route('login') }}">
                         @csrf

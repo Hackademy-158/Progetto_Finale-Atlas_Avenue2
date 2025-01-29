@@ -2,7 +2,7 @@
     <section class="bgPage1  vh-100">
         <div class="container">
             <div class="row justify-content-center ">
-                <div class="form-container" style="margin-top: 135px !important">
+                <div class="form-container" style="margin-top: 55px !important">
                     <p class="title">Registrati</p>
                     <form class="form" method="POST" action="{{ route('register') }}">
                         @csrf

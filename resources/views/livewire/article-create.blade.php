@@ -5,7 +5,7 @@
                 <div class="mb-3">
                     <label for="title" class="form-label">Titolo:</label>
                     <input type="text" class="form-control" id="title" wire:model.live="title"
-                        placeholder="es. TV, fiat 500, iPhone">
+                        placeholder="es. TV, iPhone..">
                     @error('title')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
