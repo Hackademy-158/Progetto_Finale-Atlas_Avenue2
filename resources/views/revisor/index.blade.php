@@ -61,7 +61,7 @@
                     <h4 class="fst-italic display-4">
                         Nessun articolo da revisionare
                     </h4>
-                    <a href="{{ route('homepage') }}" class="mt-5 btn btn-success">Torna all'homepage</a>
+                    <a href="{{ route('home') }}" class="mt-5 btn btn-success">Torna all'homepage</a>
                 </div>
             </div>
         @endif
