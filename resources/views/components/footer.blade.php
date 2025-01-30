@@ -36,14 +36,20 @@
         </div>
 
         <div class="col mb-3">
-            <h5>Section</h5>
+            <h5>Privileges</h5>
             <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                <h5>Vuoi diventare revisore?</h5>
+                <p>Cliccando il bottone sottostante farai richiesta al nostro admin</p>
+                <a href="{{ route('become.revisor') }}" class="btn btn-success">Diventa Revisore</a>
             </ul>
+            {{-- errore riservato ha chi e' gia revisore --}}
+            <div class="mt-3 " style="width: 450px">
+                @if (session()->has('errorMessage'))
+                    <div class="alert alert-danger text-center rounded w-50">
+                        {{ session('errorMessage') }}
+                    </div>
+                @endif
+            </div>
         </div>
     </footer>
 </div>

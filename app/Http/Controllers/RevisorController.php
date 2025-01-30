@@ -2,26 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Article;
+use App\Mail\BecomeRevisor;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Artisan;
 
 class RevisorController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $article_to_check = Article::where('is_accepted', null)->first();
         return view('revisor.index', compact('article_to_check'));
     }
 
-    public function accept(Article $article){
+    public function accept(Article $article)
+    {
         try {
-            if($article->is_accepted !== null) {
+            if ($article->is_accepted !== null) {
                 return redirect()->back()->with('error', 'Questo articolo è già stato revisionato');
             }
 
             $article->update(['is_accepted' => true]);
-            
+
             Log::info('Articolo accettato:', [
                 'article_id' => $article->id,
                 'title' => $article->title,
@@ -41,13 +47,14 @@ class RevisorController extends Controller
         }
     }
 
-    public function reject(Article $article){
+    public function reject(Article $article)
+    {
         try {
             $title = $article->title;
 
             // Eliminiamo l'articolo invece di marcarlo come rifiutato, quindi visivamente il revisore non lo vedra ha al potere su altri regular users
             $article->delete();
-            
+
             Log::info('Articolo eliminato:', [
                 'article_id' => $article->id,
                 'title' => $title,
@@ -65,5 +72,17 @@ class RevisorController extends Controller
             return redirect()->back()
                 ->with('error', "Si è verificato un errore durante l'eliminazione dell'articolo");
         }
+    }
+
+    public function becomeRevisor()
+    {
+        Mail::to('flavio.volpicella@gmail.com')->send(new BecomeRevisor(Auth::user()));
+        return redirect()->route('article.index')->with('success', 'Hai richiesto di diventare revisore');
+    }
+
+    public function makeRevisor(User $user)
+    {
+        Artisan::call('app:make-user-revisor', ['email' => $user->email]);
+        return redirect()->back();
     }
 }
