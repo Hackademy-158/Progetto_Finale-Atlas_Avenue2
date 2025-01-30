@@ -25,7 +25,7 @@ class RevisorController extends Controller
             Log::info('Articolo accettato:', [
                 'article_id' => $article->id,
                 'title' => $article->title,
-                'revisor' => auth()->user()->name
+                'revisor' => Auth::user()->name
             ]);
 
             return redirect()->route('revisor.index')
@@ -51,7 +51,7 @@ class RevisorController extends Controller
             Log::info('Articolo eliminato:', [
                 'article_id' => $article->id,
                 'title' => $title,
-                'revisor' => auth()->user()->name
+                'revisor' => Auth::user()->name
             ]);
 
             return redirect()->route('revisor.index')
