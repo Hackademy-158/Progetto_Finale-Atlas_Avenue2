@@ -56,7 +56,7 @@ class ArticleCreate extends Component
             'currency' => $this->currency
         ]);
 
-        session()->flash('success', 'Articolo creato correttamente!');
+        session()->flash('status', 'Articolo creato con successo!');
         $this->reset();
         return redirect()->route('article.index');
     }

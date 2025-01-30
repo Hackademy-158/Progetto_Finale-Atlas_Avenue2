@@ -11,15 +11,14 @@
 
 <body>
     <x-navbar />
-    {{-- Messaggi di Successo --}}
-    @if (session('success'))
+    
+    @if (session('status'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{ session('success') }}
+            {{ session('status') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
 
-    {{-- Messaggi di Errore --}}
     @if (session('error'))
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
             {{ session('error') }}
@@ -27,23 +26,9 @@
         </div>
     @endif
 
-
-    {{-- Errori di Validazione --}}
-    {{-- @if ($errors->any())
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <ul class="mb-0">
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif} --}}
-
     <div class="min-vh-100">
         {{ $slot }}
     </div>
-
 
     <x-footer />
 </body>

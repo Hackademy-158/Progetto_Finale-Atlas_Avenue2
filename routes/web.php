@@ -27,14 +27,18 @@ Route::get('/article/show/{article}', [ArticleController::class, 'show'])->name(
 Route::get('/article/edit/{article}', [ArticleController::class, 'edit'])->name('article.edit');
 Route::get('/category/{category}', [ArticleController::class, 'byCategory'])->name('byCategory');
 
-// Revisor Section
+// Revisor Approvals
 Route::middleware(['isRevisor'])->group(function () {
     Route::get('/revisor/index', [RevisorController::class, 'index'])->name('revisor.index');
     Route::patch('/accept/{article}', [RevisorController::class, 'accept'])->name('accept');
     Route::patch('/reject/{article}', [RevisorController::class, 'reject'])->name('reject');
 });
+
+// Revisor Routes
 Route::get('/revisor/request', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('become.revisor');
 Route::get('/make/revisor/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
+//Dynamic Search
+Route::get('/search/article', [PublicController::class, 'searchArticles'])->name('article.search');
 
 // Google Section
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('google.login');
