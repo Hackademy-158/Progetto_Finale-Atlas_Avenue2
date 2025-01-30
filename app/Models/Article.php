@@ -3,9 +3,21 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 
 class Article extends Model
 {
+    use Searchable;
+    public function toSearchableArray()
+    {
+        return [
+            'id' => $this->id,
+            'title' => $this->title,
+            'description' => $this->description,
+            'price' => $this->price,
+            'category' => $this->category,
+        ];
+    }
     protected $fillable = [
         'title', 
         'description', 
@@ -36,4 +48,6 @@ class Article extends Model
     {
         return Article::where('is_accepted', null)->count();
     }
+
+
 }
