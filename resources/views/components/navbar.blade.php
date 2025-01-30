@@ -1,10 +1,5 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <form role="search" class="d-flex">
-        <input type="text" name="query" class="px-3" placeholder="Cerca..." />
-        <button type="submit" class="btn btn-light m-2" style="width: 60px">
-            Cerca
-        </button>
-    </form>
+    
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ route('home') }}">Atlas Avenue</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -55,7 +50,12 @@
                             @endforeach
                         </ul>
                     </li>
-                    
+                    <form role="search" class="d-flex">
+                        <input type="text" name="query" class="px-3" placeholder="Cerca..." />
+                        <button type="submit" class="btn btn-light m-2" style="width: 60px">
+                            Cerca
+                        </button>
+                    </form>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
