@@ -200,3 +200,91 @@
     -webkit-text-fill-color: var(--bs-light) !important;
     transition: background-color 5000s ease-in-out 0s;
 }
+
+/* HEADER */
+.heros-header{
+    min-height: 50vh;
+}
+
+
+.form-control::placeholder{ /* schiarisco placeholder*/
+    color: rgba(128, 128, 128, 0.6);
+}
+
+.form-control:focus {
+    border-color: rgba(167, 201, 87, .25);
+    box-shadow: 0 0 0 .25rem rgba(167, 201, 87, .25);
+}
+
+.input-group-text {
+    color: var(--sec);
+    background-color: var(--greenLight);
+    border: var(--bs-border-width) solid var(--greenLight);
+    cursor: pointer;
+}
+
+.header-logo{
+    width: 100px;
+    padding: 10px 10px;
+    
+}
+
+/* FINE HEADER */
+
+/* SEZIONE CATEGORIE */
+.category-card > p{ /* sto selezionando solo i figli diretti e quindi tutti i paragrafi figli diretti di category-card*/
+    margin: 0;
+}
+
+.category-card{
+    transition: all 0.4s;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.category-card:hover{
+    box-shadow: 0px 0px 12px 0px #0000008a; /*all'hover deve comparire il box shadow, lo faccio con Box Shadow Generator*/
+}
+
+.category-card:hover > p{ /* sto selezionando solo i figli diretti e quindi tutti i paragrafi figli diretti di category-card*/
+    color: var(--greenLight); /* all'hover diventa verde*/
+}
+/* FINE SEZIONE CATEGORIE */ 
+
+/* CAROSELLO SWIPER */ 
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-description{
+    position: absolute;
+    top: 4px;
+    left: 5px;
+}
+
+
