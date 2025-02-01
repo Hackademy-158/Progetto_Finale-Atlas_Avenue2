@@ -49,7 +49,7 @@
                             @endforeach
                         </ul>
                     </li>
-                    <form role="search" class="d-flex">
+                    <form role="search" class="d-flex" role="search" action="{{ route('article.search') }}" method="GET">
                         <input type="text" name="query" class="px-3" placeholder="Cerca..." />
                         <button type="submit" class="btn btn-light m-2" style="width: 60px">
                             Cerca

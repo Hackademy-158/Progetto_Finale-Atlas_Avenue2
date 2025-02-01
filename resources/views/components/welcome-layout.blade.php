@@ -20,8 +20,7 @@
 </head>
 
 <body class="bg-dark text-white">
-    <x-navbar/>
-
+    
     @if (session('status'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ session('status') }}

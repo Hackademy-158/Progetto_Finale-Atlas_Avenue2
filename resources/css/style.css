@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 :root {
     --body-color: #006466;
     --element-color: #ffffff;
@@ -67,6 +68,56 @@ body {
     background-attachment: fixed; /* Sfondo fisso */
     /* background-repeat: no-repeat; Non ripetere l'immagine */
 }
+=======
+/*stile welcome*/
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+
+    opacity: 0.8;
+}
+
+
+.hero-section {
+    padding-top: 56px;
+    /* Height of the navbar */
+}
+
+.bg-img {
+    filter: brightness(0.8);
+    z-index: -1;
+    background-image: url('../img/shopping-cart.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: first baseline;
+    justify-content: flex-end;
+    text-align: center;
+    color: white;
+}
+
+.slogan{
+    margin-top: 150px;
+    padding-right: 100px;
+}
+
+.hero-section h1, h2 {
+    text-shadow: 2px 2px #333;
+    text-align: right;
+    
+}
+
+.hero-section h1 {
+    font-size: 120px;
+}
+
+.hero-section h2 {
+    font-size: 80px;
+}
+
+>>>>>>> 4078551db6a1e34b191e0486aa96c1e250405c78
 
 .form {
     display: flex;
@@ -270,3 +321,94 @@ body {
     -webkit-text-fill-color: var(--bs-light) !important;
     transition: background-color 5000s ease-in-out 0s;
 }
+<<<<<<< HEAD
+=======
+
+/* HEADER */
+.heros-header{
+    min-height: 50vh;
+}
+
+
+.form-control::placeholder{ /* schiarisco placeholder*/
+    color: rgba(128, 128, 128, 0.6);
+}
+
+.form-control:focus {
+    border-color: rgba(167, 201, 87, .25);
+    box-shadow: 0 0 0 .25rem rgba(167, 201, 87, .25);
+}
+
+.input-group-text {
+    color: var(--sec);
+    background-color: var(--greenLight);
+    border: var(--bs-border-width) solid var(--greenLight);
+    cursor: pointer;
+}
+
+.header-logo{
+    width: 100px;
+    padding: 10px 10px;
+    
+}
+
+/* FINE HEADER */
+
+/* SEZIONE CATEGORIE */
+.category-card > p{ /* sto selezionando solo i figli diretti e quindi tutti i paragrafi figli diretti di category-card*/
+    margin: 0;
+}
+
+.category-card{
+    transition: all 0.4s;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.category-card:hover{
+    box-shadow: 0px 0px 12px 0px #0000008a; /*all'hover deve comparire il box shadow, lo faccio con Box Shadow Generator*/
+}
+
+.category-card:hover > p{ /* sto selezionando solo i figli diretti e quindi tutti i paragrafi figli diretti di category-card*/
+    color: var(--greenLight); /* all'hover diventa verde*/
+}
+/* FINE SEZIONE CATEGORIE */ 
+
+/* CAROSELLO SWIPER */ 
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-description{
+    position: absolute;
+    top: 4px;
+    left: 5px;
+}
+
+
+>>>>>>> 4078551db6a1e34b191e0486aa96c1e250405c78

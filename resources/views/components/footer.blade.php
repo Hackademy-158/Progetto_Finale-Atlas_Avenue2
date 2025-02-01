@@ -39,8 +39,9 @@
             <h5>Privileges</h5>
             <ul class="nav flex-column">
                 <h5>Vuoi diventare revisore?</h5>
-                <p>Cliccando il bottone sottostante farai richiesta al nostro admin</p>
-                <a href="{{ route('become.revisor') }}" class="btn btn-success">Diventa Revisore</a>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Accedi</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Registrati</a></li>
+                <li class="nav-item mb-2"><a href="{{ route('become.revisor') }}" class="btn btn-primary">Diventa revisore</a></li>
             </ul>
             {{-- errore riservato ha chi e' gia revisore --}}
             <div class="mt-3 " style="width: 450px">
