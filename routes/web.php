@@ -38,7 +38,7 @@ Route::middleware(['isRevisor'])->group(function () {
 Route::get('/revisor/request', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('become.revisor');
 Route::get('/make/revisor/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
 //Dynamic Search
-Route::get('/search/article', [PublicController::class, 'searchArticles'])->name('article.search');
+Route::get('/search/article', [PublicController::class, 'searched'])->name('article.search');
 
 // Google Section
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('google.login');

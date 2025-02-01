@@ -8,9 +8,9 @@ body {
     width: 100%;
     z-index: 1030;
     background-color: white !important;
-    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
     padding: 8px 16px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .hero-section {
@@ -21,7 +21,7 @@ body {
 .bg-img {
     filter: brightness(0.8);
     z-index: -1;
-    background-image: url('../img/shopping-cart.jpeg'); 
+    background-image: url('../img/shopping-cart.jpeg');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -32,15 +32,16 @@ body {
     color: white;
 }
 
-.slogan{
+.slogan {
     margin-top: 150px;
     padding-right: 100px;
 }
 
-.hero-section h1, h2 {
+.hero-section h1,
+h2 {
     text-shadow: 2px 2px #333;
     text-align: right;
-    
+
 }
 
 .hero-section h1 {
@@ -256,12 +257,12 @@ body {
 
 
 /* HEADER */
-.heros-header{
+.heros-header {
     min-height: 50vh;
 }
 
 /* Placeholders */
-.form-control::placeholder{ 
+.form-control::placeholder {
     color: rgba(128, 128, 128, 0.6);
 }
 
@@ -277,20 +278,21 @@ body {
     cursor: pointer;
 }
 
-.header-logo{
+.header-logo {
     width: 100px;
     padding: 10px;
-    
+
 }
 
 /* FINE HEADER */
 
 /* SEZIONE CATEGORIE */
-.category-card > p{ /* sto selezionando solo i figli diretti e quindi tutti i paragrafi figli diretti di category-card*/
+.category-card>p {
+    /* sto selezionando solo i figli diretti e quindi tutti i paragrafi figli diretti di category-card*/
     margin: 0;
 }
 
-.category-card{
+.category-card {
     transition: all 0.4s;
     width: fit-content;
     height: fit-content;
@@ -304,16 +306,20 @@ body {
     align-items: center;
 }
 
-.category-card:hover{
-    box-shadow: 0px 0px 12px 0px #0000008a; /*all'hover deve comparire il box shadow, lo faccio con Box Shadow Generator*/
+.category-card:hover {
+    box-shadow: 0px 0px 12px 0px #0000008a;
+    /*all'hover deve comparire il box shadow, lo faccio con Box Shadow Generator*/
 }
 
-.category-card:hover > p{ /* sto selezionando solo i figli diretti e quindi tutti i paragrafi figli diretti di category-card*/
-    color: var(--greenLight); /* all'hover diventa verde*/
+.category-card:hover>p {
+    /* sto selezionando solo i figli diretti e quindi tutti i paragrafi figli diretti di category-card*/
+    color: var(--greenLight);
+    /* all'hover diventa verde*/
 }
-/* FINE SEZIONE CATEGORIE */ 
 
-/* CAROSELLO SWIPER */ 
+/* FINE SEZIONE CATEGORIE */
+
+/* CAROSELLO SWIPER */
 .swiper {
     width: 100%;
     height: 100%;
@@ -335,7 +341,7 @@ body {
     object-fit: cover;
 }
 
-.carousel-description{
+.carousel-description {
     position: absolute;
     top: 4px;
     left: 5px;
@@ -411,7 +417,7 @@ body {
 .navbar .dropdown-menu {
     margin-top: 8px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border: 1px solid #e0e0e0;
 }
 
@@ -420,7 +426,8 @@ body {
     position: relative;
     overflow: hidden;
     margin-top: -56px;
-    height: calc(100vh + 1px); /* Add 1px to trigger scroll */
+    height: calc(100vh + 1px);
+    /* Add 1px to trigger scroll */
 }
 
 .hero-content {
@@ -523,9 +530,12 @@ body {
 }
 
 @keyframes float {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-20px);
     }
@@ -571,7 +581,7 @@ body {
     .hero-section h1 {
         font-size: 48px;
     }
-    
+
     .hero-subtitle {
         margin: 0 auto;
     }
@@ -583,4 +593,32 @@ body {
     .floating-element {
         display: none;
     }
+}
+
+
+/* img-main logo */
+.img-main {
+    width: 115px;
+}
+
+.navBrand {
+    margin-right: 600px;
+}
+
+/* media query navbar */
+/* Media query per schermi piccoli (max-width: 768px) */
+@media (max-width: 768px) {
+
+    /* Centrare il logo */
+    .img-main {
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* Centrare il contenuto della navbar */
+    .navbar .container-fluid {
+        justify-content: center;
+    }
+
+
 }
