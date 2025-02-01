@@ -1,74 +1,4 @@
-<<<<<<< HEAD
-:root {
-    --body-color: #006466;
-    --element-color: #ffffff;
-    --text-color: #ffc300;
-    --navbar-color: #0b525b;
-}
 
-@font-face {
-    font-family: "titoli";
-    src: url('/public/fonts/ANDREW ELEGANT Regular.ttf') format("truetype");
-}
-
-@font-face {
-    font-family: "Brand";
-    src: url('/public/fonts/ELEGANT Personal use.ttf');
-}
-
-@font-face {
-    font-family: 'testi';
-    src: url('/public/fonts/EleganTech-.ttf') format("truetype");
-}
-
-.titoli {
-    font-family: 'titoli';
-}
-
-.Brand {
-    font-family: 'Brand';
-}
-
-.testi {
-    font-family: 'testi';
-}
-
-h1 {
-    font-family: 'titoli';
-    color: var(--text-color);
-}
-
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: 'testi';
-    color: var(--text-color);
-}
-
-p {
-    font-family: 'testi';
-    color: var(--text-color);
-}
-
-.bg-body-tertiary {
-    background-color: var(--navbar-color) !important;
-    font-family: 'titoli';
-    color: var(--text-color);
-
-}
-
-body {
-    /* background-color: var(--body-color);
-    color: var(--element-color); */
-    background-image: url('/public/images/image1.jpg'); /* Percorso dell'immagine */
-    /* background-size: cover; Copre l'intera pagina */
-    background-position: center; /* Centra l'immagine */
-    background-attachment: fixed; /* Sfondo fisso */
-    /* background-repeat: no-repeat; Non ripetere l'immagine */
-}
-=======
 /*stile welcome*/
 .navbar {
     position: fixed;
@@ -77,7 +7,6 @@ body {
 
     opacity: 0.8;
 }
-
 
 .hero-section {
     padding-top: 56px;
@@ -116,8 +45,6 @@ body {
 .hero-section h2 {
     font-size: 80px;
 }
-
->>>>>>> 4078551db6a1e34b191e0486aa96c1e250405c78
 
 .form {
     display: flex;
@@ -321,14 +248,12 @@ body {
     -webkit-text-fill-color: var(--bs-light) !important;
     transition: background-color 5000s ease-in-out 0s;
 }
-<<<<<<< HEAD
-=======
+
 
 /* HEADER */
 .heros-header{
     min-height: 50vh;
 }
-
 
 .form-control::placeholder{ /* schiarisco placeholder*/
     color: rgba(128, 128, 128, 0.6);
@@ -410,5 +335,102 @@ body {
     left: 5px;
 }
 
-
->>>>>>> 4078551db6a1e34b191e0486aa96c1e250405c78
+/* Cards MAT */
+.product-grid{
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+.product-grid .product-image{
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+.product-grid .product-image a.image{display: block; }
+.product-grid .product-image img{
+    width: 100%;
+    height: auto;
+}
+.product-grid .product-discount-label{
+    color: #fff;
+    background: #A5BA8D;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 25px;
+    padding: 0 20px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+.product-grid .product-links{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: absolute;
+    top: 10px;
+    right: -50px;
+    transition: all .5s ease 0s;
+}
+.product-grid:hover .product-links{ right: 10px; }
+.product-grid .product-links li a{
+    color: #333;
+    background: transparent;
+    font-size: 17px;
+    line-height: 38px;
+    width: 38px;
+    height: 38px;
+    border: 1px solid #333;
+    border-bottom: none;
+    display: block;
+    transition: all 0.3s;
+}
+.product-grid .product-links li:last-child a{ border-bottom: 1px solid #333; }
+.product-grid .product-links li a:hover{
+    color: #fff;
+    background: #333;
+}
+.product-grid .add-to-cart{
+    background: #A5BA8D;
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    width: 100%;
+    padding: 10px 26px;
+    position: absolute;
+    left: 0;
+    bottom: -60px;
+    transition: all 0.3s ease 0s;
+}
+.product-grid:hover .add-to-cart{ bottom: 0; }
+.product-grid .add-to-cart:hover{ text-shadow: 4px 4px rgba(0,0,0,0.2); }
+.product-grid .product-content{
+    background: #fff;
+    padding: 15px;
+    box-shadow: 0 0 0 5px rgba(0,0,0,0.1) inset;
+}
+.product-grid .title{
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin: 0 0 7px;
+}
+.product-grid .title a{
+    color: #777;
+    transition: all 0.3s ease 0s;
+}
+.product-grid .title a:hover{ color: #a5ba8d; }
+.product-grid .price{
+    color: #0d0d0d;
+    font-size: 14px;
+    font-weight: 600;
+}
+.product-grid .price span{
+    color: #888;
+    font-size: 13px;
+    font-weight: 400;
+    text-decoration: line-through;
+}
+@media screen and (max-width: 990px){
+    .product-grid{ margin-bottom: 30px; }
+}
+/* Fine Cards MAT */
