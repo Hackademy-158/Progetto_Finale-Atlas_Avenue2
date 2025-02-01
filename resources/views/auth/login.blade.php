@@ -13,26 +13,26 @@
                                 <div class="mb-4">
                                     <label class="form-label">Email</label>
                                     <input type="email" 
-                                           name="email" 
-                                           class="form-control @error('email') is-invalid @enderror" 
-                                           value="{{ old('email') }}" 
-                                           placeholder="esempio@email.com">
+                                    name="email" 
+                                    class="form-control @error('email') is-invalid @enderror" 
+                                    value="{{ old('email') }}" 
+                                    placeholder="esempio@email.com">
                                     @error('email')
-                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 
                                 <div class="mb-4">
                                     <label class="form-label">Password</label>
                                     <input type="password" 
-                                           name="password" 
-                                           class="form-control @error('password') is-invalid @enderror" 
-                                           placeholder="Inserisci la password">
+                                    name="password" 
+                                    class="form-control @error('password') is-invalid @enderror" 
+                                    placeholder="Inserisci la password">
                                     @error('password')
-                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>
-
+                                
                                 <div class="mb-4 text-end">
                                     <a href="#" class="text-decoration-none">Password dimenticata?</a>
                                 </div>
@@ -40,7 +40,7 @@
                                 <button type="submit" class="btn btn-primary w-100 mb-3 py-2">
                                     Accedi
                                 </button>
-
+                                
                                 <p class="text-center mb-0">
                                     Non hai un account? 
                                     <a href="{{ route('register') }}" class="text-decoration-none">

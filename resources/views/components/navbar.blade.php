@@ -1,58 +1,58 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         {{-- BRAND ICON --}}
-        <a class="navbar-brand" href="{{ route('home') }}"><img src="/img/logo.svg" alt=""></a>
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
-
+        
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('article.index') }}">Catalogo</a>
                 </li>
-
+                
                 <li class="nav-item">
                     @auth
-                        <a class="nav-link" href="{{ route('article.create') }}">Crea un Annuncio</a>
+                    <a class="nav-link" href="{{ route('article.create') }}">Crea un Annuncio</a>
                     @else
-                        <a class="nav-link" href="{{ route('register') }}">Crea un Annuncio</a>
+                    <a class="nav-link" href="{{ route('register') }}">Crea un Annuncio</a>
                     @endauth
                 </li>
-
+                
                 @auth
-                    @if (Auth::user()->is_revisor)
-                        <li class="nav-item">
-                            <a class="nav-link btn btn-outline-success btn-sm position-relative" href="{{ route('revisor.index') }}">
-                                Zona Revisore
-                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                    {{ App\Models\Article::toBeRevisionedCount() }}
-                                </span>
-                            </a>
-                        </li>
-                    @endif
+                @if (Auth::user()->is_revisor)
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-success btn-sm position-relative" href="{{ route('revisor.index') }}">
+                        Zona Revisore
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            {{ App\Models\Article::toBeRevisionedCount() }}
+                        </span>
+                    </a>
+                </li>
+                @endif
                 @endauth
-
+                
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                         Categorie
                     </a>
                     <ul class="dropdown-menu">
                         @foreach ($categories as $category)
-                            <li>
-                                <a class="dropdown-item" href="{{ route('byCategory', ['category' => $category]) }}">
-                                    {{ $category->name }}
-                                </a>
-                            </li>
-                            @if (!$loop->last)
-                                <hr class="dropdown-divider">
-                            @endif
+                        <li>
+                            <a class="dropdown-item" href="{{ route('byCategory', ['category' => $category]) }}">
+                                {{ $category->name }}
+                            </a>
+                        </li>
+                        @if (!$loop->last)
+                        <hr class="dropdown-divider">
+                        @endif
                         @endforeach
                     </ul>
                 </li>
             </ul>
-
+            <a class="navbar-brand p-0 me-auto " href="{{ route('home') }}"><img class="logo-navbar d-flex justifi-content-center" src="{{ asset('img/logo-white.png') }}" alt=""></a>
+            
             <!-- Search Bar -->
             <form class="d-flex me-3" action="{{ route('article.search') }}" method="GET">
                 <div class="search-wrapper">
@@ -64,7 +64,7 @@
                     </button>
                 </div>
             </form>
-
+            
             <!-- Account Menu -->
             <div class="nav-item dropdown">
                 <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
@@ -75,17 +75,17 @@
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
                     @auth
-                        <li><a class="dropdown-item" href="{{ route('article.create') }}">Crea Annuncio</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li>
-                            <form action="{{ route('logout') }}" method="POST">
-                                @csrf
-                                <button class="dropdown-item" type="submit">Logout</button>
-                            </form>
-                        </li>
+                    <li><a class="dropdown-item" href="{{ route('article.create') }}">Crea Annuncio</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <button class="dropdown-item" type="submit">Logout</button>
+                        </form>
+                    </li>
                     @else
-                        <li><a class="dropdown-item" href="{{ route('login') }}">Accedi</a></li>
-                        <li><a class="dropdown-item" href="{{ route('register') }}">Registrati</a></li>
+                    <li><a class="dropdown-item" href="{{ route('login') }}">Accedi</a></li>
+                    <li><a class="dropdown-item" href="{{ route('register') }}">Registrati</a></li>
                     @endauth
                 </ul>
             </div>

@@ -7,10 +7,19 @@ body {
     top: 0;
     width: 100%;
     z-index: 1030;
-    background-color: white !important;
+    background-color: #198754 !important;
     box-shadow: 0 2px 4px rgba(0,0,0,.1);
     padding: 8px 16px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.dropdown-item:active {
+    background-color: #198754 !important;
+}
+
+.logo-navbar {
+    padding: 0 !important;
+    width: 90px;
 }
 
 .hero-section {
@@ -405,7 +414,11 @@ body {
 }
 
 .nav-link:hover .bi-person-circle {
-    color: #198754;
+    color: #fbfffd;
+}
+
+.nav-link:hover{
+    color: #fbfffd;
 }
 
 .navbar .dropdown-menu {
