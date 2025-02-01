@@ -1,4 +1,4 @@
-<div class="container ">
+<div class="container-fluid ">
     <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
         <div class="col mb-3">
             <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
@@ -41,9 +41,10 @@
                 <h5>Vuoi diventare revisore?</h5>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Accedi</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Registrati</a></li>
-                <li class="nav-item mb-2"><a href="{{ route('become.revisor') }}" class="btn btn-primary">Diventa revisore</a></li>
+                <li class="nav-item mb-2"><a href="{{ route('become.revisor') }}" class="btn btn-primary">Diventa
+                        revisore</a></li>
             </ul>
-            
+
             {{-- errore riservato a chi è gia revisore --}}
             <div class="mt-3 " style="width: 450px">
                 @if (session()->has('errorMessage'))

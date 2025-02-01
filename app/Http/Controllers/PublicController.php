@@ -13,18 +13,18 @@ class PublicController extends Controller
         return view('welcome', compact('articles'));
     }
 
-    public function searchArticles(Request $request)
+    public function searched(Request $request)
     {
         $query = $request->input('query');
-
-        // If query is empty, return all accepted articles
-        if (empty($query)) {
-            $articles = Article::where('is_accepted', true)->paginate(10);
-            return view('article.searched', ['articles' => $articles, 'query' => '']);
-        }
-
         // If there's a query, perform the search
         $articles = Article::search($query)->where('is_accepted', true)->paginate(10);
         return view('article.searched', ['articles' => $articles, 'query' => $query]);
     }
 }
+
+// // If query is empty, return all accepted articles
+// if (empty($query)) {
+//     $articles = Article::where('is_accepted', true)->paginate(10);
+//     return view('article.searched', ['articles' => $articles, 'query' => '']);
+// } else {
+// }
