@@ -1,3 +1,73 @@
+:root {
+    --body-color: #006466;
+    --element-color: #ffffff;
+    --text-color: #ffc300;
+    --navbar-color: #0b525b;
+}
+
+@font-face {
+    font-family: "titoli";
+    src: url('/public/fonts/ANDREW ELEGANT Regular.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: "Brand";
+    src: url('/public/fonts/ELEGANT Personal use.ttf');
+}
+
+@font-face {
+    font-family: 'testi';
+    src: url('/public/fonts/EleganTech-.ttf') format("truetype");
+}
+
+.titoli {
+    font-family: 'titoli';
+}
+
+.Brand {
+    font-family: 'Brand';
+}
+
+.testi {
+    font-family: 'testi';
+}
+
+h1 {
+    font-family: 'titoli';
+    color: var(--text-color);
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'testi';
+    color: var(--text-color);
+}
+
+p {
+    font-family: 'testi';
+    color: var(--text-color);
+}
+
+.bg-body-tertiary {
+    background-color: var(--navbar-color) !important;
+    font-family: 'titoli';
+    color: var(--text-color);
+
+}
+
+body {
+    /* background-color: var(--body-color);
+    color: var(--element-color); */
+    background-image: url('/public/images/image1.jpg'); /* Percorso dell'immagine */
+    /* background-size: cover; Copre l'intera pagina */
+    background-position: center; /* Centra l'immagine */
+    background-attachment: fixed; /* Sfondo fisso */
+    /* background-repeat: no-repeat; Non ripetere l'immagine */
+}
+
 .form {
     display: flex;
     flex-direction: column;

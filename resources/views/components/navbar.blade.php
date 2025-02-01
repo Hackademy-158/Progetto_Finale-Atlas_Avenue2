@@ -1,7 +1,6 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    
+<nav class="navbar navbar-expand-lg bg-body-tertiary container rounded-4 p-4">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{ route('home') }}">Atlas Avenue</a>
+        <a class="navbar-brand Brand" href="{{ route('home') }}">Atlas Avenue</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -74,7 +73,7 @@
                 @guest
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                            aria-expanded="false titoli">
                             Ciao, Ospite
                         </a>
                         <ul class="dropdown-menu">
