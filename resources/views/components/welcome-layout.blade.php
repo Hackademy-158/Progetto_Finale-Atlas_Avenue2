@@ -21,24 +21,26 @@
 
 <body class="bg-dark text-white">
     
-    @if (session('status'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <x-navbar/>
+    
+    <div class="min-vh-100">
+        @if (session('status'))
+        <div class="alert alert-success mt-5 alert-dismissible fade show" role="alert">
             {{ session('status') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-    @endif
-
-    @if (session('error'))
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @endif
+        
+        @if (session('error'))
+        <div class="alert alert-danger alert-dismissible fade show mt-5" role="alert">
             {{ session('error') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-    @endif
-
-    <div class="min-vh-100">
+        @endif
+        
         {{ $slot }}
     </div>
-
+    
     <x-footer />
 </body>
 
