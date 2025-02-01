@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> 4c0b90524a059f4154633091928fa1a154fb6e9b
 /*stile welcome*/
 .navbar {
     position: fixed;
@@ -49,10 +46,7 @@
     font-size: 80px;
 }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 4c0b90524a059f4154633091928fa1a154fb6e9b
 .form {
     display: flex;
     flex-direction: column;
@@ -255,10 +249,7 @@
     -webkit-text-fill-color: var(--bs-light) !important;
     transition: background-color 5000s ease-in-out 0s;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> 4c0b90524a059f4154633091928fa1a154fb6e9b
 
 /* HEADER */
 .heros-header{
@@ -344,6 +335,3 @@
     top: 4px;
     left: 5px;
 }
-<<<<<<< HEAD
-=======
->>>>>>> 4c0b90524a059f4154633091928fa1a154fb6e9b
