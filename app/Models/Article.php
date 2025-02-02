@@ -4,10 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Scout\Searchable;
+use App\Models\Category;
+use App\Models\User;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Article extends Model
 {
-    use Searchable;
+    use Searchable, HasFactory;
     public function toSearchableArray()
     {
         return [
@@ -15,7 +18,7 @@ class Article extends Model
             'title' => $this->title,
             'description' => $this->description,
             'price' => $this->price,
-            'category' => $this->category,
+            'category' => $this->category->name ?? null,
         ];
     }
     

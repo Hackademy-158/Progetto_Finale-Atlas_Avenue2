@@ -16,7 +16,6 @@ return [
     |
     */
 
-    'driver' => env('SCOUT_DRIVER', 'algolia'),
     'driver' => env('SCOUT_DRIVER', 'tntsearch'),
 
     /*
@@ -220,4 +219,3 @@ return [
         'maxDocs' => env('TNTSEARCH_MAX_DOCS', 500),
     ],
 ];
-
