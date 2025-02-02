@@ -1,6 +1,5 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-success">
     <div class="container-fluid">
-        {{-- BRAND ICON --}}
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
@@ -9,39 +8,37 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('article.index') }}">Catalogo</a>
+                    <a class="nav-link d-flex align-items-center" href="{{ route('article.index') }}">
+                        <i class="bi bi-grid-3x3-gap-fill nav-icon"></i>
+                        <span>Catalogo</span>
+                    </a>
                 </li>
                 
                 <li class="nav-item">
                     @auth
-                    <a class="nav-link" href="{{ route('article.create') }}">Crea un Annuncio</a>
+                    <a class="nav-link d-flex align-items-center" href="{{ route('article.create') }}">
+                        <i class="bi bi-plus-circle nav-icon"></i>
+                        <span></span>
+                    </a>
                     @else
-                    <a class="nav-link" href="{{ route('register') }}">Crea un Annuncio</a>
+                    <a class="nav-link d-flex align-items-center" href="{{ route('register') }}">
+                        <i class="bi bi-plus-circle nav-icon"></i>
+                        <span></span>
+                    </a>
                     @endauth
                 </li>
                 
-                @auth
-                @if (Auth::user()->is_revisor)
-                <li class="nav-item">
-                    <a class="nav-link btn btn-outline-success btn-sm position-relative" href="{{ route('revisor.index') }}">
-                        Zona Revisore
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                            {{ App\Models\Article::toBeRevisionedCount() }}
-                        </span>
-                    </a>
-                </li>
-                @endif
-                @endauth
-                
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                        Categorie
+                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown">
+                        <i class="bi bi-book nav-icon"></i>
+                        <span></span>
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu animated">
                         @foreach ($categories as $category)
                         <li>
-                            <a class="dropdown-item" href="{{ route('byCategory', ['category' => $category]) }}">
-                                {{ $category->name }}
+                            <a class="dropdown-item d-flex align-items-center" href="{{ route('byCategory', ['category' => $category]) }}">
+                                <span class="category-dot"></span>
+                                <span>{{ $category->name }}</span>
                             </a>
                         </li>
                         @if (!$loop->last)
@@ -51,9 +48,19 @@
                     </ul>
                 </li>
             </ul>
-            <a class="navbar-brand p-0 me-auto " href="{{ route('home') }}"><img class="logo-navbar d-flex justifi-content-center" src="{{ asset('img/logo-white.png') }}" alt=""></a>
-            
-            <!-- Search Bar -->
+            {{-- BRAND ICON --}}
+            <a class="navbar-brand p-0 me-auto d-flex align-items-center" href="{{ route('home') }}">
+                <svg class="navbar-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 5L19 12H7.37671M20 16H8L6 3H3M11 6L13 8L17 4M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z" 
+                    stroke="currentColor" 
+                        stroke-width="2" 
+                        stroke-linecap="round" 
+                        stroke-linejoin="round"/>
+                </svg>
+                <span class="logo-text ms-2 text-white">BuyStream</span>
+            </a>
+
+            {{-- Search Bar --}}
             <form class="d-flex me-3" action="{{ route('article.search') }}" method="GET">
                 <div class="search-wrapper">
                     <input type="text" name="query" class="form-control search-input" placeholder="Cerca..."
@@ -67,33 +74,55 @@
                     </button>
                 </div>
             </form>
-            
-            <!-- Account Menu -->
+
+            {{-- Notifications Bell --}}
+            @auth
+            <div class="nav-item me-3">
+                <a class="nav-link position-relative" href="{{ route('revisor.index') }}" role="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
+                        <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6"/>
+                    </svg>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        {{ App\Models\Article::revisorPendingRequests() }}
+                        <span class="visually-hidden">unread notifications</span>
+                    </span>
+                </a>
+            </div>
+            @endauth
+
+            {{-- Account Menu per chi è loggato --}}
+            @auth
             <div class="nav-item dropdown">
                 <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
-                        class="bi bi-person-circle" viewBox="0 0 16 16">
-                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                        <path fill-rule="evenodd"
-                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
-                    </svg>
+                    <div class="rounded-circle overflow-hidden" style="width: 32px; height: 32px;">
+                        <img src="{{ asset('storage/media/user/default-user.png') }}" alt="User" class="img-fluid">
+                    </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
-                    @auth
                     <li><a class="dropdown-item" href="{{ route('article.create') }}">Crea Annuncio</a></li>
-                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
                     <li>
                         <form action="{{ route('logout') }}" method="POST">
                             @csrf
                             <button class="dropdown-item" type="submit">Logout</button>
                         </form>
                     </li>
-                    @else
-                    <li><a class="dropdown-item" href="{{ route('login') }}">Accedi</a></li>
-                    <li><a class="dropdown-item" href="{{ route('register') }}">Registrati</a></li>
-                    @endauth
                 </ul>
             </div>
+            @endauth
+
+            {{-- Account Menu per chi è non loggato --}}
+            @guest
+            <button class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
+                <a class="dropdown-item" href="{{ route('login') }}">Accedi</a>
+            </button>
+            <button class="navbar-button" role="button">
+                <hr class="dropdown-divider">
+                <a class="dropdown-item" href="{{ route('register') }}">Registrati</a>
+            </button>
+            @endguest
         </div>
     </div>
 </nav>

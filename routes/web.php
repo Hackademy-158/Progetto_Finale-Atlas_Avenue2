@@ -22,7 +22,7 @@ Route::get('/social', [PublicController::class, 'social'])->name('social');
 
 // Article Section
 Route::get('/article/create', [ArticleController::class, 'create'])->name('article.create');
-Route::get('/article/index', [ArticleController::class, 'index'])->name('article.index');
+Route::get('/annunci/catalogo', [ArticleController::class, 'index'])->name('article.index');
 Route::get('/article/show/{article}', [ArticleController::class, 'show'])->name('article.show');
 Route::get('/article/edit/{article}', [ArticleController::class, 'edit'])->name('article.edit');
 Route::get('/category/{category}', [ArticleController::class, 'byCategory'])->name('byCategory');

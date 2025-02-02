@@ -19,10 +19,10 @@ class Article extends Model
         ];
     }
     protected $fillable = [
-        'title', 
-        'description', 
-        'price', 
-        'user_id', 
+        'title',
+        'description',
+        'price',
+        'user_id',
         'category_id',
         'is_accepted'
     ];
@@ -45,10 +45,8 @@ class Article extends Model
     }
 
 
-    // public static function toBeRevisedCount()
-    // {
-    //     return Article::where('is_accepted', null)->count();
-    // }
-
-
+    public static function revisorPendingRequests()
+    {
+        return Article::where('is_accepted', null)->count();
+    }
 }

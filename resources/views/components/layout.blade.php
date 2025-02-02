@@ -17,7 +17,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     {{-- FONT AWESOME CDN --}}
     <script src="https://kit.fontawesome.com/6799961dd9.js" crossorigin="anonymous"></script>
-    
+    {{-- GOOGLE FONTS --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Borel&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=PT+Sans+Narrow:wght@400;700&family=Ramabhadra&display=swap" rel="stylesheet">
     <!-- CSS ICONES-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     @vite(['resources/css/app.css', 'resources/js/app.js'])

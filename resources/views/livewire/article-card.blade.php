@@ -11,7 +11,7 @@
                     <li><a href="#"><i class="fa fa-heart"></i></a></li>
                     <li><a href="#"><i class="fa fa-random"></i></a></li>
                 </ul>
-                <a href="" class="add-to-cart">Add to Cart</a>
+                <a href="" class="add-to-cart">Scopri di più</a>
             </div>
             <div class="product-content">
                 <h3 class="title"><a href="#">{{$article->title}}</a></h3>
