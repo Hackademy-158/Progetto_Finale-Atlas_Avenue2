@@ -40,7 +40,7 @@
                             <div class="col-12">
                                 @auth
                                     <p>Non ci sono articoli al momento disponibili.</p>
-                                    <a class="text-primary" href="{{ route('article.create') }}">Creane Uno!</a>
+                                    <a href="{{ route('article.create') }}" style="color:#198754">Creane Uno!</a>
                                 @endauth
                             </div>
                         </div>
@@ -51,7 +51,7 @@
                                 <div class="col-12">
                                     @guest
                                         <p>Non ci sono articoli al momento disponibili.</p>
-                                        <a class="text-primary" href="{{ route('register') }}">Creane uno!</a>
+                                        <a href="{{ route('register') }}" style="color:#198754">Creane uno!</a>
                                     @endguest
                                 </div>
                             </div>

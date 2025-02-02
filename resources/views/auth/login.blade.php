@@ -34,16 +34,16 @@
                                 </div>
                                 
                                 <div class="mb-4 text-end">
-                                    <a href="#" class="text-decoration-none">Password dimenticata?</a>
+                                    <a href="#" class="text-decoration-none" style="color: #157347">Password dimenticata?</a>
                                 </div>
                                 
-                                <button type="submit" class="btn btn-primary w-100 mb-3 py-2">
+                                <button type="submit" class="btn btnRevBuy w-100 mb-3 py-2">
                                     Accedi
                                 </button>
                                 
                                 <p class="text-center mb-0">
                                     Non hai un account? 
-                                    <a href="{{ route('register') }}" class="text-decoration-none">
+                                    <a href="{{ route('register') }}" class="text-decoration-none" style="color: #157347">
                                         Registrati
                                     </a>
                                 </p>
