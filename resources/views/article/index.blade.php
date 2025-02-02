@@ -1,41 +1,140 @@
 <x-layout>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-12 text-center mt-5 mb-5">
-                <h1>Articoli</h1>
+            <!-- Sidebar with Filters -->
+            <div class="col-md-3 mb-4">
+                <div class="sidebar-filter bg-light p-4 rounded shadow-sm">
+                    <h5 class="mb-4 text-black">Filtri di Ricerca</h5>
+
+                    <!-- Search -->
+                    <div class="search-wrapper mb-4 d-flex align-items-center">
+                        <form action="{{ route('articles.search') }}" method="GET" class="d-flex w-100">
+                            <input type="text" class="search-input" id="search" name="query" placeholder="Cerca articoli..." value="{{ request('query') }}">
+                            <button type="submit" class="search-button d-flex align-items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Category -->
+                    <div class="filter-group">
+                        <label for="categoryDropdown" class="text-black">Categoria</label>
+                        <div class="dropdown">
+                            <button class="dropdown-menu-animated text-black w-100 d-flex justify-content-between align-items-center" type="button" id="categoryDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span>Tutte le categorie</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                            </button>
+                            <ul class="dropdown-menu w-100" aria-labelledby="categoryDropdown">
+                                <li><a class="dropdown-item" href="#" data-value="">Tutte le categorie</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                @foreach($categories as $category)
+                                    <li><a class="dropdown-item" href="#" data-value="{{ $category->id }}">{{ $category->name }}</a></li>
+                                    @if(!$loop->last)
+                                        <li><hr class="dropdown-divider"></li>
+                                    @endif
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Price Range -->
+                    <div class="filter-group">
+                        <label>Range di Prezzo</label>
+                        <div class="range-container">
+                            <div class="range-values">
+                                <span class="min-value">0€</span>
+                                <span class="max-value">9999€</span>
+                            </div>
+                            <div class="double-slider">
+                                <div class="track"></div>
+                                <div class="range"></div>
+                                <div class="thumb left"></div>
+                                <div class="thumb right"></div>
+                                <input type="hidden" id="min-price" name="min-price" value="0">
+                                <input type="hidden" id="max-price" name="max-price" value="9999">
+                            </div>
+                            <div class="slider-markers">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Currency -->
+                    <div class="filter-group">
+                        <label for="currency">Valuta</label>
+                        <select id="currency" name="currency">
+                            <option value="">Tutte le valute</option>
+                            <option value="EUR">Euro (€)</option>
+                            <option value="USD">Dollaro ($)</option>
+                            <option value="GBP">Sterlina (£)</option>
+                            <option value="JPY">Yen (¥)</option>
+                        </select>
+                    </div>
+
+                    <!-- Reset Button -->
+                    <div class="mt-4">
+                        <button id="resetFilters" class="resetFilters w-100">
+                            <i class="bi bi-arrow-counterclockwise me-2"></i>
+                            Resetta Filtri
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Newest Articles -->
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-12 text-center mt-5 mb-5">
+                        <h1>Articoli</h1>
+                    </div>
+                </div>
+
+                <div id="articles-container" class="row justify-content-start g-4">
+                    @foreach($articles as $article)
+                        <div class="col-12 col-sm-6 col-lg-4 article-card" 
+                             data-title="{{ $article->title }}"
+                             data-price="{{ $article->price }}"
+                             data-category="{{ $article->category_id }}"
+                             data-currency="{{ $article->currency }}">
+                            <livewire:article-card :article="$article" />
+                        </div>
+                    @endforeach
+                </div>
+
+                <!-- No Results Message -->
+                <div id="no-results" class="row d-none">
+                    <div class="col-12 text-center mt-3">
+                        <div class="alert alert-info">
+                            <p>Nessun articolo trovato con i filtri selezionati.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row justify-content-center">
-            @forelse ($articles as $article)
-                <div class="col-12 col-sm-6 col-md-3 m-1"> 
-                    <livewire:article-card :article="$article" />
-                </div>
-            @empty
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 text-center mt-3 mb-3">
-                            <div class="col-12">
-                            @auth
-                                <p>Non ci sono articoli al momento disponibili.</p>
-                                <a class="text-primary" href="{{ route('article.create') }}">Creane Uno!</a>
-                            @endauth
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 text-center mt-3 mb-3">
-                            <div class="col-12">
-                            @guest
-                                <p>Non ci sono articoli al momento disponibili.</p>
-                                <a class="text-primary" href="{{ route('register') }}">Creane uno!</a>
-                            @endguest
-                        </div>
-                    </div>
-                </div>
-        </div>
-    </div>
-    @endforelse
+
+    <style>
+        .sidebar-filter {
+            position: sticky;
+            top: 1rem;
+            height: calc(100vh - 2rem);
+            overflow-y: auto;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar-filter {
+                position: relative;
+                height: auto;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
 </x-layout>

@@ -69,7 +69,7 @@
                             </button>
                             <a href="{{ route('article.index') }}" class="btn btn-outline-secondary">
                                 <i class="bi bi-arrow-left me-2"></i>
-                                Torna agli Annunci
+                                Torna agli annunci
                             </a>
                         </div>
                     </div>

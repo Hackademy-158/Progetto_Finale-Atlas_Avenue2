@@ -20,8 +20,9 @@ class ArticleController extends Controller //implements HasMiddleware
     // }
     public function index()
     {
-        $articles = Article::all();
-        return view('article.index', compact('articles'));
+        $articles = Article::where('is_accepted', true)->latest()->get();
+        $categories = Category::all();
+        return view('article.index', compact('articles', 'categories'));
     }
 
     /**

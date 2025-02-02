@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Article;
+use App\Http\Requests\StoreArticleRequest;
 use Livewire\Component;
 use Livewire\Attributes\Validate;
 use Illuminate\Support\Facades\Auth;
@@ -10,13 +11,13 @@ use App\Models\Category;
 
 class ArticleCreate extends Component
 {
-    #[Validate('required|min:4|max:20')]
+    #[Validate('required|min:3|max:20')]
     public $title;
 
-    #[Validate('required|min:0')]
+    #[Validate('required|min:0|numeric|max:9999.99')]
     public $price;
 
-    #[Validate('required|min:10|max:120')]
+    #[Validate('required|min:10|max:5000')]
     public $description;
 
     #[Validate('required')]

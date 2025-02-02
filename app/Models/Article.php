@@ -11,26 +11,45 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Article extends Model
 {
     use Searchable, HasFactory;
+
+    protected $searchable = [
+        'columns' => [
+            'articles.title' => 10,
+            'articles.description' => 5,
+            'categories.name' => 2,
+        ]
+    ];
+    // Funzione per la ricerca tramite determinati campi
     public function toSearchableArray()
     {
+        $array = $this->toArray();
+
         return [
-            'id' => $this->id,
+            'id' => $this->getKey(),
             'title' => $this->title,
             'description' => $this->description,
-            'price' => $this->price,
-            'category' => $this->category->name ?? null,
+            'category' => $this->category ? $this->category->name : null,
         ];
+    }
+
+// Funzione per la ricerca di un articolo solo se è stato accettato
+    public function shouldBeSearchable()
+    {
+        return $this->is_accepted;
     }
     
     protected $fillable = [
-        'title', // Titolo che l'utente ha inserito per l'annuncio
-        'description', // Descrizione che l'utente ha inserito per l'annuncio
-        'price',  // Prezzo che l'utente ha inserito per l'annuncio
-        'user_id', // L'utente che ha creato l'annuncio
-        'category_id', // La categoria a cui l'annuncio appartiene
-        'is_accepted', // Se l'annuncio è stato approvato o no
-        'revisor_id'  // Chi ha revisionato l'annuncio
+        'title',
+        'price',
+        'description',
+        'is_accepted',
+        'revisor_id',
+        'user_id', 
+        'category_id',
+        'currency'
     ];
+
+    protected $appends = ['currency_symbol'];
 
     public function user()
     {
@@ -55,6 +74,18 @@ class Article extends Model
         return true;
     }
 
+    // Se l'articolo è stato accettato, restituisce il simbolo della moneta, altrimenti restituisce la moneta in uso
+    public function getCurrencySymbolAttribute()
+    {
+        $symbols = [
+            'EUR' => '€',
+            'USD' => '$',
+            'GBP' => '£',
+            'JPY' => '¥'
+        ];
+        
+        return $symbols[$this->currency] ?? $this->currency;
+    }
 
     public static function revisorPendingRequests()
     {

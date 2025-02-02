@@ -60,21 +60,6 @@
                 <span class="logo-text ms-2 text-white">BuyStream</span>
             </a>
 
-            {{-- Search Bar --}}
-            <form class="d-flex me-3" action="{{ route('article.search') }}" method="GET">
-                <div class="search-wrapper">
-                    <input type="text" name="query" class="form-control search-input" placeholder="Cerca..."
-                        minlength="1">
-                    <button type="submit" class="search-button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-search" viewBox="0 0 16 16">
-                            <path
-                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-                        </svg>
-                    </button>
-                </div>
-            </form>
-
             {{-- Notifications Bell --}}
             @auth
                 @if(Auth::user()->is_revisor)
@@ -100,21 +85,37 @@
             {{-- Account Menu per chi è loggato --}}
             @auth
             <div class="nav-item dropdown">
-                <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
-                    <div class="rounded-circle overflow-hidden" style="width: 32px; height: 32px;">
-                        <img src="{{ asset('storage/media/user/default-user.png') }}" alt="User" class="img-fluid">
-                    </div>
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-person-circle fs-5"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="{{ route('article.create') }}">Crea Annuncio</a></li>
                     <li>
-                        <hr class="dropdown-divider">
+                        <span class="dropdown-item-text">
+                            <small class="text-muted">Benvenuto,</small><br>
+                            {{ Auth::user()->name }}
+                        </span>
                     </li>
+                    <li><hr class="dropdown-divider"></li>
                     <li>
-                        <form action="{{ route('logout') }}" method="POST">
-                            @csrf
-                            <button class="dropdown-item" type="submit">Logout</button>
-                        </form>
+                        <a class="dropdown-item" href="{{ route('dashboard') }}">
+                            <i class="bi bi-speedometer2 me-2"></i>Dashboard
+                        </a>
+                    </li>
+                    @if(Auth::user()->is_revisor)
+                        <li>
+                            <a class="dropdown-item" href="{{ route('revisor.dashboard') }}">
+                                <i class="bi bi-check-circle me-2"></i>
+                                Area Revisore
+                                <span class="badge rounded-pill bg-danger">
+                                    {{ App\Models\Article::revisorPendingRequests() }}
+                                </span>
+                            </a>
+                        </li>
+                    @endif
+                    <li>
+                        <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">
+                            <i class="bi bi-box-arrow-right me-2"></i>Logout
+                        </a>
                     </li>
                 </ul>
             </div>

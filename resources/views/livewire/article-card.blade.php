@@ -15,7 +15,12 @@
             </div>
             <div class="product-content">
                 <h3 class="title"><a href="#">{{$article->title}}</a></h3>
-                <div class="price">{{$article->price}}</div>
+                <div class="rating">
+                    @for ($i = 0; $i < $article->rating; $i++)
+                        <i class="fa fa-star"></i>
+                    @endfor
+                </div>
+                <div class="price">{{$article->price}} {{$article->currency_symbol}}</div>
             </div>
         </div>
     </div>

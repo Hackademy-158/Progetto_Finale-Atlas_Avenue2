@@ -18,14 +18,6 @@
                     </a>
                 </div>
             </div>
-
-            <!-- Indicator dots (static, for visual only) -->
-            <div class="carousel-indicators">
-                <button type="button" class="active" aria-current="true"></button>
-                <button type="button"></button>
-                <button type="button"></button>
-            </div>
-        </div>
     </section>
 
     <div class="container mt-4">
