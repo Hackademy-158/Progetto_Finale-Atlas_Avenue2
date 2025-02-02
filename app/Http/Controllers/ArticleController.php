@@ -47,11 +47,11 @@ class ArticleController extends Controller //implements HasMiddleware
     }
 
     /**
-     * Display the specified resource.
+     *  Mostra la vista per dei dettagli annuncio
      */
     public function show(Article $article)
     {
-        return view('article.show', compact('article'));
+        return view('livewire.article-show', compact('article'));
     }
     public function byCategory(Category $category)
     {

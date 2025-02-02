@@ -37,7 +37,7 @@
                         @foreach ($categories as $category)
                         <li>
                             <a class="dropdown-item d-flex align-items-center" href="{{ route('byCategory', ['category' => $category]) }}">
-                                <span class="category-dot"></span>
+                                <span class="dropdown-divider"></span>
                                 <span>{{ $category->name }}</span>
                             </a>
                         </li>
@@ -48,7 +48,7 @@
                     </ul>
                 </li>
             </ul>
-            {{-- BRAND ICON --}}
+            {{-- Brand Icon --}}
             <a class="navbar-brand p-0 me-auto d-flex align-items-center" href="{{ route('home') }}">
                 <svg class="navbar-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M21 5L19 12H7.37671M20 16H8L6 3H3M11 6L13 8L17 4M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z" 
@@ -77,17 +77,24 @@
 
             {{-- Notifications Bell --}}
             @auth
-            <div class="nav-item me-3">
-                <a class="nav-link position-relative" href="{{ route('revisor.index') }}" role="button">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
-                        <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6"/>
-                    </svg>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                        {{ App\Models\Article::revisorPendingRequests() }}
-                        <span class="visually-hidden">unread notifications</span>
-                    </span>
-                </a>
-            </div>
+                @if(Auth::user()->is_revisor)
+                    <div class="nav-item me-3">
+                        <a class="nav-link position-relative" href="{{ route('revisor.dashboard') }}" role="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
+                                <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6"/>
+                            </svg>
+                            @if(App\Models\Article::revisorPendingRequests() > 0)
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    {{ App\Models\Article::revisorPendingRequests() }}
+                                </span>
+                            @else
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    0
+                                </span>
+                            @endif
+                        </a>
+                    </div>
+                @endif
             @endauth
 
             {{-- Account Menu per chi è loggato --}}
@@ -115,13 +122,8 @@
 
             {{-- Account Menu per chi è non loggato --}}
             @guest
-            <button class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
-                <a class="dropdown-item" href="{{ route('login') }}">Accedi</a>
-            </button>
-            <button class="navbar-button" role="button">
-                <hr class="dropdown-divider">
-                <a class="dropdown-item" href="{{ route('register') }}">Registrati</a>
-            </button>
+                <a class="user-button" href="{{ route('login') }}">Accedi</a>
+                <a class="user-button" href="{{ route('register') }}">Registrati</a>
             @endguest
         </div>
     </div>

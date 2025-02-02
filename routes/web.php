@@ -27,9 +27,10 @@ Route::get('/article/show/{article}', [ArticleController::class, 'show'])->name(
 Route::get('/article/edit/{article}', [ArticleController::class, 'edit'])->name('article.edit');
 Route::get('/category/{category}', [ArticleController::class, 'byCategory'])->name('byCategory');
 
-// Revisor Approvals
+// Revisor Area
 Route::middleware(['isRevisor'])->group(function () {
-    Route::get('/revisor/index', [RevisorController::class, 'index'])->name('revisor.index');
+    Route::get('/revisor/dashboard', [RevisorController::class, 'index'])->name('revisor.dashboard');
+    Route::get('/revisor/approved', [RevisorController::class, 'approved'])->name('revisor.approved');
     Route::patch('/accept/{article}', [RevisorController::class, 'accept'])->name('accept');
     Route::patch('/reject/{article}', [RevisorController::class, 'reject'])->name('reject');
 });
