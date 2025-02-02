@@ -2,8 +2,8 @@
     <div class="container py-5">
         <nav aria-label="breadcrumb" class="mb-4">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('article.index') }}">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('byCategory', ['category' => $article->category]) }}">{{ $article->category->name }}</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('article.index') }}" style="color: #198754">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('byCategory', ['category' => $article->category]) }}" style="color: #198754">{{ $article->category->name }}</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{{ $article->title }}</li>
             </ol>
         </nav>
@@ -63,7 +63,7 @@
                         </div>
 
                         <div class="d-grid gap-2">
-                            <button class="btn btn-primary btn-lg">
+                            <button class="btn btnRevBuy btn-lg">
                                 <i class="bi bi-cart-plus me-2"></i>
                                 Aggiungi al Carrello
                             </button>
