@@ -33,13 +33,13 @@
                 <div class="row">
                     <div class="col-md-3">
                         @if ($article->images && $article->images->first())
-                            <img src="{{ Storage::url($article->images->first()->path) }}" 
-                                 class="img-fluid rounded" 
-                                 alt="{{ $article->title }}">
+                        <img src="{{ Storage::url($article->images->first()->path) }}" 
+                        class="img-fluid rounded" 
+                        alt="{{ $article->title }}">
                         @else
-                            <img src="https://picsum.photos/200" 
-                                 class="img-fluid rounded" 
-                                 alt="Placeholder">
+                        <img src="https://picsum.photos/200" 
+                        class="img-fluid rounded" 
+                        alt="Placeholder">
                         @endif
                     </div>
                     <div class="col-md-9">
