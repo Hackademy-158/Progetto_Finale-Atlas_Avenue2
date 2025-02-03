@@ -101,7 +101,7 @@
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li>
                             <span class="dropdown-item-text">
-                                <small class="text-muted">Benvenuto,</small><br>
+                                <small class="text-muted">Bentornato,</small><br>
                                 {{ Auth::user()->name }}
                             </span>
                         </li>

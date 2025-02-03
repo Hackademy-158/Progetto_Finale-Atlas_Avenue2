@@ -5,11 +5,11 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
-    <div class="container-fluid">
+    <div class="container-fluid vh-100">
         <div class="row">
             <!-- Sidebar with Filters -->
             <div class="col-md-3 mb-4">
-                <div class="sidebar-filter bg-light p-4 rounded shadow-sm">
+                <div class="sidebar-filter bg-light p-4 rounded shadow-sm" style="width: 400px">
                     <h5 class="mb-4 text-black">Filtri di Ricerca</h5>
 
                     <!-- Search -->
@@ -32,7 +32,7 @@
                         <label for="categoryDropdown" class="text-black">Categoria</label>
                         <div class="dropdown">
                             <button
-                                class="dropdown-menu-animated text-black w-100 d-flex justify-content-between align-items-center"
+                                class="dropdown-menu text-black w-100 d-flex justify-content-between align-items-center"
                                 type="button" id="categoryDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                                 <span>Tutte le categorie</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
