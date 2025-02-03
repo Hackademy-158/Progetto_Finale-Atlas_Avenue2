@@ -77,119 +77,152 @@
     @endpush
 
 
-    <section class=""
-        style="">
+    <section>
         <div class="container-fluid position-relative">
-            <div class="row vh-100">
-                <div class=" col-lg-5 hero-content" data-aos="fade-right" data-aos-duration="1000">
-                    <h5 class="display-3 fw-bold mb-3"><i class="bi bi-check-circle"></i> Lavoro di qualità: efficiente e affidabile</h5>
-                        <p>Ricevi consegne puntuali e impeccabili, 0 intoppi.</p>
-                </div>
+            <div class="row">
+                <h1 class=" text-center fw-bold display-3 text-main mt-5 mb-3">Quello che desideri in un <span class="text-uppercase text-success" >click</span>!</h1>
             </div>
-        </div>
-
-        <body class="bg-dark text-white">
-            <div class="container-fluid p-0">
-            
-                <div class="hero-section bg-img" >
-                    <div class="slogan">
-                        <h2 >Il tuo shop</h2>
-                        <h1>le tue scelte</h1>
-                        <button class="btn btn-primary mt-3">Scopri di più</button>
+        <div class="container-fluid position-relative">
+            <div class="row">
+                <div class="col-lg-1 hero-content display-3 fw-bold mb-3 margin-right-0" style="text-align:right">
+                    <i class="bi bi-check-circle"></i>
+                </div>
+                    <div class=" col-lg-5 hero-content" style="margin-left:0; padding-left:0">
+                        <h3 class="display-3 fw-bold mb-3">Lavoro di <span class="text-success">qualità</span></h3>
+                        <h4>Ricevi consegne puntuali e impeccabili</h4>
                     </div>
-                </div>
+                    <div class="col-lg-5" style="padding-top:100px">
+                        <img src="https://picsum.photos/400" alt="">
+                    </div>
             </div>
-            
-        
-        
-    </section>
+            <div class="container-fluid position-relative">
+                <div class="row">
+                    <div class="col-lg-5" style="padding-top:100px">
+                        <img src="https://picsum.photos/400" alt="">
+                    </div>
+                    <div class="col-lg-1 hero-content display-3 fw-bold mb-3 margin-right-0" style="text-align:right">
+                        <i class="bi bi-check-circle"></i>
+                    </div>
+                        <div class=" col-lg-5 hero-content" style="margin-left:0; padding-left:0">
+                            <h3 class="display-3 fw-bold mb-3">Pagamenti<span class="text-success"> protetti</span></h3>
+                            <h4>Transazioni sbloccate alla approvata consegna</h4>
+                        </div>
+                </div>
+
+            <div class="container-fluid position-relative">
+                <div class="row">
+                    <div class="col-lg-1 hero-content display-3 fw-bold mb-3 margin-right-0" style="text-align:right">
+                        <i class="bi bi-check-circle"></i>
+                    </div>
+                        <div class=" col-lg-5 hero-content" style="margin-left:0; padding-left:0">
+                            <h3 class="display-3 fw-bold mb-3">Locale o <span class="text-success">globale</span></h3>
+                            <h4>Vicini o distanti, la scelta è solo tua</h4>
+                        </div>
+                        <div class="col-lg-5  " style="padding-top:100px">
+                            <img src="https://picsum.photos/400" alt="">
+                        </div>
+                </div>
+                <div class="container-fluid position-relative">
+                    <div class="row">
+                        <div class="col-lg-5  " style="padding-top:100px">
+                            <img src="https://picsum.photos/400" alt="">
+                        </div>
+                        <div class="col-lg-1 hero-content display-3 fw-bold mb-3 margin-right-0" style="text-align:right">
+                            <i class="bi bi-check-circle"></i>
+                        </div>
+                            <div class=" col-lg-5 hero-content" style="margin-left:0; padding-left:0">
+                                <h3 class="display-3 fw-bold mb-3">Assistenza<span class="text-success"> H24</span></h3>
+                                <h4>Domande? Il nostro team di assistenza è disponibile H24</h4>
+                            </div>
+                    </div>
+</section>
     <!-- SEZIONE NUMERI INCREMENTALI gestiti con js in main.js-->
     <section>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center mt-5 mb-5">
-                <h2>I numeri di BuyStream</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 text-center">
-                <img src="https://picsum.photos/200" />
-                <h3 id="firstNumber"></h3>
-                <p>Clienti soddisfatti</p>
-            </div>
-            <div class="col-4 text-center">
-                <img src="https://picsum.photos/200" />
-                <h3 id="secondNumber"></h3>
-                <p>Recensioni positive</p>
-            </div>
-            <div class="col-4 text-center">
-                <img src="https://picsum.photos/200" />
-                <h3 id="thirdNumber"></h3>
-                <p>Partner</p>
-            </div>
-        </div>
-    </div>
-</section>
-<div class="spacer"></div>
-<div class="spacer"></div>
-<div class="spacer"></div>
-</section>
-            <!-- Sezione Our Team --> 
         <div class="container">
-            <div class="spacer"></div>
-            <div class="spacer"></div>
             <div class="row">
-                <div class="col-sm-12 mt-5 mb-5">
-                    <h3 class="text-center text-uppercase">Chi siamo?</h3>
+                <div class="col-12 text-center mt-5 mb-5">
+                    <h2>I numeri di BuyStream</h2>
                 </div>
             </div>
-            <div class="spacer"></div>
-            <div class="spacer"></div>
             <div class="row">
-                <div class="col-sm-6 col-md-2 text-center mx-4">
-                    <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
-                    <div class="spacer"></div>
-                    <h3 class="">Danilo</h3>
-                    <p>Full Stack Developer</p>
-                    <i class="bi bi-facebook  margin-right-20"></i>
-                    <i class="bi bi-linkedin  margin-right-20"></i>
-                    <i class="bi bi-instagram"></i>
+                <div class="col-4 text-center">
+                    <img src="https://picsum.photos/200" />
+                    <h3 id="firstNumber"></h3>
+                    <p>Clienti soddisfatti</p>
                 </div>
-                <div class="col-sm-6 col-md-2 text-center mx-4">
-                    <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
-                    <div class="spacer"></div>
-                    <h3 class="">Alessio</h3>
-                    <p>Full Stack Developer</p>
-                    <i class="bi bi-facebook  margin-right-20"></i>
-                    <i class="bi bi-linkedin  margin-right-20"></i>
-                    <i class="bi bi-instagram "></i>
+                <div class="col-4 text-center">
+                    <img src="https://picsum.photos/200" />
+                    <h3 id="secondNumber"></h3>
+                    <p>Recensioni positive</p>
                 </div>
-                <div class="col-sm-6 col-md-2 text-center mx-4">
-                    <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
-                    <div class="spacer"></div>
-                    <h3 class="">Matteo</h3>
-                    <p>Full Stack Developer</p>
-                    <i class="bi bi-facebook  margin-right-20"></i>
-                    <i class="bi bi-linkedin  margin-right-20"></i>
-                    <i class="bi bi-instagram "></i>
-                </div>
-                <div class="col-sm-6 col-md-2 text-center mx-4">
-                    <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
-                    <div class="spacer"></div>
-                    <h3 class="">Anna</h3>
-                    <p>Full Stack Developer</p>
-                    <i class="bi bi-facebook  margin-right-20"></i>
-                    <i class="bi bi-linkedin  margin-right-20"></i>
-                    <i class="bi bi-instagram "></i>
-                </div>
-                <div class="col-sm-6 col-md-2 text-center">
-                    <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
-                    <div class="spacer"></div>
-                    <h3 class="">Flavio</h3>
-                    <p>Full Stack Developer</p>
-                    <i class="bi bi-facebook  margin-right-20"></i>
-                    <i class="bi bi-linkedin  margin-right-20"></i>
-                    <i class="bi bi-instagram"></i>
+                <div class="col-4 text-center">
+                    <img src="https://picsum.photos/200" />
+                    <h3 id="thirdNumber"></h3>
+                    <p>Partner</p>
                 </div>
             </div>
+        </div>
+    </section>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    </section>
+    <!-- Sezione Our Team -->
+    <div class="container">
+        <div class="spacer"></div>
+        <div class="spacer"></div>
+        <div class="row">
+            <div class="col-sm-12 mt-5 mb-5">
+                <h3 class="text-center text-uppercase">Chi siamo?</h3>
+            </div>
+        </div>
+        <div class="spacer"></div>
+        <div class="spacer"></div>
+        <div class="row">
+            <div class="col-sm-6 col-md-2 text-center mx-4">
+                <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
+                <div class="spacer"></div>
+                <h3 class="">Danilo</h3>
+                <p>Full Stack Developer</p>
+                <i class="bi bi-facebook  margin-right-20"></i>
+                <i class="bi bi-linkedin  margin-right-20"></i>
+                <i class="bi bi-instagram"></i>
+            </div>
+            <div class="col-sm-6 col-md-2 text-center mx-4">
+                <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
+                <div class="spacer"></div>
+                <h3 class="">Alessio</h3>
+                <p>Full Stack Developer</p>
+                <i class="bi bi-facebook  margin-right-20"></i>
+                <i class="bi bi-linkedin  margin-right-20"></i>
+                <i class="bi bi-instagram "></i>
+            </div>
+            <div class="col-sm-6 col-md-2 text-center mx-4">
+                <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
+                <div class="spacer"></div>
+                <h3 class="">Matteo</h3>
+                <p>Full Stack Developer</p>
+                <i class="bi bi-facebook  margin-right-20"></i>
+                <i class="bi bi-linkedin  margin-right-20"></i>
+                <i class="bi bi-instagram "></i>
+            </div>
+            <div class="col-sm-6 col-md-2 text-center mx-4">
+                <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
+                <div class="spacer"></div>
+                <h3 class="">Anna</h3>
+                <p>Full Stack Developer</p>
+                <i class="bi bi-facebook  margin-right-20"></i>
+                <i class="bi bi-linkedin  margin-right-20"></i>
+                <i class="bi bi-instagram "></i>
+            </div>
+            <div class="col-sm-6 col-md-2 text-center">
+                <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
+                <div class="spacer"></div>
+                <h3 class="">Flavio</h3>
+                <p>Full Stack Developer</p>
+                <i class="bi bi-facebook  margin-right-20"></i>
+                <i class="bi bi-linkedin  margin-right-20"></i>
+                <i class="bi bi-instagram"></i>
+            </div>
+        </div>
 </x-layout>
