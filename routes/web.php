@@ -26,7 +26,7 @@ Route::get('/article/create', [ArticleController::class, 'create'])->name('artic
 Route::get('/article/index', [PublicController::class, 'index'])->name('article.index');
 Route::get('/article/show/{article}', [ArticleController::class, 'show'])->name('article.show');
 Route::get('/article/edit/{article}', [ArticleController::class, 'edit'])->name('article.edit');
-Route::get('/article/byCategory/{category}', [ArticleController::class, 'byCategory'])->name('byCategory');
+Route::get('/category/{category}', [ArticleController::class, 'byCategory'])->name('byCategory');
 Route::get('/search/article', [PublicController::class, 'searched'])->name('article.search');
 // User Dashboard Routes
 Route::middleware(['auth'])->group(function () {

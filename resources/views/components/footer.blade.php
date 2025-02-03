@@ -41,9 +41,12 @@
                 <h5>Vuoi diventare revisore?</h5>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Accedi</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Registrati</a></li>
-                <li class="nav-item mb-2"><a href="{{ route('become.revisor') }}" class="btn btnRevBuy">Diventa
-                        revisore</a></li>
+                @auth
+                    <li class="nav-item mb-2"><a href="{{ route('become.revisor') }}" class="btn btnRevBuy">Diventa
+                            revisore</a></li>
+                @endauth
             </ul>
+
 
             {{-- errore riservato a chi è gia revisore --}}
             <div class="mt-3 " style="width: 450px">
