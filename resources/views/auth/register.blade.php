@@ -14,7 +14,7 @@
                                     <label class="form-label">Nome Utente</label>
                                     <input type="text" name="name"
                                         class="form-control @error('name') is-invalid @enderror"
-                                        value="{{ old('name') }}" placeholder="Inserisci il tuo nome">
+                                        value="{{ old('name') }}" placeholder="Inserisci il tuo nome" id="name">
                                     @error('name')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
@@ -24,7 +24,7 @@
                                     <label class="form-label">Email</label>
                                     <input type="email" name="email"
                                         class="form-control @error('email') is-invalid @enderror"
-                                        value="{{ old('email') }}" placeholder="esempio@email.com">
+                                        value="{{ old('email') }}" placeholder="esempio@email.com" id="email">
                                     @error('email')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
@@ -34,7 +34,9 @@
                                     <label class="form-label">Password</label>
                                     <input type="password" name="password"
                                         class="form-control @error('password') is-invalid @enderror"
-                                        placeholder="Inserisci la password">
+                                        placeholder="Inserisci la password" id="password">
+                                    <button type="button" id="togglePassword" class="btn btnRevBuy mt-2">Mostra
+                                        Password</button>
                                     @error('password')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
@@ -43,7 +45,7 @@
                                 <div class="mb-4">
                                     <label class="form-label">Conferma Password</label>
                                     <input type="password" name="password_confirmation" class="form-control"
-                                        placeholder="Conferma la password">
+                                        placeholder="Conferma la password" id="password_confirmation">
                                 </div>
 
                                 <button type="submit" class="btn btnRevBuy w-100 mb-3 py-2">

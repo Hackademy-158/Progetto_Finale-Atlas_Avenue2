@@ -289,3 +289,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // Carica filtri iniziali
     caricaFiltriDaURL();
 });
+
+//mostra la password
+
+document.getElementById('togglePassword').addEventListener('click', function () {
+    const passwordField = document.getElementById('password');
+    const toggleButton = this;
+
+    if (passwordField.type === 'password') {
+        passwordField.type = 'text';
+        toggleButton.textContent = 'Nascondi Password';
+    } else {
+        passwordField.type = 'password';
+        toggleButton.textContent = 'Mostra Password';
+    }
+});

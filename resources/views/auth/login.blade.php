@@ -14,7 +14,7 @@
                                     <label class="form-label">Email</label>
                                     <input type="email" name="email"
                                         class="form-control @error('email') is-invalid @enderror"
-                                        value="{{ old('email') }}" placeholder="esempio@email.com">
+                                        value="{{ old('email') }}" placeholder="esempio@email.com" id="email">
                                     @error('email')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
@@ -24,7 +24,9 @@
                                     <label class="form-label">Password</label>
                                     <input type="password" name="password"
                                         class="form-control @error('password') is-invalid @enderror"
-                                        placeholder="Inserisci la password">
+                                        placeholder="Inserisci la password" id="password">
+                                    <button type="button" id="togglePassword" class="btn btnRevBuy mt-2">Mostra
+                                        Password</button>
                                     @error('password')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror

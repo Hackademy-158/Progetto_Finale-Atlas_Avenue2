@@ -125,7 +125,8 @@ class RevisorController extends Controller
      */
     public function approved(Request $request)
     {
-        return $this->getReviewedArticles($request, true, 'revisor.approved');
+        $articles = Article::where('is_accepted', true)->paginate(6);
+        return view('revisor.approved', compact('articles', 'request'));
     }
 
     /**
@@ -133,7 +134,8 @@ class RevisorController extends Controller
      */
     public function showRefusedArticles(Request $request)
     {
-        return $this->getReviewedArticles($request, false, 'revisor.refused');
+        $articles = Article::where('is_accepted', false)->paginate(6);
+        return view('revisor.refused', compact('articles', 'request'));
     }
 
     /**

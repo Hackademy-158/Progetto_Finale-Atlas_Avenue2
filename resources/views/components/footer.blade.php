@@ -38,9 +38,15 @@
         <div class="col mb-3">
             <h5>Privileges</h5>
             <ul class="nav flex-column">
-                <h5>Vuoi diventare revisore?</h5>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Accedi</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Registrati</a></li>
+                @auth
+                    <h5>Vuoi diventare revisore?</h5>
+                @endauth
+                @guest
+                    <li class="nav-item mb-2"><a href="{{ route('login') }}"
+                            class="nav-link p-0 text-body-secondary">Accedi</a></li>
+                    <li class="nav-item mb-2"><a href="{{ route('register') }}"
+                            class="nav-link p-0 text-body-secondary">Registrati</a></li>
+                @endguest
                 @auth
                     <li class="nav-item mb-2"><a href="{{ route('become.revisor') }}" class="btn btnRevBuy">Diventa
                             revisore</a></li>

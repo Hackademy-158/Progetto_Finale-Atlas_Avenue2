@@ -31,12 +31,6 @@
                                 Annunci Respinti
                             </a>
                         </li>
-                        <li class="mb-3">
-                            <a href="#stats" class="d-flex align-items-center text-decoration-none text-dark">
-                                <i class="bi bi-graph-up text-primary me-2"></i>
-                                Statistiche
-                            </a>
-                        </li>
                     </ul>
                 </div>
             </div>
