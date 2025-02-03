@@ -19,7 +19,15 @@ return [
     'DIY' => 'Fai da te',
     'Fashion & accessories' => 'Moda & Accessori',
     'BuyStream's numbers' => 'I numeri di BuyStream',
-    'Happy Client'=> 'Clienti soddisfatti',
+    'Satisfied Client'=> 'Clienti soddisfatti',
     'Partner'=>'Partner',
     'Positive Reviews'=>'Recensioni positive'
+    'Full Stack Developer' => 'Full Stack Developer',
+    'Sections' => 'Sezioni',
+    'Features' => 'Caratteristiche',
+    'Pricing' => 'Prezzi',
+    'FAQ' => 'Domande Frequenti',
+    'About' => 'Chi siamo',
+    'Privilegisti' => 'Privilegi',
+    'Social' => 'Social',
 ]
