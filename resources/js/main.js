@@ -288,7 +288,121 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Carica filtri iniziali
     caricaFiltriDaURL();
+
+    
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const slider = document.querySelector('.double-slider');
+    const range = slider.querySelector('.range');
+    const leftThumb = slider.querySelector('.thumb.left');
+    const rightThumb = slider.querySelector('.thumb.right');
+    const minInput = document.getElementById('min-price');
+    const maxInput = document.getElementById('max-price');
+    const minValue = document.querySelector('.min-value');
+    const maxValue = document.querySelector('.max-value');
+
+    const MIN_PRICE = 0;
+    const MAX_PRICE = 9999;
+    const STEP = 10; // Risoluzione del passo
+
+    // Funzione per aggiornare la posizione dei thumb e il range visivo
+    function updateSlider() {
+        const minPercent = ((minInput.value - MIN_PRICE) / (MAX_PRICE - MIN_PRICE)) * 100;
+        const maxPercent = ((maxInput.value - MIN_PRICE) / (MAX_PRICE - MIN_PRICE)) * 100;
+
+        leftThumb.style.left = `${minPercent}%`;
+        rightThumb.style.left = `${maxPercent}%`;
+        range.style.left = `${minPercent}%`;
+        range.style.right = `${100 - maxPercent}%`;
+
+        minValue.textContent = `${minInput.value}€`;
+        maxValue.textContent = `${maxInput.value}€`;
+    }
+
+    // Funzione per aggiornare i valori del filtro prezzo
+    function updatePriceFilter() {
+        const minVal = parseInt(minInput.value, 10);
+        const maxVal = parseInt(maxInput.value, 10);
+
+        document.querySelectorAll('.article-card').forEach(article => {
+            const price = parseInt(article.getAttribute('data-price'), 10);
+            if (price >= minVal && price <= maxVal) {
+                article.style.display = '';
+            } else {
+                article.style.display = 'none';
+            }
+        });
+    }
+
+    // Gestione degli input
+    minInput.addEventListener('input', function () {
+        if (parseInt(minInput.value) >= parseInt(maxInput.value)) {
+            minInput.value = maxInput.value - STEP;
+        }
+        updateSlider();
+        updatePriceFilter();
+    });
+
+    maxInput.addEventListener('input', function () {
+        if (parseInt(maxInput.value) <= parseInt(minInput.value)) {
+            maxInput.value = parseInt(minInput.value) + STEP;
+        }
+        updateSlider();
+        updatePriceFilter();
+    });
+
+    // Dragging dei thumb
+    function handleThumbDrag(thumb, isLeftThumb) {
+        let isDragging = false;
+
+        function startDrag(e) {
+            isDragging = true;
+            e.preventDefault();
+        }
+
+        function onDrag(e) {
+            if (!isDragging) return;
+            const sliderRect = slider.getBoundingClientRect();
+            const x = e.touches ? e.touches[0].clientX : e.clientX;
+            let percent = ((x - sliderRect.left) / sliderRect.width) * 100;
+            percent = Math.max(0, Math.min(percent, 100));
+
+            let newValue = Math.round((percent * (MAX_PRICE - MIN_PRICE) / 100 + MIN_PRICE) / STEP) * STEP;
+
+            if (isLeftThumb) {
+                if (newValue >= parseInt(maxInput.value)) newValue = parseInt(maxInput.value) - STEP;
+                minInput.value = newValue;
+            } else {
+                if (newValue <= parseInt(minInput.value)) newValue = parseInt(minInput.value) + STEP;
+                maxInput.value = newValue;
+            }
+
+            updateSlider();
+            updatePriceFilter();
+        }
+
+        function stopDrag() {
+            isDragging = false;
+        }
+
+        thumb.addEventListener('mousedown', startDrag);
+        thumb.addEventListener('touchstart', startDrag);
+        document.addEventListener('mousemove', onDrag);
+        document.addEventListener('touchmove', onDrag);
+        document.addEventListener('mouseup', stopDrag);
+        document.addEventListener('touchend', stopDrag);
+    }
+
+    // Attacca gli eventi ai thumbs
+    handleThumbDrag(leftThumb, true);
+    handleThumbDrag(rightThumb, false);
+
+    // Inizializza lo slider
+    updateSlider();
+    updatePriceFilter();
+});
+
 
 //mostra la password
 
