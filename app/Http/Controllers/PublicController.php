@@ -42,7 +42,7 @@ class PublicController extends Controller
     public function searched(Request $request)
     {
         $query = $request->input('query');
-        
+
         if (empty($query)) {
             // Se la query è vuota, reindirizza alla pagina degli articoli
             return redirect()->route('article.index');
@@ -50,11 +50,11 @@ class PublicController extends Controller
             $articles = Article::search($query)
                 ->query(function ($builder) {
                     $builder->where('is_accepted', true)
-                           ->with('category');
+                        ->with('category');
                 })
                 ->orderBy('created_at', 'desc')
                 ->paginate(10);
-        
+
             return view('article.searched', compact('articles', 'query'));
         }
     }
@@ -71,7 +71,7 @@ class PublicController extends Controller
 
         // Filtro per categoria
         if ($request->filled('category') && $request->category != 'all') {
-            $articles->whereHas('category', function($query) use ($request) {
+            $articles->whereHas('category', function ($query) use ($request) {
                 $query->where('name', $request->category);
             });
         }
@@ -84,9 +84,9 @@ class PublicController extends Controller
         // Filtro per ricerca
         if ($request->filled('query')) {
             $searchTerm = $request->query;
-            $articles->where(function($query) use ($searchTerm) {
+            $articles->where(function ($query) use ($searchTerm) {
                 $query->where('title', 'LIKE', "%{$searchTerm}%")
-                      ->orWhere('description', 'LIKE', "%{$searchTerm}%");
+                    ->orWhere('description', 'LIKE', "%{$searchTerm}%");
             });
         }
 
@@ -97,5 +97,11 @@ class PublicController extends Controller
         $categories = Category::all();
 
         return view('article.index', compact('articles', 'categories'));
+    }
+    // Language Change
+    public function setLanguage($lang)
+    {
+        session()->put('locale', $lang);
+        return redirect()->back();
     }
 }

@@ -12,7 +12,7 @@
                         Scopri un nuovo modo di fare shopping online. Trova tutto ciò che cerchi in un unico posto.
                     </p>
                     <a href="{{ route('article.create') }}" class="hero-button" data-aos="zoom-in" data-aos-delay="700">
-                        Shop Now
+                        Scopri di più
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-arrow-right" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
@@ -75,6 +75,20 @@
             });
         </script>
     @endpush
+
+
+    <section class=""
+        style="">
+        <div class="container-fluid position-relative">
+            <div class="row vh-100">
+                <div class=" col-lg-5 hero-content" data-aos="fade-right" data-aos-duration="1000">
+                    <h5 class="display-3 fw-bold mb-3"><i class="bi bi-check-circle"></i> Lavoro di qualità: efficiente e affidabile</h5>
+                        <p>Ricevi consegne puntuali e impeccabili, 0 intoppi.</p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
     <!-- SEZIONE NUMERI INCREMENTALI gestiti con js in main.js-->
     <section>
     <div class="container">

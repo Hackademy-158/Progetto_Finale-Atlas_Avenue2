@@ -51,3 +51,6 @@ Route::middleware(['isRevisor'])->group(function () {
 // Revisor Requests
 Route::get('/revisor/request', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('become.revisor');
 Route::get('/make/revisor/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
+
+// Language change
+Route::post('/lang/{locale}', [PublicController::class, 'setLanguage'])->name('setLocale');

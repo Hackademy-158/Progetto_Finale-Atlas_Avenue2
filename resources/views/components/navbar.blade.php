@@ -137,7 +137,9 @@
                     </ul>
                 </div>
             @endauth
-
+            <x-_locale lang="it"/>
+            <x-_locale lang="en"/>
+            <x-_locale lang="de"/>
             {{-- Account Menu per chi è non loggato --}}
             @guest
                 <a class="user-button" href="{{ route('login') }}">Accedi</a>
