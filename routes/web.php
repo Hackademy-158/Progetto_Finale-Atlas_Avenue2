@@ -28,13 +28,11 @@ Route::get('/article/show/{article}', [ArticleController::class, 'show'])->name(
 Route::get('/article/edit/{article}', [ArticleController::class, 'edit'])->name('article.edit');
 Route::get('/article/byCategory/{category}', [ArticleController::class, 'byCategory'])->name('byCategory');
 Route::get('/search/article', [PublicController::class, 'searched'])->name('article.search');
-Route::get('/catalogo/ricerca', [PublicController::class, 'searched'])->name('articles.search');
-
 // User Dashboard Routes
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::get('/dashboard/articoli', [DashboardController::class, 'articles'])->name('dashboard.articles');
-    Route::get('/dashboard/profilo', [DashboardController::class, 'profile'])->name('dashboard.profile');
+    Route::get('/dashboard/index', [DashboardController::class, 'articles'])->name('dashboard.articles');
+    Route::get('/dashboard/profile', [DashboardController::class, 'profile'])->name('dashboard.profile');
 });
 
 // Revisor Area
@@ -45,7 +43,7 @@ Route::middleware(['isRevisor'])->group(function () {
     Route::get('/revisor/pending', [RevisorController::class, 'pending'])->name('revisor.pending');
     Route::get('/revisor/approved-articles', [RevisorController::class, 'approved'])->name('revisor.approved');
     Route::get('/revisor/refused-articles', [RevisorController::class, 'showRefusedArticles'])->name('revisor.refused');
-// Revisor Actions    
+    // Revisor Actions    
     Route::patch('/revisor/reject/{article}', [RevisorController::class, 'refused'])->name('revisor.reject');
     Route::patch('/revisor/accept/{article}', [RevisorController::class, 'accepted'])->name('revisor.accept');
 });
