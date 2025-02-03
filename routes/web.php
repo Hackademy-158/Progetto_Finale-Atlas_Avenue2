@@ -23,10 +23,10 @@ Route::get('/social', [PublicController::class, 'social'])->name('social');
 
 // Article Section
 Route::get('/article/create', [ArticleController::class, 'create'])->name('article.create');
-Route::get('/articles', [PublicController::class, 'index'])->name('article.index');
+Route::get('/article/index', [PublicController::class, 'index'])->name('article.index');
 Route::get('/article/show/{article}', [ArticleController::class, 'show'])->name('article.show');
 Route::get('/article/edit/{article}', [ArticleController::class, 'edit'])->name('article.edit');
-Route::get('/article/byCategory/{category}', [ArticleController::class, 'byCategory'])->name('byCategory');
+Route::get('/category/{category}', [ArticleController::class, 'byCategory'])->name('byCategory');
 Route::get('/search/article', [PublicController::class, 'searched'])->name('article.search');
 // User Dashboard Routes
 Route::middleware(['auth'])->group(function () {
@@ -51,3 +51,6 @@ Route::middleware(['isRevisor'])->group(function () {
 // Revisor Requests
 Route::get('/revisor/request', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('become.revisor');
 Route::get('/make/revisor/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
+
+// Language change
+Route::post('/lang/{locale}', [PublicController::class, 'setLanguage'])->name('setLocale');

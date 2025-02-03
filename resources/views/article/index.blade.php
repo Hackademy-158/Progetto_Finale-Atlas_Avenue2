@@ -1,18 +1,27 @@
 <x-layout>
-    <div class="container-fluid">
+    @if (session('success'))
+        <div class="alert alert-success text-center alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+    <div class="container-fluid vh-100">
         <div class="row">
             <!-- Sidebar with Filters -->
             <div class="col-md-3 mb-4">
-                <div class="sidebar-filter bg-light p-4 rounded shadow-sm">
+                <div class="sidebar-filter bg-light p-4 rounded shadow-sm" style="width: 400px">
                     <h5 class="mb-4 text-black">Filtri di Ricerca</h5>
 
                     <!-- Search -->
                     <div class="search-wrapper mb-4 d-flex align-items-center">
-                        <form action="{{ route('articles.search') }}" method="GET" class="d-flex w-100">
-                            <input type="text" class="search-input" id="search" name="query" placeholder="Cerca articoli..." value="{{ request('query') }}">
+                        <form action="{{ route('article.search') }}" method="GET" class="d-flex w-100">
+                            <input type="text" class="search-input" id="search" name="query"
+                                placeholder="Cerca articoli..." value="{{ request('query') }}">
                             <button type="submit" class="search-button d-flex align-items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                                 </svg>
                             </button>
                         </form>
@@ -22,19 +31,28 @@
                     <div class="filter-group">
                         <label for="categoryDropdown" class="text-black">Categoria</label>
                         <div class="dropdown">
-                            <button class="dropdown-menu-animated text-black w-100 d-flex justify-content-between align-items-center" type="button" id="categoryDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button
+                                class="dropdown-menu text-black w-100 d-flex justify-content-between align-items-center"
+                                type="button" id="categoryDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                                 <span>Tutte le categorie</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                    <path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" viewBox="0 0 16 16">
+                                    <path
+                                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
                                 </svg>
                             </button>
                             <ul class="dropdown-menu w-100" aria-labelledby="categoryDropdown">
                                 <li><a class="dropdown-item" href="#" data-value="">Tutte le categorie</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                @foreach($categories as $category)
-                                    <li><a class="dropdown-item" href="#" data-value="{{ $category->id }}">{{ $category->name }}</a></li>
-                                    @if(!$loop->last)
-                                        <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                @foreach ($categories as $category)
+                                    <li><a class="dropdown-item" href="#"
+                                            data-value="{{ $category->id }}">{{ $category->name }}</a></li>
+                                    @if (!$loop->last)
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
                                     @endif
                                 @endforeach
                             </ul>
@@ -104,12 +122,10 @@
                 </div>
 
                 <div id="articles-container" class="row justify-content-start g-4">
-                    @foreach($articles as $article)
-                        <div class="col-12 col-sm-6 col-lg-4 article-card" 
-                             data-title="{{ $article->title }}"
-                             data-price="{{ $article->price }}"
-                             data-category="{{ $article->category_id }}"
-                             data-currency="{{ $article->currency }}">
+                    @foreach ($articles as $article)
+                        <div class="col-12 col-sm-6 col-lg-4 article-card" data-title="{{ $article->title }}"
+                            data-price="{{ $article->price }}" data-category="{{ $article->category_id }}"
+                            data-currency="{{ $article->currency }}">
                             <livewire:article-card :article="$article" />
                         </div>
                     @endforeach

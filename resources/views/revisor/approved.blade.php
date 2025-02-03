@@ -1,48 +1,26 @@
 <x-layout>
     <div class="container mt-5">
-        <h2 class="mb-4">Annunci Revisionati</h2>
-        
-        <div class="row">
-            <!-- Filtri -->
-            <div class="col-md-3 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Filtri</h5>
-                        <form action="{{ route('revisor.approved') }}" method="GET">
-                            <div class="mb-3">
-                                <label class="form-label">Stato</label>
-                                <select name="status" class="form-select">
-                                    <option>Tutti</option>
-                                    <option>Approvati</option>
-                                    <option>Respinti</option>
-                                </select>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Applica Filtri</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+        <h2 class="mb-4 text-center">Annunci Approvati</h2>
 
-            <!-- Lista Annunci -->
-            
-            <div id="articles-container" class="row justify-content-start g-4">
-                @foreach($articles as $article)
-                    <div class="col-12 col-sm-6 col-lg-4 article-card" 
-                         data-title="{{ $article->title }}"
-                         data-price="{{ $article->price }}"
-                         data-category="{{ $article->category_id }}"
-                         data-currency="{{ $article->currency }}">
-                        <livewire:article-card :article="$article" />
-                    </div>
-                @endforeach
-            </div>
 
-                <!-- Paginazione -->
-                <div class="d-flex justify-content-center">
-                    {{ $articles->links() }}
+        <!-- Lista Annunci -->
+
+        <div id="articles-container" class="row justify-content-start g-4">
+            @foreach ($articles as $article)
+                <div class="col-12 col-sm-6 col-lg-4 article-card" data-title="{{ $article->title }}"
+                    data-price="{{ $article->price }}" data-category="{{ $article->category_id }}"
+                    data-currency="{{ $article->currency }}">
+                    <livewire:article-card :article="$article" />
                 </div>
-            </div>
+            @endforeach
         </div>
+
+        <!-- Paginazione -->
+        <div class="d-flex justify-content-center">
+            {{ $articles->links() }}
+        </div>
+    </div>
+    </div>
     </div>
 </x-layout>
 
@@ -54,7 +32,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-3">
-                        @if($article->images && $article->images->first())
+                        @if ($article->images && $article->images->first())
                             <img src="{{ Storage::url($article->images->first()->path) }}" 
                                  class="img-fluid rounded" 
                                  alt="{{ $article->title }}">

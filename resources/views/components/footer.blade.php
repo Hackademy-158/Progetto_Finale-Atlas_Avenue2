@@ -14,13 +14,13 @@
         </div>
 
         <div class="col mb-3">
-            <h5>Section</h5>
+            <h5>Sezione</h5>
             <ul class="nav flex-column">
                 <li class="nav-item mb-2"><a href="/" class="nav-link p-0 text-body-secondary">Home</a></li>
-                <li class="nav-item mb-2"><a href="/features" class="nav-link p-0 text-body-secondary">Features</a></li>
-                <li class="nav-item mb-2"><a href="/pricing" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                <li class="nav-item mb-2"><a href="/faqs" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                <li class="nav-item mb-2"><a href="/about" class="nav-link p-0 text-body-secondary">About</a></li>
+                <li class="nav-item mb-2"><a href="/features" class="nav-link p-0 text-body-secondary">Caratteristiche</a></li>
+                <li class="nav-item mb-2"><a href="/pricing" class="nav-link p-0 text-body-secondary">Prezzi</a></li>
+                <li class="nav-item mb-2"><a href="/faqs" class="nav-link p-0 text-body-secondary">Domande frequenti</a></li>
+                <li class="nav-item mb-2"><a href="/about" class="nav-link p-0 text-body-secondary">Chi siamo</a></li>
             </ul>
         </div>
 
@@ -38,12 +38,21 @@
         <div class="col mb-3">
             <h5>Privileges</h5>
             <ul class="nav flex-column">
-                <h5>Vuoi diventare revisore?</h5>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Accedi</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Registrati</a></li>
-                <li class="nav-item mb-2"><a href="{{ route('become.revisor') }}" class="btn btnRevBuy">Diventa
-                        revisore</a></li>
+                @auth
+                    <h5>Vuoi diventare revisore?</h5>
+                @endauth
+                @guest
+                    <li class="nav-item mb-2"><a href="{{ route('login') }}"
+                            class="nav-link p-0 text-body-secondary">Accedi</a></li>
+                    <li class="nav-item mb-2"><a href="{{ route('register') }}"
+                            class="nav-link p-0 text-body-secondary">Registrati</a></li>
+                @endguest
+                @auth
+                    <li class="nav-item mb-2"><a href="{{ route('become.revisor') }}" class="btn btnRevBuy">Diventa
+                            revisore</a></li>
+                @endauth
             </ul>
+
 
             {{-- errore riservato a chi è gia revisore --}}
             <div class="mt-3 " style="width: 450px">

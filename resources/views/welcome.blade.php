@@ -1,5 +1,6 @@
 <x-layout>
-    <section class="hero-section" style="background-image: url('/img/hero.png'); background-size: cover; background-position: center;">
+    <section class="hero-section"
+        style="background-image: url('/img/hero.png'); background-size: cover; background-position: center;">
         <div class="container-fluid position-relative">
             <div class="row vh-100">
                 <div class="col-lg-5 hero-content" data-aos="fade-right" data-aos-duration="1000">
@@ -10,10 +11,12 @@
                     <p class="hero-subtitle mb-4" data-aos="fade-up" data-aos-delay="500">
                         Scopri un nuovo modo di fare shopping online. Trova tutto ciò che cerchi in un unico posto.
                     </p>
-                    <a href="{{ route('article.index') }}" class="hero-button" data-aos="zoom-in" data-aos-delay="700">
-                        Shop Now
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                    <a href="{{ route('article.create') }}" class="hero-button" data-aos="zoom-in" data-aos-delay="700">
+                        Scopri di più
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-arrow-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
                         </svg>
                     </a>
                 </div>
@@ -63,13 +66,116 @@
         </div>
     </div>
     @push('scripts')
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            AOS.init({
-                duration: 1000,
-                once: true
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                AOS.init({
+                    duration: 1000,
+                    once: true
+                });
             });
-        });
-    </script>
+        </script>
     @endpush
+
+
+    <section class=""
+        style="">
+        <div class="container-fluid position-relative">
+            <div class="row vh-100">
+                <div class=" col-lg-5 hero-content" data-aos="fade-right" data-aos-duration="1000">
+                    <h5 class="display-3 fw-bold mb-3"><i class="bi bi-check-circle"></i> Lavoro di qualità: efficiente e affidabile</h5>
+                        <p>Ricevi consegne puntuali e impeccabili, 0 intoppi.</p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <!-- SEZIONE NUMERI INCREMENTALI gestiti con js in main.js-->
+    <section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mt-5 mb-5">
+                <h2>I numeri di BuyStream</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 text-center">
+                <img src="https://picsum.photos/200" />
+                <h3 id="firstNumber"></h3>
+                <p>Clienti soddisfatti</p>
+            </div>
+            <div class="col-4 text-center">
+                <img src="https://picsum.photos/200" />
+                <h3 id="secondNumber"></h3>
+                <p>Recensioni positive</p>
+            </div>
+            <div class="col-4 text-center">
+                <img src="https://picsum.photos/200" />
+                <h3 id="thirdNumber"></h3>
+                <p>Partner</p>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+</section>
+            <!-- Sezione Our Team --> 
+        <div class="container">
+            <div class="spacer"></div>
+            <div class="spacer"></div>
+            <div class="row">
+                <div class="col-sm-12 mt-5 mb-5">
+                    <h3 class="text-center text-uppercase">Chi siamo?</h3>
+                </div>
+            </div>
+            <div class="spacer"></div>
+            <div class="spacer"></div>
+            <div class="row">
+                <div class="col-sm-6 col-md-2 text-center mx-4">
+                    <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
+                    <div class="spacer"></div>
+                    <h3 class="">Danilo</h3>
+                    <p>Full Stack Developer</p>
+                    <i class="bi bi-facebook  margin-right-20"></i>
+                    <i class="bi bi-linkedin  margin-right-20"></i>
+                    <i class="bi bi-instagram"></i>
+                </div>
+                <div class="col-sm-6 col-md-2 text-center mx-4">
+                    <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
+                    <div class="spacer"></div>
+                    <h3 class="">Alessio</h3>
+                    <p>Full Stack Developer</p>
+                    <i class="bi bi-facebook  margin-right-20"></i>
+                    <i class="bi bi-linkedin  margin-right-20"></i>
+                    <i class="bi bi-instagram "></i>
+                </div>
+                <div class="col-sm-6 col-md-2 text-center mx-4">
+                    <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
+                    <div class="spacer"></div>
+                    <h3 class="">Matteo</h3>
+                    <p>Full Stack Developer</p>
+                    <i class="bi bi-facebook  margin-right-20"></i>
+                    <i class="bi bi-linkedin  margin-right-20"></i>
+                    <i class="bi bi-instagram "></i>
+                </div>
+                <div class="col-sm-6 col-md-2 text-center mx-4">
+                    <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
+                    <div class="spacer"></div>
+                    <h3 class="">Anna</h3>
+                    <p>Full Stack Developer</p>
+                    <i class="bi bi-facebook  margin-right-20"></i>
+                    <i class="bi bi-linkedin  margin-right-20"></i>
+                    <i class="bi bi-instagram "></i>
+                </div>
+                <div class="col-sm-6 col-md-2 text-center">
+                    <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
+                    <div class="spacer"></div>
+                    <h3 class="">Flavio</h3>
+                    <p>Full Stack Developer</p>
+                    <i class="bi bi-facebook  margin-right-20"></i>
+                    <i class="bi bi-linkedin  margin-right-20"></i>
+                    <i class="bi bi-instagram"></i>
+                </div>
+            </div>
 </x-layout>
