@@ -22,4 +22,5 @@ return [
     'Happy Client'=> 'Clienti soddisfatti',
     'Partner'=>'Partner',
     'Positive Reviews'=>'Recensioni positive'
+    
 ]

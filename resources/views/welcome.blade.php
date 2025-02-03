@@ -87,6 +87,20 @@
                 </div>
             </div>
         </div>
+
+        <body class="bg-dark text-white">
+            <div class="container-fluid p-0">
+            
+                <div class="hero-section bg-img" >
+                    <div class="slogan">
+                        <h2 >Il tuo shop</h2>
+                        <h1>le tue scelte</h1>
+                        <button class="btn btn-primary mt-3">Scopri di più</button>
+                    </div>
+                </div>
+            </div>
+            
+        
         
     </section>
     <!-- SEZIONE NUMERI INCREMENTALI gestiti con js in main.js-->
