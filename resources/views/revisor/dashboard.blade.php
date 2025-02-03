@@ -80,13 +80,13 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     @if($article_to_check->images && $article_to_check->images->first())
-                                        <img src="{{ Storage::url($article_to_check->images->first()->path) }}" 
-                                             class="img-fluid rounded" 
-                                             alt="{{ $article_to_check->title }}">
+                                    <img src="{{ Storage::url($article_to_check->images->first()->path) }}" 
+                                    class="img-fluid rounded" 
+                                    alt="{{ $article_to_check->title }}">
                                     @else
-                                        <img src="https://picsum.photos/300/200" 
-                                             class="img-fluid rounded" 
-                                             alt="Placeholder">
+                                    <img src="https://picsum.photos/300/200" 
+                                    class="img-fluid rounded" 
+                                    alt="Placeholder">
                                     @endif
                                 </div>
                                 <div class="col-md-8">
