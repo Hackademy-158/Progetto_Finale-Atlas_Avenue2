@@ -90,8 +90,8 @@ class RevisorController extends Controller
     public function approved(Request $request)
     {
         $query = Article::whereNotNull('is_accepted')
-                       ->whereNotNull('revisor_id')
-                       ->with(['revisor', 'category', 'images']);
+            ->whereNotNull('revisor_id')
+            ->with(['revisor', 'category', 'images']);
 
         // Filtra per stato se specificato
         if ($request->has('status') && $request->status !== 'all') {
@@ -99,8 +99,8 @@ class RevisorController extends Controller
         }
 
         $articles = $query->latest('updated_at')
-                         ->paginate(10)
-                         ->withQueryString();
+            ->paginate(10)
+            ->withQueryString();
 
         return view('revisor.approved', compact('articles'));
     }
@@ -110,7 +110,7 @@ class RevisorController extends Controller
      */
     public function becomeRevisor()
     {
-        Mail::to('utente.prova@gmail.com')->send(new BecomeRevisor(Auth::user()));
+        Mail::to('flavio.volpicella@gmail.com')->send(new BecomeRevisor(Auth::user()));
         return redirect()->route('article.index')->with('success', 'Hai richiesto di diventare revisore');
     }
 

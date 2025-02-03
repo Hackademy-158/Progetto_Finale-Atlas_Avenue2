@@ -22,12 +22,12 @@ Route::get('/faq', [PublicController::class, 'faq'])->name('faq');
 Route::get('/social', [PublicController::class, 'social'])->name('social');
 
 // Article Section
-Route::get('/crea-articolo', [ArticleController::class, 'create'])->name('article.create');
-Route::get('/catalogo', [ArticleController::class, 'index'])->name('article.index');
-Route::get('/articolo/{article}', [ArticleController::class, 'show'])->name('article.show');
-Route::get('/modifica-articolo/{article}', [ArticleController::class, 'edit'])->name('article.edit');
-Route::get('/categoria/{category}', [ArticleController::class, 'byCategory'])->name('byCategory');
-Route::get('/cerca-articolo', [PublicController::class, 'searched'])->name('article.search');
+Route::get('/article/create', [ArticleController::class, 'create'])->name('article.create');
+Route::get('/article/index', [ArticleController::class, 'index'])->name('article.index');
+Route::get('/article/show/{article}', [ArticleController::class, 'show'])->name('article.show');
+Route::get('/article/edit/{article}', [ArticleController::class, 'edit'])->name('article.edit');
+Route::get('/article/byCategory/{category}', [ArticleController::class, 'byCategory'])->name('byCategory');
+Route::get('/search/article', [PublicController::class, 'searched'])->name('article.search');
 Route::get('/catalogo/ricerca', [PublicController::class, 'searched'])->name('articles.search');
 
 // User Dashboard Routes
@@ -48,5 +48,5 @@ Route::middleware(['isRevisor'])->group(function () {
 });
 
 // Revisor Routes
-Route::get('/revisor/richiesta', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('become.revisor');
-Route::get('/rendi-revisor/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
+Route::get('/revisor/request', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('become.revisor');
+Route::get('/make/revisor/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
