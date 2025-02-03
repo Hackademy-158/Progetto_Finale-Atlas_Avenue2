@@ -75,4 +75,93 @@
             });
         </script>
     @endpush
+    <!-- SEZIONE NUMERI INCREMENTALI gestiti con js in main.js-->
+    <section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mt-5 mb-5">
+                <h2>I numeri di BuyStream</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 text-center">
+                <img src="https://picsum.photos/200" />
+                <h3 id="firstNumber"></h3>
+                <p>Clienti soddisfatti</p>
+            </div>
+            <div class="col-4 text-center">
+                <img src="https://picsum.photos/200" />
+                <h3 id="secondNumber"></h3>
+                <p>Recensioni positive</p>
+            </div>
+            <div class="col-4 text-center">
+                <img src="https://picsum.photos/200" />
+                <h3 id="thirdNumber"></h3>
+                <p>Partner</p>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+</section>
+            <!-- Sezione Our Team --> 
+        <div class="container">
+            <div class="spacer"></div>
+            <div class="spacer"></div>
+            <div class="row">
+                <div class="col-sm-12 mt-5 mb-5">
+                    <h3 class="text-center text-uppercase">Chi siamo?</h3>
+                </div>
+            </div>
+            <div class="spacer"></div>
+            <div class="spacer"></div>
+            <div class="row">
+                <div class="col-sm-6 col-md-2 text-center mx-4">
+                    <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
+                    <div class="spacer"></div>
+                    <h3 class="">Danilo</h3>
+                    <p>Full Stack Developer</p>
+                    <i class="bi bi-facebook  margin-right-20"></i>
+                    <i class="bi bi-linkedin  margin-right-20"></i>
+                    <i class="bi bi-instagram"></i>
+                </div>
+                <div class="col-sm-6 col-md-2 text-center mx-4">
+                    <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
+                    <div class="spacer"></div>
+                    <h3 class="">Alessio</h3>
+                    <p>Full Stack Developer</p>
+                    <i class="bi bi-facebook  margin-right-20"></i>
+                    <i class="bi bi-linkedin  margin-right-20"></i>
+                    <i class="bi bi-instagram "></i>
+                </div>
+                <div class="col-sm-6 col-md-2 text-center mx-4">
+                    <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
+                    <div class="spacer"></div>
+                    <h3 class="">Matteo</h3>
+                    <p>Full Stack Developer</p>
+                    <i class="bi bi-facebook  margin-right-20"></i>
+                    <i class="bi bi-linkedin  margin-right-20"></i>
+                    <i class="bi bi-instagram "></i>
+                </div>
+                <div class="col-sm-6 col-md-2 text-center mx-4">
+                    <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
+                    <div class="spacer"></div>
+                    <h3 class="">Anna</h3>
+                    <p>Full Stack Developer</p>
+                    <i class="bi bi-facebook  margin-right-20"></i>
+                    <i class="bi bi-linkedin  margin-right-20"></i>
+                    <i class="bi bi-instagram "></i>
+                </div>
+                <div class="col-sm-6 col-md-2 text-center">
+                    <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
+                    <div class="spacer"></div>
+                    <h3 class="">Flavio</h3>
+                    <p>Full Stack Developer</p>
+                    <i class="bi bi-facebook  margin-right-20"></i>
+                    <i class="bi bi-linkedin  margin-right-20"></i>
+                    <i class="bi bi-instagram"></i>
+                </div>
+            </div>
 </x-layout>

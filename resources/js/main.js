@@ -1,3 +1,33 @@
+//setinterval()
+
+let counter = 0;
+
+let interval = setInterval(()=>{
+    if (counter < 700) {
+        counter++;
+        firstNumber.innerHTML = counter;
+    } else {
+        clearInterval(interval);
+    }
+}, 5);
+
+let interval2 = setInterval(()=>{
+    if (counter < 600) {
+        counter++;
+        secondNumber.innerHTML = counter;
+    } else {
+        clearInterval(interval2);
+    }
+}, 1.5);
+
+let interval3 = setInterval(()=>{
+    if (counter < 150) {
+        counter++;
+        thirdNumber.innerHTML = counter;
+    } else {
+        clearInterval(interval3);
+    }
+});
 // Sistema di Filtri per il Catalogo
 document.addEventListener('DOMContentLoaded', function() {
     // Elementi DOM
@@ -304,3 +334,4 @@ document.getElementById('togglePassword').addEventListener('click', function () 
         toggleButton.textContent = 'Mostra Password';
     }
 });
+
