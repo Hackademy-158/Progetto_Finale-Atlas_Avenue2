@@ -23,7 +23,7 @@ Route::get('/social', [PublicController::class, 'social'])->name('social');
 
 // Article Section
 Route::get('/article/create', [ArticleController::class, 'create'])->name('article.create');
-Route::get('/article/index', [ArticleController::class, 'index'])->name('article.index');
+Route::get('/articles', [PublicController::class, 'index'])->name('article.index');
 Route::get('/article/show/{article}', [ArticleController::class, 'show'])->name('article.show');
 Route::get('/article/edit/{article}', [ArticleController::class, 'edit'])->name('article.edit');
 Route::get('/article/byCategory/{category}', [ArticleController::class, 'byCategory'])->name('byCategory');
@@ -40,13 +40,16 @@ Route::middleware(['auth'])->group(function () {
 // Revisor Area
 Route::middleware(['isRevisor'])->group(function () {
     Route::get('/revisor/dashboard', [RevisorController::class, 'index'])->name('revisor.dashboard');
-    Route::get('/revisor/approvati', [RevisorController::class, 'approved'])->name('revisor.approved');
-    Route::patch('/accetta/{article}', [RevisorController::class, 'accept'])->name('accept');
-    Route::get('/revisor/statistiche', [RevisorController::class, 'stats'])->name('revisor.stats');
-    Route::get('/revisor/in-attesa', [RevisorController::class, 'pending'])->name('revisor.pending');
-    Route::patch('/revisor/rifiutati', [RevisorController::class, 'refused'])->name('reject');
+    Route::patch('/accept/{article}', [RevisorController::class, 'accept'])->name('accept');
+    Route::get('/revisor/statistics', [RevisorController::class, 'statistics'])->name('revisor.stats');
+    Route::get('/revisor/pending', [RevisorController::class, 'pending'])->name('revisor.pending');
+    Route::get('/revisor/approved-articles', [RevisorController::class, 'approved'])->name('revisor.approved');
+    Route::get('/revisor/refused-articles', [RevisorController::class, 'showRefusedArticles'])->name('revisor.refused');
+// Revisor Actions    
+    Route::patch('/revisor/reject/{article}', [RevisorController::class, 'refused'])->name('revisor.reject');
+    Route::patch('/revisor/accept/{article}', [RevisorController::class, 'accepted'])->name('revisor.accept');
 });
 
-// Revisor Routes
+// Revisor Requests
 Route::get('/revisor/request', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('become.revisor');
 Route::get('/make/revisor/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');

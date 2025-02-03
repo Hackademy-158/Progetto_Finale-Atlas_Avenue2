@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Article;
+use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 
 class PublicController extends Controller
@@ -56,5 +57,45 @@ class PublicController extends Controller
         
             return view('article.searched', compact('articles', 'query'));
         }
+    }
+
+    /**
+     * Mostra e filtra gli articoli
+     * Show and filter articles
+     */
+    public function index(Request $request)
+    {
+        // Prepara la query base degli articoli
+        $articles = Article::where('is_accepted', true)
+            ->with('category');
+
+        // Filtro per categoria
+        if ($request->filled('category') && $request->category != 'all') {
+            $articles->whereHas('category', function($query) use ($request) {
+                $query->where('name', $request->category);
+            });
+        }
+
+        // Filtro per prezzo
+        $minPrice = $request->input('min-price', 0);
+        $maxPrice = $request->input('max-price', 9999);
+        $articles->whereBetween('price', [$minPrice, $maxPrice]);
+
+        // Filtro per ricerca
+        if ($request->filled('query')) {
+            $searchTerm = $request->query;
+            $articles->where(function($query) use ($searchTerm) {
+                $query->where('title', 'LIKE', "%{$searchTerm}%")
+                      ->orWhere('description', 'LIKE', "%{$searchTerm}%");
+            });
+        }
+
+        // Ordina e impagina
+        $articles = $articles->latest()->paginate(10);
+
+        // Recupera tutte le categorie per il filtro
+        $categories = Category::all();
+
+        return view('article.index', compact('articles', 'categories'));
     }
 }

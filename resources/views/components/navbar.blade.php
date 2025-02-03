@@ -1,10 +1,19 @@
 <nav class="navbar navbar-expand-lg bg-success">
-    <div class="container-fluid">
+    <div class="container-fluid position-relative">
         
+        <a class="navbar-brand p-0 position-absolute top-50 start-50 translate-middle d-flex align-items-center" href="{{ route('home') }}">
+            <svg class="navbar-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 5L19 12H7.37671M20 16H8L6 3H3M11 6L13 8L17 4M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z" 
+                stroke="currentColor" 
+                    stroke-width="2" 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round"/>
+            </svg>
+            <span class="logo-text ms-2 text-white">BuyStream</span>
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
-        
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
@@ -33,7 +42,7 @@
                         <i class="bi bi-book nav-icon"></i>
                         <span></span>
                     </a>
-                    <ul class="dropdown-menu animated">
+                    <ul class="dropdown-menu dropdown-animated animated">
                         @foreach ($categories as $category)
                         <li>
                             <a class="dropdown-item d-flex align-items-center" href="{{ route('byCategory', ['category' => $category]) }}">
@@ -48,18 +57,7 @@
                     </ul>
                 </li>
             </ul>
-            {{-- Brand Icon --}}
-            <a class="navbar-brand p-0 me-auto d-flex align-items-center" href="{{ route('home') }}">
-                <svg class="navbar-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21 5L19 12H7.37671M20 16H8L6 3H3M11 6L13 8L17 4M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z" 
-                    stroke="currentColor" 
-                        stroke-width="2" 
-                        stroke-linecap="round" 
-                        stroke-linejoin="round"/>
-                </svg>
-                <span class="logo-text ms-2 text-white">BuyStream</span>
-            </a>
-
+            
             {{-- Notifications Bell --}}
             @auth
                 @if(Auth::user()->is_revisor)
@@ -113,9 +111,13 @@
                         </li>
                     @endif
                     <li>
+                        {{-- Logout Button --}}
+                        <form action="{{ route('logout') }}" method="POST" id="form-logout">
+                            @csrf
                         <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">
                             <i class="bi bi-box-arrow-right me-2"></i>Logout
                         </a>
+                        </form>
                     </li>
                 </ul>
             </div>

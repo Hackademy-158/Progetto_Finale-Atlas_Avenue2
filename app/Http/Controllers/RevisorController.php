@@ -22,10 +22,24 @@ class RevisorController extends Controller
         return view('revisor.dashboard', compact('article_to_check'));
     }
 
+
+    /**
+     * Mostra gli articoli in attesa di revisione
+     * Show pending articles for review
+     */
+    public function pending()
+    {
+        $pending_articles = Article::where('is_accepted', null)
+            ->latest()
+            ->paginate(10);
+
+        return view('revisor.pending', compact('pending_articles'));
+    }
+
     /**
      * Accetta un articolo e registra l'azione nel log
      */
-    public function accept(Article $article)
+    public function accepted(Article $article)
     {
         try {
             if ($article->is_accepted !== null) {
@@ -56,7 +70,7 @@ class RevisorController extends Controller
     /**
      * Rifiuta un articolo e registra l'azione nel log
      */
-    public function reject(Article $article)
+    public function refused(Article $article)
     {
         try {
             if ($article->is_accepted !== null) {
@@ -85,24 +99,41 @@ class RevisorController extends Controller
     }
 
     /**
-     * Mostra gli articoli già revisionati con filtri per stato
+     * Recupera e mostra gli articoli revisionati
      */
-    public function approved(Request $request)
+    private function getReviewedArticles(Request $request, ?bool $status, string $view)
     {
         $query = Article::whereNotNull('is_accepted')
             ->whereNotNull('revisor_id')
             ->with(['revisor', 'category', 'images']);
 
         // Filtra per stato se specificato
-        if ($request->has('status') && $request->status !== 'all') {
-            $query->where('is_accepted', $request->status);
+        // Filter by status if specified
+        if ($status !== null) {
+            $query->where('is_accepted', $status);
         }
 
         $articles = $query->latest('updated_at')
             ->paginate(10)
             ->withQueryString();
 
-        return view('revisor.approved', compact('articles'));
+        return view($view, compact('articles'));
+    }
+
+    /**
+     * Mostra gli articoli approvat
+     */
+    public function approved(Request $request)
+    {
+        return $this->getReviewedArticles($request, true, 'revisor.approved');
+    }
+
+    /**
+     * Mostra gli articoli rifiutati
+     */
+    public function showRefusedArticles(Request $request)
+    {
+        return $this->getReviewedArticles($request, false, 'revisor.refused');
     }
 
     /**
@@ -110,12 +141,13 @@ class RevisorController extends Controller
      */
     public function becomeRevisor()
     {
-        Mail::to('flavio.volpicella@gmail.com')->send(new BecomeRevisor(Auth::user()));
+        Mail::to(Auth::user()->email)->send(new BecomeRevisor(Auth::user()));
         return redirect()->route('article.index')->with('success', 'Hai richiesto di diventare revisore');
     }
 
     /**
      * Mostra il form per richiedere di diventare revisore
+     * Show the form to request becoming a revisor
      */
     public function formRevisor()
     {
@@ -124,6 +156,7 @@ class RevisorController extends Controller
 
     /**
      * Promuove un utente al ruolo di revisore tramite comando Artisan
+     * Promote a user to revisor role using Artisan command
      */
     public function makeRevisor(User $user)
     {

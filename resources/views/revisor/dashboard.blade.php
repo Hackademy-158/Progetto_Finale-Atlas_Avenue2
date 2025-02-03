@@ -7,7 +7,7 @@
                     <h5 class="mb-4">Dashboard Revisore</h5>
                     <ul class="list-unstyled">
                         <li class="mb-3">
-                            <a href="#pending" class="d-flex align-items-center text-decoration-none text-dark">
+                            <a href="{{ route('revisor.pending') }}" class="d-flex align-items-center text-decoration-none text-dark">
                                 <i class="bi bi-hourglass text-warning me-2"></i>
                                 Annunci in Attesa
                                 @if(App\Models\Article::revisorPendingRequests() > 0)
@@ -22,7 +22,7 @@
                             </a>
                         </li>
                         <li class="mb-3">
-                            <a href="{{ route('revisor.approved') }}?status=0" class="d-flex align-items-center text-decoration-none text-dark">
+                            <a href="{{ route('revisor.refused') }}" class="d-flex align-items-center text-decoration-none text-dark">
                                 <i class="bi bi-x-circle text-danger me-2"></i>
                                 Annunci Respinti
                             </a>
@@ -97,14 +97,14 @@
                                         <span class="badge bg-info">€{{ $article_to_check->price }}</span>
                                     </div>
                                     <div class="d-flex gap-2">
-                                        <form action="{{ route('accept', ['article' => $article_to_check]) }}" method="POST">
+                                        <form action="{{ route('revisor.accept', ['article' => $article_to_check]) }}" method="POST">
                                             @csrf
                                             @method('PATCH')
                                             <button type="submit" class="btn btn-success">
                                                 <i class="bi bi-check-lg"></i> Approva
                                             </button>
                                         </form>
-                                        <form action="{{ route('reject', ['article' => $article_to_check]) }}" method="POST">
+                                        <form action="{{ route('revisor.reject', ['article' => $article_to_check]) }}" method="POST">
                                             @csrf
                                             @method('PATCH')
                                             <button type="submit" class="btn btn-danger">

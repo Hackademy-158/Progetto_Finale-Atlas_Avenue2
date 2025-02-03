@@ -42,30 +42,32 @@
                     </div>
 
                     <!-- Price Range -->
-                    <div class="filter-group">
-                        <label>Range di Prezzo</label>
-                        <div class="range-container">
-                            <div class="range-values">
-                                <span class="min-value">0€</span>
-                                <span class="max-value">9999€</span>
-                            </div>
-                            <div class="double-slider">
-                                <div class="track"></div>
-                                <div class="range"></div>
-                                <div class="thumb left"></div>
-                                <div class="thumb right"></div>
-                                <input type="hidden" id="min-price" name="min-price" value="0">
-                                <input type="hidden" id="max-price" name="max-price" value="9999">
-                            </div>
-                            <div class="slider-markers">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
+                    <form id="filterForm" action="{{ route('article.index') }}" method="GET">
+                        <div class="filter-group">
+                            <label>Range di Prezzo</label>
+                            <div class="range-container">
+                                <div class="range-values">
+                                    <span class="min-value">0€</span>
+                                    <span class="max-value">9999€</span>
+                                </div>
+                                <div class="double-slider">
+                                    <div class="track"></div>
+                                    <div class="range"></div>
+                                    <div class="thumb left"></div>
+                                    <div class="thumb right"></div>
+                                    <input type="hidden" id="min-price" name="min-price" value="0">
+                                    <input type="hidden" id="max-price" name="max-price" value="9999">
+                                </div>
+                                <div class="slider-markers">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
 
                     <!-- Currency -->
                     <div class="filter-group">
@@ -79,10 +81,14 @@
                         </select>
                     </div>
 
-                    <!-- Reset Button -->
-                    <div class="mt-4">
-                        <button id="resetFilters" class="resetFilters w-100">
-                            <i class="bi bi-arrow-counterclockwise me-2"></i>
+                    <!-- Filter Buttons -->
+                    <div class="mt-4 d-flex gap-2">
+                        <button type="submit" class="applyFilters flex-grow-1">
+                            <i class="bi bi-filter"></i>
+                            Applica Filtri
+                        </button>
+                        <button id="resetFilters" class="resetFilters flex-grow-1">
+                            <i class="bi bi-arrow-counterclockwise"></i>
                             Resetta Filtri
                         </button>
                     </div>
@@ -120,21 +126,4 @@
             </div>
         </div>
     </div>
-
-    <style>
-        .sidebar-filter {
-            position: sticky;
-            top: 1rem;
-            height: calc(100vh - 2rem);
-            overflow-y: auto;
-        }
-
-        @media (max-width: 768px) {
-            .sidebar-filter {
-                position: relative;
-                height: auto;
-                margin-bottom: 1rem;
-            }
-        }
-    </style>
 </x-layout>
