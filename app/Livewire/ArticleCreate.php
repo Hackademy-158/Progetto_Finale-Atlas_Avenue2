@@ -3,8 +3,9 @@
 namespace App\Livewire;
 
 use App\Models\Article;
-use Livewire\Component;
 use App\Models\Category;
+use App\Models\User;
+use Livewire\Component;
 use Livewire\WithFileUploads;
 use Livewire\Attributes\Validate;
 use Illuminate\Support\Facades\Auth;
@@ -56,11 +57,14 @@ class ArticleCreate extends Component
     public function store()
     {
         $this->validate();
-        $this->article = Auth::user()->articles()->create([
+        
+        $user = Auth::user();
+        
+        $this->article = Article::create([
             'title' => $this->title,
             'price' => $this->price,
             'description' => $this->description,
-            'user_id' => Auth::user()->id,
+            'user_id' => $user->id,
             'category_id' => $this->category_id,
             'currency' => $this->currency
         ]);
@@ -79,24 +83,14 @@ class ArticleCreate extends Component
     
     public function mount()
     {
-        try {
-            $categories = Category::all();
-            if ($categories->isEmpty()) {
-                session()->flash('error', 'Nessuna categoria trovata nel database.');
-            }
-            $this->categories = $categories;
-        } catch (\Exception $e) {
-            session()->flash('error', 'Errore nel caricamento delle categorie: ' . $e->getMessage());
-            $this->categories = collect([]);  // Inizializza come collection vuota
-        }
+        $this->categories = Category::all();
     }
     
     public function render()
     {
-        if (!$this->categories) {
-            $this->categories = collect([]); // Assicurati che categories non sia mai null
-        }
-        return view('livewire.article-create');
+        return view('livewire.article-create', [
+            'categories' => $this->categories
+        ]);
     }
     
     public function updatedTemporaryImages()

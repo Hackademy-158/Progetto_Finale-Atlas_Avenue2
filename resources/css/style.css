@@ -1715,29 +1715,183 @@ input[type="range"]:hover::-moz-range-thumb {
         justify-content: center;
     }
 
-    /* Form and Footer Adjustments */
-    .form-custom .form-control,
-    .form-custom .custom-input {
-        width: 100%;
-        margin-bottom: 10px;
-    }
+/* Global Styles */
+footer {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    padding: 1rem;
+}
 
-    .footer {
-        padding: 20px 10px;
-    }
+footer * {
+    box-sizing: border-box;
+    max-width: 100%;
+}
 
-    /* Team Section */
-    .team-pic {
-        max-width: 150px;
-        max-height: 150px;
-    }
+footer .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1rem;
+    margin: 0 auto;
+}
 
-    /* Article Cards */
-    .col-12.col-sm-6.col-md-3.m-1 {
-        margin: 10px 0 !important;
-        width: 100%;
+/* Responsiveness for large desktop screens (Macbook, etc.) */
+@media (min-width: 1200px) {
+    footer .container {
+        padding: 0 2rem;
     }
 }
+
+/* Responsive for tablets and smaller desktop (iPad, Surface, Galaxy Tab) */
+@media (min-width: 768px) and (max-width: 1199px) {
+    footer .container {
+        padding: 0 1.5rem;
+    }
+}
+
+/* Mobile responsiveness for smaller screens (iPhone SE, iPhone X, Samsung Galaxy S series) */
+@media (max-width: 767px) {
+    footer {
+        padding: 0.5rem;
+    }
+
+    footer .container {
+        padding: 0 0.5rem;
+    }
+
+    footer .input-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    footer .input-group .form-control,
+    footer .input-group .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    footer .row {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    footer .col-lg-3,
+    footer .col-md-6 {
+        width: 100%;
+        margin-bottom: 1rem;
+        padding: 0;
+    }
+
+    footer .social-icon {
+        margin: 0.25rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    footer .social-icon img {
+        max-width: 32px;
+        max-height: 32px;
+        object-fit: contain;
+    }
+}
+
+/* Smaller devices (iPhone 5, Galaxy A12, etc.) */
+@media (max-width: 480px) {
+    footer .container {
+        padding: 0 0.25rem;
+    }
+
+    footer .input-group .form-control,
+    footer .input-group .btn {
+        font-size: 0.875rem;
+        padding: 0.75rem;
+    }
+
+    footer .list-unstyled {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .col-lg-3,
+    footer .col-md-6 {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Smartphones in portrait orientation */
+@media (max-width: 768px) and (orientation: portrait) {
+    footer .input-group .form-control,
+    footer .input-group .btn {
+        width: 100%;
+    }
+
+    footer .social-icon {
+        margin: 0.25rem;
+    }
+
+    footer .social-icon img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* Tablets in landscape mode (iPad, Galaxy Tab, etc.) */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    footer .container {
+        padding: 1rem;
+    }
+
+    footer .input-group {
+        max-width: 100%;
+    }
+}
+
+/* Ensuring that flex items are wrapping correctly on very small screens (e.g. iPhone SE) */
+@media (max-width: 375px) {
+    footer .input-group {
+        flex-direction: column;
+    }
+
+    footer .social-icon {
+        margin: 0.25rem;
+        display: inline-flex;
+        justify-content: center;
+    }
+}
+
+/* Handling Smart TVs and kiosks (larger screens) */
+@media (min-width: 1440px) {
+    footer .container {
+        padding: 2rem;
+    }
+    footer .social-icon img {
+        max-width: 48px;
+        max-height: 48px;
+    }
+}
+
+/* Prevent overflow and ensure content fits */
+footer section {
+    width: 100%;
+    overflow: hidden;
+}
+
+footer .list-unstyled {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (max-width: 576px) {
+    footer .list-unstyled {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 
 /* Tablet Devices (577px to 992px) */
 @media (min-width: 577px) and (max-width: 992px) {
@@ -3079,24 +3233,6 @@ footer .social-icon:hover {
     min-height: 4.5rem;
 }
 
-/* Article Create Page Container */
-@media (min-width: 992px) {
-    .article-create-container {
-        min-height: 800px !important;
-        max-height: 900px !important;
-    }
-
-    .article-create-container .cover {
-        min-height: 800px !important;
-        max-height: 900px !important;
-    }
-
-    .article-create-container .cover img {
-        object-fit: cover !important;
-        height: 100% !important;
-        width: 100% !important;
-    }
-}
 
 /* Form Validation Layout Prevention */
 .form-custom .mb-3 {
@@ -3130,4 +3266,47 @@ footer .social-icon:hover {
     background-size: cover;
     height: 120px;
     width: 120px;
+}
+
+/* Article Create Responsive Styles */
+@media (max-width: 768px) {
+    .article-create .row {
+        flex-direction: column;
+    }
+    
+    .article-create .col-12.col-md-6 {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .article-create .cover {
+        height: 300px;
+        margin-bottom: 1rem;
+    }
+    
+    .article-create .form-custom {
+        padding: 1rem !important;
+    }
+    
+    .img-preview {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (min-width: 769px) {
+    .article-create .row {
+        min-height: 600px;
+    }
+    
+    .article-create .cover {
+        height: 100%;
+    }
+    
+    .article-create .form-custom {
+        overflow-y: auto;
+        max-height: 100%;
+    }
+}
+
 }

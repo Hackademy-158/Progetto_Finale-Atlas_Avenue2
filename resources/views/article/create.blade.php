@@ -5,15 +5,11 @@
             <div class="container-fluid h-100">
                 <div class="row justify-content-center align-items-center h-100">
                     <div class="col-12 col-lg-9 col-xl-8 mx-auto article-create-column">
-                        <div class="card mb-3 shadow-lg border-0 rounded-4">
-                            <div class="card-body p-0">
-                                <livewire:article-create />
-                            </div>
-                        </div>
+                            <livewire:article-create />
                     </div>
                 </div>
             </div>
-        </div>
+        </div>  
     @endauth
     @guest
         <div class="container">

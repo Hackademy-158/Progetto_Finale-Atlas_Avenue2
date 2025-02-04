@@ -1,13 +1,12 @@
-<div class="container-fluid px-0 article-create-container d-flex align-items-center justify-content-center min-vh-100">
     <div class="row g-0 align-items-stretch rounded-4 overflow-hidden mw-1200 w-100">
-        <div class="col-12 col-lg-5">
+        <div class="col-12 col-md-6">
             <div class="cover h-100">
                 <img src="{{ asset('img/article/article-create.png') }}" 
                 alt="Create Article" 
                 class="img-fluid w-100 h-100 object-cover">
             </div>
         </div>
-        <div class="col-12 col-lg-7 bg-light p-4 p-lg-5 form-custom">
+        <div class="col-12 col-md-6 bg-light p-4 p-lg-5 form-custom">
             <h2 class="mb-4">Crea un Nuovo Annuncio</h2>
             <div class="mb-3">
                 <i class="bi bi-pencil-square me-2"></i>Compila tutti i campi per pubblicare il tuo articolo
@@ -50,7 +49,7 @@
                         @enderror
                     </div>
                     
-                    <div class="mb-3">
+                    <div class="col-12 mb-3">
                         <label for="category" class="form-label">Inserisci Immagine</label>
                         <input type="file" wire:model.live="temporary_images" multiple
                         class="form-control shadow @error('temporary_images .* ') is-invalid @enderror" placeholder="Img/">
@@ -67,7 +66,7 @@
                             <p>Photo preview:</p>
                             <div class="row border border-4 border-success rounded shadow py-4">
                                 @foreach ($images as $key => $image)
-                                <div class="col d-flex flex-column align-items-center my-3">
+                                <div class="col-4 d-flex flex-column align-items-center my-3">
                                     <div class="img-preview mx-auto shadow rounded"
                                     style="background-image: url({{ $image->temporaryUrl() }});"></div>
                                     <button type="button" class="btn btn-danger mt-2" wire:click="removeImage({{ $key }})">
@@ -144,4 +143,3 @@
             </div>
         </div>
     </div>
-</div>
