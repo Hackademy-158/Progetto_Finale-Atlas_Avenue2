@@ -81,14 +81,18 @@
                         @if ($article_to_check)
                             <div class="row">
                                 <div class="col-md-4">
-                                    @if($article_to_check->images && $article_to_check->images->first())
-                                    <img src="{{ Storage::url($article_to_check->images->first()->path) }}" 
+                                    @if($article_to_check->images->count())
+                                    @foreach ($article_to_check->images as $key => $image)
+                                    <img src="{{ Storage::url($image->path) }}" 
                                     class="img-fluid rounded" 
-                                    alt="{{ $article_to_check->title }}">
+                                    alt="Immagine {{ $key +1 }} dell'articolo ' {{ $article_to_check->title }}">
+                                    @endforeach
                                     @else
+                                    @for($i = 0; $i < 6; $i++)
                                     <img src="https://picsum.photos/300/200" 
                                     class="img-fluid rounded" 
                                     alt="Placeholder">
+                                    @endfor
                                     @endif
                                 </div>
                                 <div class="col-md-8">
