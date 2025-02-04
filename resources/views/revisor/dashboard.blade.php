@@ -81,18 +81,19 @@
                         @if ($article_to_check)
                             <div class="row">
                                 <div class="col-md-4">
-                                    @if($article_to_check->images->count())
-                                    @foreach ($article_to_check->images as $key => $image)
-                                    <img src="{{ Storage::url($image->path) }}" 
-                                    class="img-fluid rounded" 
-                                    alt="Immagine {{ $key +1 }} dell'articolo ' {{ $article_to_check->title }}">
-                                    @endforeach
+                                    @if ($article_to_check->images->count())
+                                        @foreach ($article_to_check->images as $key => $image)
+                                            <div class="col-6 col-md-4 mb-4 text-center">
+                                                <img src="{{ $image->getUrl(300, 300) }}"
+                                                    class="img-fluid rounded shadow"
+                                                    alt="Immagine {{ $key + 1 }} dell'articolo ' {{ $article_to_check->title }}">
+                                            </div>
+                                        @endforeach
                                     @else
-                                    @for($i = 0; $i < 6; $i++)
-                                    <img src="https://picsum.photos/300/200" 
-                                    class="img-fluid rounded" 
-                                    alt="Placeholder">
-                                    @endfor
+                                        @for ($i = 0; $i < 6; $i++)
+                                            <img src="https://picsum.photos/300/200" class="img-fluid rounded"
+                                                alt="Placeholder">
+                                        @endfor
                                     @endif
                                 </div>
                                 <div class="col-md-8">
