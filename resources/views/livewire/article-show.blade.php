@@ -63,7 +63,7 @@
                         </div>
 
                         <div class="d-grid gap-2">
-                            <button class="btn btnRevBuy btn-lg">
+                            <button class="btn btn-success btn-lg">
                                 <i class="bi bi-cart-plus me-2"></i>
                                 Aggiungi al Carrello
                             </button>

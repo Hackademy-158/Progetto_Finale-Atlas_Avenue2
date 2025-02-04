@@ -72,7 +72,7 @@
                     </div>
                 @endforelse
                 <div>
-                    <a class="btn btnRevBuy" href="{{ route('revisor.dashboard') }}">Indietro</a>
+                    <a class="btn btn-success" href="{{ route('revisor.dashboard') }}">Indietro</a>
                 </div>
 
                 <!-- Paginazione -->

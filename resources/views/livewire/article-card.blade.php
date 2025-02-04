@@ -20,7 +20,7 @@
                     </div>
                     <div class="price">{{ $article->price }} {{ $article->currency_symbol }}</div>
                     <div class="d-grid gap-2">
-                        <button class="btn btnRevBuy">
+                        <button class="btn btn-success">
                             <i class="bi bi-cart-plus me-2"></i> Aggiungi al Carrello
                         </button>
                     </div>

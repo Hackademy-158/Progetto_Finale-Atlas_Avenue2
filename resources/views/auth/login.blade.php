@@ -25,7 +25,7 @@
                                     <input type="password" name="password"
                                         class="form-control @error('password') is-invalid @enderror"
                                         placeholder="Inserisci la password" id="password">
-                                    <button type="button" id="togglePassword" class="btn btnRevBuy mt-2">Mostra
+                                    <button type="button" id="togglePassword" class="btn btn-success mt-2">Mostra
                                         Password</button>
                                     @error('password')
                                         <div class="invalid-feedback">{{ $message }}</div>
@@ -37,7 +37,7 @@
                                         dimenticata?</a>
                                 </div>
 
-                                <button type="submit" class="btn btnRevBuy w-100 mb-3 py-2">
+                                <button type="submit" class="btn btn-success w-100 mb-3 py-2">
                                     Accedi
                                 </button>
 

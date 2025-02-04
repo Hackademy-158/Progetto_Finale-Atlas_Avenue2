@@ -96,7 +96,7 @@
                 <div class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        <i class="bi bi-person-circle fs-5"></i>
+                        <i class="bi bi-person-circle fs-5 me-2 text-white"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li>
@@ -137,9 +137,7 @@
                     </ul>
                 </div>
             @endauth
-            <x-_locale lang="it"/>
-            <x-_locale lang="en"/>
-            <x-_locale lang="de"/>
+            <x-_locale/>
             {{-- Account Menu per chi è non loggato --}}
             @guest
                 <a class="user-button" href="{{ route('login') }}">Accedi</a>

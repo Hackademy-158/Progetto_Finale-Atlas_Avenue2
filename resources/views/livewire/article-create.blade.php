@@ -1,5 +1,5 @@
-<div class="container-fluid px-0">
-    <div class="row g-0 align-items-stretch rounded-4 overflow-hidden">
+<div class="container-fluid px-0 article-create-container d-flex align-items-center justify-content-center min-vh-100">
+    <div class="row g-0 align-items-stretch rounded-4 overflow-hidden mw-1200 w-100">
         <div class="col-12 col-lg-5">
             <div class="cover h-100">
                 <img src="{{ asset('img/article/article-create.png') }}" 
@@ -7,7 +7,7 @@
                      class="img-fluid w-100 h-100 object-cover">
             </div>
         </div>
-        <div class="col-12 col-lg-7 bg-light p-4 p-lg-5">
+        <div class="col-12 col-lg-7 bg-light p-4 p-lg-5 form-custom">
             <h2 class="mb-4">Crea un Nuovo Annuncio</h2>
             <div class="mb-3">
                 <i class="bi bi-pencil-square me-2"></i>Compila tutti i campi per pubblicare il tuo articolo
@@ -23,7 +23,7 @@
                                wire:model.live="title"
                                placeholder="es. Libro, iPhone, SmartTV...">
                         @error('title')
-                            <span class="text-danger small">{{ $message }}</span>
+                            <span class="text-danger small mt-1">{{ $message }}</span>
                         @enderror
                     </div>
 
@@ -46,7 +46,7 @@
                             </ul>
                         </div>
                         @error('category_id')
-                            <span class="text-danger small">{{ $message }}</span>
+                            <span class="text-danger small mt-1">{{ $message }}</span>
                         @enderror
                     </div>
 
@@ -58,7 +58,7 @@
                                   rows="4"
                                   placeholder="Inserisci una descrizione esauriente del tuo articolo..."></textarea>
                         @error('description')
-                            <span class="text-danger small">{{ $message }}</span>
+                            <span class="text-danger small mt-1">{{ $message }}</span>
                         @enderror
                     </div>
 
@@ -84,10 +84,10 @@
                             </div>
                         </div>
                         @error('price')
-                            <span class="text-danger small">{{ $message }}</span>
+                            <span class="text-danger small mt-1">{{ $message }}</span>
                         @enderror
                         @error('currency')
-                            <span class="text-danger small">{{ $message }}</span>
+                            <span class="text-danger small mt-1">{{ $message }}</span>
                         @enderror
                     </div>
 
