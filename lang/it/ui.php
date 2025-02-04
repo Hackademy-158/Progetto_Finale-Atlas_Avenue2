@@ -22,9 +22,6 @@ return [
     'Satisfied Client'=> 'Clienti soddisfatti',
     'Partner'=>'Partner',
     'Positive Reviews'=>'Recensioni positive'
-<<<<<<< HEAD
-    
-=======
     'Full Stack Developer' => 'Full Stack Developer',
     'Sections' => 'Sezioni',
     'Features' => 'Caratteristiche',
@@ -33,5 +30,4 @@ return [
     'About' => 'Chi siamo',
     'Privilegisti' => 'Privilegi',
     'Social' => 'Social',
->>>>>>> 96b7ccb3712bd8ef0420cc96827b19f934899dee
 ]
