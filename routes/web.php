@@ -53,4 +53,4 @@ Route::get('/revisor/request', [RevisorController::class, 'becomeRevisor'])->mid
 Route::get('/make/revisor/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
 
 // Language change
-Route::post('/lang/{locale}', [PublicController::class, 'setLanguage'])->name('setLocale');
+Route::get('/lang/{locale}', [PublicController::class, 'setLanguage'])->name('setLocale');
