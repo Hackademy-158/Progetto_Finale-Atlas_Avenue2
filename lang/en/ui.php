@@ -30,4 +30,5 @@ return [
     'Chi siamo' => 'About',
     'Privilegi' => 'Privilegisti',
     'Social' => 'Social',
+    ''
 ]
