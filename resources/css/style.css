@@ -3122,3 +3122,12 @@ footer .social-icon:hover {
     min-height: 4.5rem;
     margin-bottom: 1.5rem !important;
 }
+
+/* Anteprima Immagine ArticleCreate */
+.img-preview {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 120px;
+    width: 120px;
+}

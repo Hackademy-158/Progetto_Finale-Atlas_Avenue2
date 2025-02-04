@@ -43,7 +43,8 @@ class ArticleController extends Controller //implements HasMiddleware
             'price' => $request->price,
             'description' => $request->description,
             'user_id' => Auth::user()->id,
-            'category_id' => $request->category_id
+            'category_id' => $request->category_id,
+            
         ]);
     }
 

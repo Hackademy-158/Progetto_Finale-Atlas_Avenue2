@@ -4,7 +4,7 @@
             <div class="product-grid p-0 ">
                 <div class="product-image">
                     <a class="image">
-                        <img src="https://picsum.photos/700/600" class="img-fluid rounded-bottom-1">
+                        <img src="{{ $article->images->isNotEmpty() ? Storage::url($article->images->first()->path) : 'https://picsum.photos/700/600'}}" class="img-fluid rounded-bottom-1" alt="Immagine dell'articolo: {{ $article->title }}">
                     </a>
                     <a href="{{ route('article.show', compact('article')) }}">
                         <span class="product-discount-label">{{ $article->category->name }}</span>
