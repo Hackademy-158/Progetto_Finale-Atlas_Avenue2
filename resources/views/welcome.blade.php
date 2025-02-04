@@ -4,15 +4,15 @@
             <div class="row align-items-center vh-100">
                 <div class="col-12 col-lg-7 offset-lg-1 text-center text-lg-start">
                     <h1 class="display-3 fw-bold mb-3" data-aos="zoom-in" data-aos-delay="300">
-                        Il tuo <span class="highlight">flusso</span>,<br>
-                        il tuo <span class="highlight">shopping</span>
+                        {{ __('ui.nav.your') }}<span class="highlight">{{ __('ui.nav.flow') }}</span>,<br>
+                        {{ __('ui.nav.your') }}<span class="highlight">{{ __('ui.nav.shopping') }}</span>
                     </h1>
                     <p class="hero-subtitle mb-4 ml-lg-0 lead" data-aos="fade-up" data-aos-delay="500">
-                        Scopri un nuovo modo di fare shopping online. Trova tutto ciò che cerchi in un unico posto.
+                        {{ __('ui.hero.sub_title') }}
                     </p>
                     <div class="d-flex justify-content-center justify-content-lg-start">
                         <a href="{{ route('article.create') }}" class="hero-button" data-aos="zoom-in" data-aos-delay="700">
-                            Scopri di più
+                            {{ __('ui.hero.button') }}
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-arrow-right ms-2" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"

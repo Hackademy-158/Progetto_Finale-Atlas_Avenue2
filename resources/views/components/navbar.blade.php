@@ -17,13 +17,13 @@
                 <li class="nav-item">
                     <a class="nav-link d-flex align-items-center" href="{{ route('home') }}">
                         <i class="bi bi-house nav-icon"></i>
-                        <span class="nav-link-text">Home</span>
+                        <span class="nav-link-text">{{ __('ui.nav.home') }}</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link d-flex align-items-center" href="{{ route('article.index') }}">
                         <i class="bi bi-grid-3x3-gap-fill nav-icon"></i>
-                        <span>Catalogo</span>
+                        <span>{{ __('ui.nav.catalog') }}</span>
                     </a>
                 </li>
 
@@ -96,7 +96,7 @@
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li>
                                 <span class="dropdown-item-text">
-                                    <small class="text-muted">Bentornato,</small><br>
+                                    <small class="text-muted">{{ __('ui.nav.welcome') }}</small><br>
                                     {{ Auth::user()->name }}
                                 </span>
                             </li>
@@ -141,8 +141,8 @@
                 @guest
                     <li class="nav-item">
                         <div class="d-flex align-items-center gap-2">
-                            <a class="user-button me-2" href="{{ route('login') }}">Accedi</a>
-                            <a class="user-button" href="{{ route('register') }}">Registrati</a>
+                            <a class="user-button me-2" href="{{ route('login') }}">{{ __('ui.nav.login') }}</a>
+                            <a class="user-button" href="{{ route('register') }}">{{ __('ui.nav.register') }}</a>
                         </div>
                     </li>
                 @endguest
