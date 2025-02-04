@@ -383,52 +383,59 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Dragging dei thumb
+    // Funzione per gestire il trascinamento dei thumb  dello slider
     function handleThumbDrag(thumb, isLeftThumb) {
-        let isDragging = false;
-
+        let isDragging = false;// Variabile di stato per controllare se il thumb è in trascinamento
+        // Funzione che si attiva quando l'utente inizia a trascinare il thumb
         function startDrag(e) {
-            isDragging = true;
-            e.preventDefault();
+        isDragging = true; // Imposta il flag su "true" per indicare che il trascinamento è iniziato
+            e.preventDefault(); // Previene il comportamento predefinito per evitare effetti indesiderati (es. scrolling)
         }
-
+ // Funzione che gestisce il movimento del thumb durante il trascinamento
         function onDrag(e) {
-            if (!isDragging) return;
-            const sliderRect = slider.getBoundingClientRect();
-            const x = e.touches ? e.touches[0].clientX : e.clientX;
-            let percent = ((x - sliderRect.left) / sliderRect.width) * 100;
+            if (!isDragging) return; // Se il thumb non è in trascinamento, esce dalla funzione
+            const sliderRect = slider.getBoundingClientRect();// Ottiene le dimensioni e la posizione dello slider
+            const x = e.touches ? e.touches[0].clientX : e.clientX;// Prende la posizione X del mouse o del tocco
+            let percent = ((x - sliderRect.left) / sliderRect.width) * 100;// Calcola la posizione in percentuale rispetto allo slider
+            // Limita il valore tra 0 e 100 per evitare che il thumb esca dallo slider
             percent = Math.max(0, Math.min(percent, 100));
-
+// Calcola il nuovo valore del prezzo basandosi sulla posizione del thumb
             let newValue = Math.round((percent * (MAX_PRICE - MIN_PRICE) / 100 + MIN_PRICE) / STEP) * STEP;
 
-            if (isLeftThumb) {
-                if (newValue >= parseInt(maxInput.value)) newValue = parseInt(maxInput.value) - STEP;
-                minInput.value = newValue;
-            } else {
-                if (newValue <= parseInt(minInput.value)) newValue = parseInt(minInput.value) + STEP;
-                maxInput.value = newValue;
+            if (isLeftThumb) {// Se è il thumb sinistro
+                if (newValue >= parseInt(maxInput.value)) 
+                    newValue = parseInt(maxInput.value) - STEP;// Impedisce che il min superi il max
+                minInput.value = newValue; // Aggiorna il valore minimo del filtro prezzo
+            } else {// Se è il thumb destro
+                if (newValue <= parseInt(minInput.value)) newValue = parseInt(minInput.value) + STEP; // Impedisce che il max sia inferiore al min
+                maxInput.value = newValue;// Aggiorna il valore massimo del filtro prezzo
             }
 
-            updateSlider();
-            updatePriceFilter();
+            updateSlider();// Aggiorna la posizione grafica del range slider
+            updatePriceFilter();// Applica il filtro aggiornato ai prodotti
         }
-
+// Funzione che si attiva quando l'utente rilascia il thumb
         function stopDrag() {
-            isDragging = false;
+            isDragging = false;// Imposta il flag su "false" per indicare che il trascinamento è terminato
         }
 
+    // Aggiunge gli event listener per l'inizio del trascinamento (mouse e touch)
         thumb.addEventListener('mousedown', startDrag);
         thumb.addEventListener('touchstart', startDrag);
+        // Aggiunge gli event listener per il movimento del mouse/touch durante il trascinamento
         document.addEventListener('mousemove', onDrag);
         document.addEventListener('touchmove', onDrag);
+        // Aggiunge gli event listener per il rilascio del thumb
         document.addEventListener('mouseup', stopDrag);
         document.addEventListener('touchend', stopDrag);
     }
 
-    // Attacca gli eventi ai thumbs
-    handleThumbDrag(leftThumb, true);
-    handleThumbDrag(rightThumb, false);
+    // Associa la funzione di trascinamento ai due thumbs dello slider
+    handleThumbDrag(leftThumb, true);// Gestisce il thumb sinistro
+    handleThumbDrag(rightThumb, false);// Gestisce il thumb destro
 
-    // Inizializza lo slider
+    
+// Inizializza lo slider e il filtro prezzo dopo il caricamento della pagina
     updateSlider();
     updatePriceFilter();
 });
