@@ -492,9 +492,8 @@ a.nav-link.dropdown-toggle {
 .dropdown-menu {
     --dropdown-divider-color: var(--neutral-300);
     background-color: var(--dropdown-bg) !important;
-    border: none;
-    border-radius: 8px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--neutral-300) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
     padding: 8px;
@@ -553,7 +552,7 @@ a.nav-link.dropdown-toggle {
     margin-top: 8px;
     border-radius: 8px;
     box-shadow: 0 2px 10px var(--overlay-shadow);
-    border: 1px solid var(--neutral-300);
+    border: 1px solid var(--neutral-300) !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
     background-color: var(--dropdown-bg) !important;
@@ -578,10 +577,10 @@ a.nav-link.dropdown-toggle {
 
 /* Navbar and Dropdown Styles */
 .navbar .dropdown-menu {
-    border: none !important;
-    box-shadow: none !important;
-    background-color: transparent !important;
-    background: transparent !important;
+    border: 1px solid var(--neutral-300) !important;
+    box-shadow: 0 2px 10px var(--overlay-shadow) !important;
+    background-color: var(--dropdown-bg) !important;
+    background: var(--dropdown-bg) !important;
 }
 
 .navbar .nav-link.dropdown-toggle {
@@ -598,15 +597,15 @@ a.nav-link.dropdown-toggle {
 }
 
 .dropdown-menu.show {
-    background-color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
+    background-color: var(--dropdown-bg) !important;
+    border: 1px solid var(--neutral-300) !important;
+    box-shadow: 0 2px 10px var(--overlay-shadow) !important;
 }
 
 /* Navbar Dropdown Specific Styles */
 .navbar-dropdown-menu {
-    background-color: transparent !important;
-    border: none !important;
+    background-color: var(--dropdown-bg) !important;
+    border: 1px solid var(--neutral-300) !important;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-top: 0.5rem;
     padding: 0.5rem 0;
@@ -614,7 +613,7 @@ a.nav-link.dropdown-toggle {
 
 .navbar-dropdown-menu .dropdown-item {
     color: var(--neutral-900) !important;
-    background-color: transparent !important;
+    background-color: var(--dropdown-bg) !important;
     transition: all 0.2s ease;
     padding: 0.5rem 1rem;
 }

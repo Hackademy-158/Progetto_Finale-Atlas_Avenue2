@@ -1,6 +1,5 @@
 <nav class="navbar navbar-expand-lg bg-success">
     <div class="container-fluid position-relative">
-
         <a class="navbar-brand p-0 position-absolute top-50 start-50 translate-middle d-flex align-items-center"
             href="{{ route('home') }}">
             <svg class="navbar-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -80,11 +79,6 @@
                                     <span
                                         class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                                         {{ App\Models\Article::revisorPendingRequests() }}
-                                    </span>
-                                @else
-                                    <span
-                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                        0
                                     </span>
                                 @endif
                             </a>

@@ -44,8 +44,10 @@
         </div>
     @endif
 
-    <div class="min-vh-100">
-        {{ $slot }}
+    <div class="min-vh-100 d-flex flex-column">
+        <main class="flex-grow-1">
+            {{ $slot }}
+        </main>
     </div>
 
     <x-footer />
