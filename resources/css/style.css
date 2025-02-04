@@ -60,7 +60,7 @@
     --search-icon: var(--success);
     --search-icon-hover: var(--success-dark);
 
-    /* Conversione rem to px (16px = 16px) */
+    /* Conversione rem to px (1rem = 16px, 1.5rem = 24px, 2rem = 32px, 3rem = 48px, 4rem = 64px, 5rem = 80px) */
     --spacing-xs: 8px;
     /* 8px */
     --spacing-sm: 12px;
@@ -73,11 +73,335 @@
     /* 32px */
     --spacing-xxl: 48px;
     /* 48px */
+    --navbar-height: 72px;
+
+    /* Base font sizes for different breakpoints */
+    --base-font-size-mobile: 14px;
+    --base-font-size-tablet: 15px;
+    --base-font-size-desktop: 16px;
+    --base-font-size-large-desktop: 17px;
+
+    /* Spacing variables */
+    --body-padding-top-mobile: 60px;
+    --body-padding-top-tablet: 68px;
+    --body-padding-top-desktop: 72px;
+    --body-padding-top-large-desktop: 76px;
+}
+
+/* =================== NAVBAR SPACER =================== */
+.navbar-spacer {
+    width: 100%;
+    height: var(--navbar-height, 72px);
+    display: block;
+}
+
+/* Responsive Navbar Spacer Visibility */
+@media (max-width: 990px) {
+    .navbar-spacer {
+        display: none !important;
+    }
 }
 
 /* =================== GLOBAL STYLES =================== */
-body {
-    padding-top: 76px;
+
+
+/* =================== RESPONSIVE BODY LAYOUT =================== */
+/* Mobile Devices (up to 576px) */
+@media (max-width: 576px) {
+    :root {
+        --navbar-height: 60px;
+    }
+    
+    .navbar-spacer {
+        height: var(--navbar-height);
+    }
+}
+
+/* Tablet Devices (577px to 992px) */
+@media (min-width: 577px) and (max-width: 992px) {
+    :root {
+        --navbar-height: 68px;
+    }
+    
+    .navbar-spacer {
+        height: var(--navbar-height);
+    }
+}
+
+/* Desktop Devices (993px to 2560px) */
+@media (min-width: 993px) and (max-width: 2560px) {
+    :root {
+        --navbar-height: 72px;
+    }
+    
+    .navbar-spacer {
+        height: var(--navbar-height);
+    }
+}
+
+/* Large Desktop Devices (2561px and above) */
+@media (min-width: 2561px) {
+    :root {
+        --navbar-height: 76px;
+    }
+    
+    .navbar-spacer {
+        height: var(--navbar-height);
+    }
+}
+
+/* Hero Section Positioning */
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    top: 0;
+    left: 0;
+}
+
+/* Hero Section Comprehensive Responsive Styling */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    height: 100vh;
+    max-height: 100vh;
+    background-image: url('/img/hero.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    padding: var(--spacing-lg) 0;
+    top: 0;
+    left: 0;
+}
+
+/* Responsive Height Adjustments */
+@media (max-width: 576px) {
+    .hero-section {
+        min-height: calc(100vh - var(--body-padding-top-mobile));
+        height: calc(100vh - var(--body-padding-top-mobile));
+        padding: var(--spacing-md) 0;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+    .hero-section {
+        min-height: calc(100vh - var(--body-padding-top-tablet));
+        height: calc(100vh - var(--body-padding-top-tablet));
+        padding: var(--spacing-lg) 0;
+    }
+}
+
+@media (min-width: 993px) and (max-width: 2560px) {
+    .hero-section {
+        min-height: calc(100vh - var(--body-padding-top-desktop));
+        height: calc(100vh - var(--body-padding-top-desktop));
+        background-attachment: fixed; /* Parallax effect for larger screens */
+    }
+}
+
+@media (min-width: 2561px) {
+    .hero-section {
+        min-height: calc(100vh - var(--body-padding-top-large-desktop));
+        height: calc(100vh - var(--body-padding-top-large-desktop));
+    }
+}
+
+/* Hero Content Styling */
+.hero-section .container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 var(--spacing-md);
+}
+
+.hero-section .row {
+    margin: 0;
+}
+
+.hero-subtitle {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive Typography */
+@media (max-width: 576px) {
+    .hero-section {
+        text-align: center;
+    }
+
+    .display-3 {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-left: 0;
+    }
+
+    .hero-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+    .display-3 {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 993px) {
+    .hero-subtitle {
+        margin-left: 4%;
+    }
+
+    .hero-section .container {
+        max-width: 1200px;
+    }
+}
+
+/* Ensure smooth background scaling */
+@media (max-width: 992px) {
+    .hero-section {
+        background-attachment: scroll;
+    }
+}
+
+/* Universal Responsive Typography */
+@media (max-width: 1200px) {
+    body {
+        line-height: 1.5;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Hero Section Responsive Styles */
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-subtitle {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive Typography */
+@media (max-width: 576px) {
+    .hero-section {
+        text-align: center;
+    }
+
+    .display-3 {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+    .display-3 {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 993px) {
+    .hero-section .container {
+        max-width: 1200px;
+    }
+}
+
+/* Hero Subtitle Responsive Positioning */
+@media (min-width: 993px) {
+    .hero-subtitle {
+        max-width: 600px;
+        margin-left: 4%; /* Reduced from 8.33% */
+        margin-right: auto;
+    }
+}
+
+/* Hero Section Background Image Responsiveness */
+.hero-section {
+    background-image: url('/img/hero.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+@media (min-width: 993px) {
+    .hero-section {
+        background-attachment: fixed; /* Parallax-like effect */
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-section {
+        background-attachment: scroll;
+        background-size: cover;
+    }
+}
+
+/* Ensure full viewport coverage on different screen sizes */
+@media (max-width: 576px) {
+    .hero-section {
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+    .hero-section {
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+@media (min-width: 993px) {
+    .hero-section {
+        background-size: cover;
+        background-position: center;
+    }
 }
 
 /* =================== NAVBAR =================== */
@@ -85,6 +409,7 @@ body {
 
 /* Container */
 .navbar {
+    height: var(--navbar-height, 72px);
     position: fixed;
     top: 0;
     width: 100%;
@@ -464,10 +789,35 @@ a.nav-link.dropdown-toggle {
 /* Container */
 .hero-section {
     position: relative;
-    overflow: hidden;
-    margin-top: -56px;
-    height: 800px;
-    padding-top: 56px;
+    width: 100%;
+    min-height: 100vh;
+    top: 0;
+    left: 0;
+}
+
+/* Responsive Hero Section Adjustments */
+@media (max-width: 576px) {
+    .hero-section {
+        min-height: calc(100vh - var(--body-padding-top-mobile));
+    }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+    .hero-section {
+        min-height: calc(100vh - var(--body-padding-top-tablet));
+    }
+}
+
+@media (min-width: 993px) and (max-width: 2560px) {
+    .hero-section {
+        min-height: calc(100vh - var(--body-padding-top-desktop));
+    }
+}
+
+@media (min-width: 2561px) {
+    .hero-section {
+        min-height: calc(100vh - var(--body-padding-top-large-desktop));
+    }
 }
 
 /* Content */
@@ -1333,6 +1683,145 @@ input[type="range"]:hover::-moz-range-thumb {
 
 /* =================== RESPONSIVE DESIGN =================== */
 /* Inizio Media Queries */
+
+/* Mobile Devices (up to 576px) */
+@media (max-width: 576px) {
+    body {
+        padding-top: 60px;
+    }
+
+    .hero-section {
+        padding: 20px 10px;
+        text-align: center;
+    }
+
+    .hero-content {
+        width: 100%;
+        text-align: center;
+    }
+
+    .display-3 {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-button {
+        margin: 0 auto;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Form and Footer Adjustments */
+    .form-custom .form-control,
+    .form-custom .custom-input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .footer {
+        padding: 20px 10px;
+    }
+
+    /* Team Section */
+    .team-pic {
+        max-width: 150px;
+        max-height: 150px;
+    }
+
+    /* Article Cards */
+    .col-12.col-sm-6.col-md-3.m-1 {
+        margin: 10px 0 !important;
+        width: 100%;
+    }
+}
+
+/* Tablet Devices (577px to 992px) */
+@media (min-width: 577px) and (max-width: 992px) {
+    body {
+        padding-top: 68px;
+    }
+
+    .hero-section {
+        padding: 30px 15px;
+    }
+
+    .display-3 {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .form-custom .form-control,
+    .form-custom .custom-input {
+        width: 100%;
+    }
+
+    .footer {
+        padding: 25px 15px;
+    }
+
+    /* Team Section */
+    .team-pic {
+        max-width: 200px;
+        max-height: 200px;
+    }
+}
+
+/* Desktop Devices (993px to 2560px) */
+@media (min-width: 993px) and (max-width: 2560px) {
+    .hero-section {
+        padding: 50px 30px;
+    }
+
+    .display-3 {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+}
+
+/* Large Desktop Devices (2561px and above) */
+@media (min-width: 2561px) {
+    .hero-section {
+        padding: 80px 50px;
+    }
+
+    .display-3 {
+        font-size: 4rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .container, 
+    .container-fluid {
+        max-width: 2400px;
+    }
+}
+
+/* Universal Responsive Adjustments */
+@media (max-width: 1200px) {
+    .row > div {
+        margin-bottom: 20px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .section {
+        padding: 30px 0;
+    }
+}
 
 /* Tablet and Small Desktop */
 @media (max-width: 991.98px) {

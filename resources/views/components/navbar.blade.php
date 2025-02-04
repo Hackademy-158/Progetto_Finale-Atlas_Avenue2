@@ -65,84 +65,96 @@
                 </li>
             </ul>
 
-            {{-- Notifications Bell --}}
-            @auth
-                @if (Auth::user()->is_revisor)
-                    <div class="nav-item me-3">
-                        <a class="nav-link position-relative" href="{{ route('revisor.dashboard') }}" role="button">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                class="bi bi-bell" viewBox="0 0 16 16">
-                                <path
-                                    d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6" />
-                            </svg>
-                            @if (App\Models\Article::revisorPendingRequests() > 0)
-                                <span
-                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                    {{ App\Models\Article::revisorPendingRequests() }}
-                                </span>
-                            @else
-                                <span
-                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                    0
-                                </span>
-                            @endif
-                        </a>
-                    </div>
-                @endif
-            @endauth
-
-            {{-- Account Menu per chi è loggato --}}
-            @auth
-                <div class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        <i class="bi bi-person-circle fs-5 me-2 text-white"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li>
-                            <span class="dropdown-item-text">
-                                <small class="text-muted">Bentornato,</small><br>
-                                {{ Auth::user()->name }}
-                            </span>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="{{ route('dashboard') }}">
-                                <i class="bi bi-speedometer2 me-2"></i>Dashboard
-                            </a>
-                        </li>
-                        @if (Auth::user()->is_revisor)
-                            <li>
-                                <a class="dropdown-item" href="{{ route('revisor.dashboard') }}">
-                                    <i class="bi bi-check-circle me-2"></i>
-                                    Area Revisore
-                                    <span class="badge rounded-pill bg-danger">
+            <ul class="navbar-nav ms-auto align-items-center">
+                {{-- Notifications Bell --}}
+                @auth
+                    @if (Auth::user()->is_revisor)
+                        <li class="nav-item me-3">
+                            <a class="nav-link position-relative" href="{{ route('revisor.dashboard') }}" role="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                    class="bi bi-bell" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6" />
+                                </svg>
+                                @if (App\Models\Article::revisorPendingRequests() > 0)
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                                         {{ App\Models\Article::revisorPendingRequests() }}
                                     </span>
+                                @else
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        0
+                                    </span>
+                                @endif
+                            </a>
+                        </li>
+                    @endif
+                @endauth
+
+                {{-- Account Menu per chi è loggato --}}
+                @auth
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="bi bi-person-circle fs-5 me-2 text-white"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <span class="dropdown-item-text">
+                                    <small class="text-muted">Bentornato,</small><br>
+                                    {{ Auth::user()->name }}
+                                </span>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ route('dashboard') }}">
+                                    <i class="bi bi-speedometer2 me-2"></i>Dashboard
                                 </a>
                             </li>
-                        @endif
-                        <li>
-                            {{-- Logout Button --}}
-                            <form action="{{ route('logout') }}" method="POST" id="form-logout">
-                                @csrf
-                                <a class="dropdown-item" href="#"
-                                    onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">
-                                    <i class="bi bi-box-arrow-right me-2"></i>Logout
-                                </a>
-                            </form>
-                        </li>
-                    </ul>
-                </div>
-            @endauth
-            <x-_locale/>
-            {{-- Account Menu per chi è non loggato --}}
-            @guest
-                <a class="user-button" href="{{ route('login') }}">Accedi</a>
-                <a class="user-button" href="{{ route('register') }}">Registrati</a>
-            @endguest
+                            @if (Auth::user()->is_revisor)
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('revisor.dashboard') }}">
+                                        <i class="bi bi-check-circle me-2"></i>
+                                        Area Revisore
+                                        <span class="badge rounded-pill bg-danger">
+                                            {{ App\Models\Article::revisorPendingRequests() }}
+                                        </span>
+                                    </a>
+                                </li>
+                            @endif
+                            <li>
+                                {{-- Logout Button --}}
+                                <form action="{{ route('logout') }}" method="POST" id="form-logout">
+                                    @csrf
+                                    <a class="dropdown-item" href="#"
+                                        onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">
+                                        <i class="bi bi-box-arrow-right me-2"></i>Logout
+                                    </a>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                @endauth
+
+                <li class="nav-item">
+                    <x-_locale/>
+                </li>
+
+                {{-- Account Menu per chi è non loggato --}}
+                @guest
+                    <li class="nav-item">
+                        <div class="d-flex align-items-center gap-2">
+                            <a class="user-button me-2" href="{{ route('login') }}">Accedi</a>
+                            <a class="user-button" href="{{ route('register') }}">Registrati</a>
+                        </div>
+                    </li>
+                @endguest
+            </ul>
         </div>
     </div>
 </nav>
+{{-- Spacer per la navbar --}}
+<div class="navbar-spacer"></div>
