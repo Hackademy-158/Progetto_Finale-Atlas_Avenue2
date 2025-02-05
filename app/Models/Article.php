@@ -35,19 +35,19 @@ class Article extends Model
         ];
     }
 
-// Funzione per la ricerca di un articolo solo se è stato accettato
+    // Funzione per la ricerca di un articolo solo se è stato accettato
     public function shouldBeSearchable()
     {
         return $this->is_accepted;
     }
-    
+
     protected $fillable = [
         'title',
         'price',
         'description',
         'is_accepted',
         'revisor_id',
-        'user_id', 
+        'user_id',
         'category_id',
         'currency'
     ];
@@ -69,7 +69,7 @@ class Article extends Model
         return $this->belongsTo(Category::class);
     }
 
-    public function images() : HasMany
+    public function images(): HasMany
     {
         return $this->hasMany(Image::class);
     }
@@ -91,7 +91,7 @@ class Article extends Model
             'GBP' => '£',
             'JPY' => '¥'
         ];
-        
+
         return $symbols[$this->currency] ?? $this->currency;
     }
 
@@ -99,6 +99,4 @@ class Article extends Model
     {
         return Article::where('is_accepted', null)->count();
     }
-
-
 }
