@@ -3258,14 +3258,7 @@ footer .social-icon:hover {
     margin-bottom: 1.5rem !important;
 }
 
-/* Anteprima Immagine ArticleCreate */
-.img-preview {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 120px;
-    width: 120px;
-}
+
 
 /* Article Create Responsive Styles */
 @media (max-width: 768px) {
@@ -3307,5 +3300,12 @@ footer .social-icon:hover {
         max-height: 100%;
     }
 }
-
+}
+/* Anteprima Immagine ArticleCreate */
+.img-preview {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 120px;
+    width: 120px;
 }
