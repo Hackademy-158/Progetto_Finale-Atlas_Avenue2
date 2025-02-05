@@ -5,18 +5,18 @@ return [
     // Navigation
     'nav.home' => 'Home',
     'nav.catalog' => 'Catalogo',
-    'nav.login' => 'Accedi',
+    'nav.create_article' => 'Crea articolo',
     'nav.register' => 'Registrati',
-    'nav.logout' => 'Disconnetti',
-    'nav.dashboard' => 'Pannello di Controllo',
-    'nav.sections' => 'Sezioni',
-    'nav.features' => 'Caratteristiche',
-    'nav.pricing' => 'Prezzi',
-    'nav.faq' => 'Domande Frequenti',
-    'nav.about' => 'Chi Siamo',
-    'nav.social' => 'Social',
+    'nav.login' => 'Accedi',
+
+    // DropDown Menu Categories
+    /* DICHIARATE QUI SOTTO */
+
+
+
 
     // Categories
+
     'categories.title' => 'Categorie',
     'categories.electronics' => 'Elettronica & Tech',
     'categories.furniture' => 'Casa & Arredamento',
@@ -29,15 +29,123 @@ return [
     'categories.diy' => 'Fai da Te',
     'categories.fashion' => 'Moda & Accessori',
 
+    // DropDown Menu Account
+    'account.welcome' => 'Bentornato',
+    'account.revisor_area' => 'Area del Revisor',
+    'account.dashboard' => 'Pannello di Controllo',
+    'account.logout' => 'Disconnetti',
+
+
     // Home Page
-    'home.welcome' => 'Bentornato',
-    'home.your_flow' => 'Il Tuo Flusso',
-    'home.your_shopping' => 'Il Tuo Shopping',
-    'home.tagline' => 'Scopri un nuovo modo di fare shopping online. Trova tutto ciò che cerchi in un unico posto.',
+
     'home.show_more' => 'Scopri di Più',
     'home.latest_articles' => 'Ultimi Articoli Pubblicati',
     'home.no_articles' => 'Non ci sono articoli al momento disponibili.',
     'home.create_article' => 'Creane Uno!',
+    // Hero Section
+
+    //Title
+    'hero.your' => 'Il Tuo',
+    'hero.flow' => 'Flusso',
+    'hero.shopping' => 'Shopping',
+    //Subtitle
+    'hero.discover_new_way' => 'Scopri un nuovo modo di fare shopping online.',
+    'hero.find_everything' => 'Trova tutto ciò che cerchi in un unico posto.',
+    //Button
+    'hero.button' => 'Clicca Qui',
+
+
+    // Last Articles
+    'last_articles.title' => 'Ultimi Articoli Pubblicati',
+
+    // No Articles Yet
+    'last_articles.no_articles' => 'Non ci sono articoli al momento disponibili.',
+    'articles.create_one' => 'Creane Uno!',
+
+
+
+    // Search Filters
+    'search_filters.title' => 'Filtri di Ricerca',
+    'search_filters.search' => 'Cerca articoli...',
+    'search_filters.category_title' => 'Categoria',
+    'search_filters.category' => 'Tutte le categorie',
+    'search_filters.currency_title' => 'Valuta',
+    'search_filters.currency' => 'Tutte le valute',
+    'search_filters.apply_button' => 'Applica',
+    'search_filters.reset_button' => 'Resetta',
+    'search_filters.price_title' => 'Prezzo',
+    'search_filters.price' => 'Tutti i prezzi',
+    'search_filters.sort_title' => 'Ordina per',
+    'search_filters.sort' => 'Predefinito',
+
+    // Currency
+    'currency.euro' => 'Euro (€)',
+    'currency.dollar' => 'Dollaro ($)',
+    'currency.pound' => 'Sterlina (£)',
+    'currency.yen' => 'Yen (¥)',
+    'currency.ruble' => 'Rublo (₽)',
+    'currency.real' => 'Real (R$)',
+
+
+    // Titles
+    'articles.title' => 'Articoli',
+    'articles.subtitle' => 'Tutti gli articoli',
+
+    // Card Show
+    'card.title' => 'Titolo',
+    'card.content' => 'Descrizione',
+    'card.available' => 'Disponibile',
+    'card.date' => 'Pubblicato il:',
+    'card.category' => 'Categoria:',
+    'card.currency' => 'Valuta',
+    'card.price' => 'Prezzo',
+    'card.cart_button' => 'Aggiungi al Carrello',
+    'card.back_button' => 'Torna Indietro',
+
+    // Card Action Translations
+    'card.add_to_cart' => 'Aggiungi al Carrello',
+    'card.add_to_wishlist' => 'Aggiungi ai Preferiti',
+    'card.quick_view' => 'Anteprima Rapida',
+    'card.share' => 'Condividi',
+
+    // Card Edit
+    'card.edit_title' => 'Modifica Titolo',
+    'card.edit_content' => 'Modifica Contenuto',
+    'card.edit_available' => 'Disponibilità',
+    'card.edit_date' => 'Data Pubblicazione',
+    'card.edit_category' => 'Categoria',
+    'card.edit_currency' => 'Valuta',
+    'card.edit_price' => 'Prezzo',
+    'card.cart_button' => 'Aggiungi al Carrello',
+    'card.back_button' => 'Torna Indietro',
+
+
+    // Create Article
+    'article.create_instructions' => 'Inserisci le informazioni sul tuo articolo.',
+    'article.create_title' => 'Titolo',
+    'article.create_description' => 'Descrizione',
+    'article.create_image_preview' => 'Anteprima Immagine',
+    'article.create_image' => 'Inserisci l\'immagine',
+    'article.create_description_placeholder' => 'Minimo 50 caratteri',
+    'article.create_category' => 'Inserisci la categoria',
+    'article.create_no_categories' => 'Nessuna categoria disponibile',
+    'article.create_category_placeholder' => 'Seleziona la categoria',
+    'article.create_currency' => 'Inserisci la valuta',
+    'article.create_price' => 'Inserisci il prezzo',
+    'article.create_required_fields' => 'È necessario inserire un titolo, una descrizione, una categoria e una valuta',
+    'article.create_data_secure' => 'I tuoi dati sono al sicuro con noi',
+
+
+
+
+
+
+
+
+
+
+
+
 
     // Features
     'features.one_click' => 'Quello che desideri in un click!',
@@ -78,11 +186,4 @@ return [
     'stats.partners' => 'Partner',
     'stats.positive_reviews' => 'Recensioni Positive',
 
-    // Hero Section
-
-    //Title
-    'ui.nav.your_flow' => 'Il Tuo Flusso',
-    //Subtitle
-    'ui.nav.your_shopping' => 'Il Tuo Shopping',
-    //Button
 ];

@@ -4,48 +4,127 @@ return [
     // Navigation
     'nav.home' => 'Home',
     'nav.catalog' => 'Catalog',
-    'nav.login' => 'Login',
+    'nav.create_article' => 'Create Article',
     'nav.register' => 'Register',
-    'nav.logout' => 'Logout',
-    'nav.dashboard' => 'Dashboard',
-    'nav.sections' => 'Sections',
-    'nav.features' => 'Features',
-    'nav.pricing' => 'Pricing',
-    'nav.faq' => 'FAQ',
-    'nav.about' => 'About',
-    'nav.social' => 'Social',
+    'nav.login' => 'Login',
+
+    // DropDown Menu Categories
+    /* DICHIARATE QUI SOTTO */
+
 
     // Categories
+
     'categories.title' => 'Categories',
-    'categories.electronics' => 'Electronics',
-    'categories.furniture' => 'Furniture',
-    'categories.gaming' => 'Gaming & Console',
+    'categories.electronics' => 'Electronics & Tech',
+    'categories.furniture' => 'Home & Furniture',
+    'categories.gaming' => 'Gaming & Consoles',
     'categories.books' => 'Books & Media',
     'categories.health' => 'Health & Beauty',
-    'categories.sports' => 'Sport & Free Time',
-    'categories.food' => 'Food',
+    'categories.sports' => 'Sports & Leisure',
+    'categories.food' => 'Cooking',
     'categories.art' => 'Art & Collectibles',
     'categories.diy' => 'DIY',
     'categories.fashion' => 'Fashion & Accessories',
 
+    // DropDown Menu Account
+    'account.welcome' => 'Welcome Back',
+    'account.revisor_area' => 'Revisor Area',
+    'account.dashboard' => 'Control Panel',
+    'account.logout' => 'Logout',
+
+
     // Home Page
-    'home.welcome' => 'Welcome',
-    'home.your_flow' => 'Your Flow',
-    'home.your_shopping' => 'Your Shopping',
-    'home.tagline' => 'Discover a new way to shop online. Find everything you need in one place.',
-    'home.show_more' => 'Show More',
-    'home.latest_articles' => 'Latest Articles Published',
-    'home.no_articles' => 'No articles available at the moment.',
+
+    'home.show_more' => 'Discover More',
+    'home.latest_articles' => 'Latest Published Articles',
+    'home.no_articles' => 'No articles are currently available.',
     'home.create_article' => 'Create One!',
+    // Hero Section
+
+    //Title
+    'hero.your' => 'Your',
+    'hero.flow' => 'Flow',
+    'hero.shopping' => 'Shopping',
+    //Subtitle
+    'hero.discover_new_way' => 'Discover a new way to shop online.',
+    'hero.find_everything' => 'Find everything you need in one place.',
+    //Button
+    'hero.button' => 'Click Here',
+
+
+    // Last Articles
+    'last_articles.title' => 'Latest Published Articles',
+
+    // No Articles Yet
+    'last_articles.no_articles' => 'No articles are currently available.',
+    'articles.create_one' => 'Create One!',
+
+
+
+    // Search Filters
+    'search_filters.title' => 'Search Filters',
+    'search_filters.search' => 'Search articles...',
+    'search_filters.category_title' => 'Category',
+    'search_filters.category' => 'All Categories',
+    'search_filters.currency_title' => 'Currency',
+    'search_filters.currency' => 'All Currencies',
+    'search_filters.apply_button' => 'Apply',
+    'search_filters.reset_button' => 'Reset',
+    'search_filters.price_title' => 'Price',
+    'search_filters.price' => 'All Prices',
+    'search_filters.sort_title' => 'Sort By',
+    'search_filters.sort' => 'Default',
+
+    // Currency
+    'currency.euro' => 'Euro (€)',
+    'currency.dollar' => 'Dollar ($)',
+    'currency.pound' => 'Pound (£)',
+    'currency.yen' => 'Yen (¥)',
+    'currency.ruble' => 'Ruble (₽)',
+    'currency.real' => 'Real (R$)',
+
+
+    // Titles
+    'articles.title' => 'Articles',
+    'articles.subtitle' => 'All Articles',
+
+    // Card Show
+    'card.title' => 'Title',
+    'card.content' => 'Description',
+    'card.available' => 'Available',
+    'card.date' => 'Published on:',
+    'card.category' => 'Category:',
+    'card.currency' => 'Currency',
+    'card.price' => 'Price',
+    'card.cart_button' => 'Add to Cart',
+    'card.back_button' => 'Go Back',
+
+    // Card Action Translations
+    'card.add_to_cart' => 'Add to Cart',
+    'card.add_to_wishlist' => 'Add to Favorites',
+    'card.quick_view' => 'Quick Preview',
+    'card.share' => 'Share',
+
+    // Card Edit
+    'card.edit_title' => 'Edit Title',
+    'card.edit_content' => 'Edit Content',
+    'card.edit_available' => 'Availability',
+    'card.edit_date' => 'Publication Date',
+    'card.edit_category' => 'Category',
+    'card.edit_currency' => 'Currency',
+    'card.edit_price' => 'Price',
+    'card.cart_button' => 'Add to Cart',
+    'card.back_button' => 'Go Back',
+
 
     // Features
     'features.one_click' => 'What you want in a click!',
     'features.quality_work' => 'Quality Work',
     'features.timely_delivery' => 'Receive timely and impeccable deliveries',
     'features.protected_payments' => 'Protected Payments',
-    'features.transaction_unlock' => 'Unlocked transactions upon delivery approval',
+    'features.transaction_unlock' => 'Transactions unlocked upon delivery approval',
     'features.local_global' => 'Local or Global',
-    'features.choice_yours' => 'Near or far, your choice is only yours',
+    'features.choice_yours' => 'Near or far, the choice is yours',
     'features.support' => '24/7 Support',
     'features.support_description' => 'Questions? Our support team is available 24/7',
 
@@ -58,12 +137,12 @@ return [
 
     // Contact
     'contact.support' => 'Support',
-    'contact.contact_us' => 'Contact',
+    'contact.contact_us' => 'Contact Us',
     'contact.support_center' => 'Support Center',
 
     // Newsletter
-    'newsletter.title' => 'Discover the Best Offers of Buystream!',
-    'newsletter.description' => 'Enter your email to receive exclusive discounts, early product releases and personalized offers.',
+    'newsletter.title' => 'Discover the Best Offers from Buystream!',
+    'newsletter.description' => 'Enter your email to receive exclusive discounts, early product releases, and personalized offers.',
     'newsletter.placeholder' => 'Enter your email',
 
     // Misc
@@ -77,4 +156,5 @@ return [
     'stats.partners' => 'Partners',
     'stats.positive_reviews' => 'Positive Reviews',
 ];
+
 ?>
