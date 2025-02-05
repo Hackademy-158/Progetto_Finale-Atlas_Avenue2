@@ -12,6 +12,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Google\Cloud\Vision\V1\ImageAnnotatorClient;
 
+
 class RemoveFaces implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
@@ -21,7 +22,7 @@ class RemoveFaces implements ShouldQueue
     /**
     * Create a new job instance.
     */
-    public function __construct()
+    public function __construct($article_image_id)
     {
         $this->article_image_id = $article_image_id;
     }
@@ -59,7 +60,7 @@ class RemoveFaces implements ShouldQueue
             $w = $bounds[2][0] - $bounds[0][0];
             $h = $bounds[2][1] - $bounds[0][1];
         
-        $image = SpatieImage::load($srcPath);
+            $image = SpatieImage::load($srcPath);
 
         $image->watermark(
             base_path('resources/img/smile.png'),
