@@ -98,7 +98,6 @@
                     <div class="col-lg-5" style="padding-top:100px">
                         <img src="{{ asset('img/welcome/') }}" alt="">
                     </div>
-<<<<<<< HEAD
             </div>
             <div class="container-fluid position-relative">
                 <div class="row">
@@ -108,7 +107,7 @@
                     <div class="col-lg-1 hero-content display-3 fw-bold mb-3 margin-right-0" style="text-align:right">
                         <i class="bi bi-check-circle"></i>
                     </div>
-=======
+
                 </div>
                 <div class="container-fluid position-relative">
                     <div class="row">
@@ -119,45 +118,18 @@
                             style="text-align:right">
                             <i class="bi bi-check-circle"></i>
                         </div>
->>>>>>> 77d07efccc906c4ddf5228ecc9ec5b4ea6120640
+
                         <div class=" col-lg-5 hero-content" style="margin-left:0; padding-left:0">
                             <h3 class="display-3 fw-bold mb-3">Pagamenti<span class="text-success"> protetti</span></h3>
                             <h4>Transazioni sbloccate alla approvata consegna</h4>
                         </div>
                     </div>
 
-<<<<<<< HEAD
-            <div class="container-fluid position-relative">
-                <div class="row">
-                    <div class="col-lg-1 hero-content display-3 fw-bold mb-3 margin-right-0" style="text-align:right">
-                        <i class="bi bi-check-circle"></i>
-                    </div>
-                        <div class=" col-lg-5 hero-content" style="margin-left:0; padding-left:0">
-                            <h3 class="display-3 fw-bold mb-3">Locale o <span class="text-success">globale</span></h3>
-                            <h4>Vicini o distanti, la scelta è solo tua</h4>
-                        </div>
-                        <div class="col-lg-5  " style="padding-top:100px">
-                            <img src="{{ asset('img/welcome/h24_resized.jpg') }}" alt="">
-                        </div>
-                </div>
-                <div class="container-fluid position-relative">
-                    <div class="row">
-                        <div class="col-lg-5  " style="padding-top:100px">
-                            <img src="{{ asset('img/welcome/24oree.png') }}" alt="">
-                        </div>
-                        <div class="col-lg-1 hero-content display-3 fw-bold mb-3 margin-right-0" style="text-align:right">
-                            <i class="bi bi-check-circle"></i>
-                        </div>
-                            <div class=" col-lg-5 hero-content" style="margin-left:0; padding-left:0">
-                                <h3 class="display-3 fw-bold mb-3">Assistenza<span class="text-success"> H24</span></h3>
-                                <h4>Domande? Il nostro team di assistenza è disponibile H24</h4>
-=======
                     <div class="container-fluid position-relative">
                         <div class="row">
                             <div class="col-lg-1 hero-content display-3 fw-bold mb-3 margin-right-0"
                                 style="text-align:right">
                                 <i class="bi bi-check-circle"></i>
->>>>>>> 77d07efccc906c4ddf5228ecc9ec5b4ea6120640
                             </div>
                             <div class=" col-lg-5 hero-content" style="margin-left:0; padding-left:0">
                                 <h3 class="display-3 fw-bold mb-3">Locale o <span class="text-success">globale</span>
