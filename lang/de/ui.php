@@ -103,14 +103,14 @@ return [
 
 
     // Search Filters
-    'search_filters.title' => 'Suchfilter',
-    'search_filters.search' => 'Artikel suchen...',
-    'search_filters.category_title' => 'Kategorie',
-    'search_filters.category' => 'Alle Kategorien',
-    'search_filters.currency_title' => 'Währung',
-    'search_filters.currency' => 'Alle Währungen',
-    'search_filters.apply_button' => 'Anwenden',
-    'search_filters.reset_button' => 'Zurücksetzen',
+    'search.filters.title' => 'Suchfilter',
+    'search.filters.search' => 'Artikel suchen...',
+    'search.filters.category_title' => 'Kategorie',
+    'search.filters.category' => 'Alle Kategorien',
+    'search.filters.currency_title' => 'Währung',
+    'search.filters.currency' => 'Alle Währungen',
+    'search.filters.apply_button' => 'Anwenden',
+    'search.filters.reset_button' => 'Zurücksetzen',
 
     // Currency
     'currency.euro' => 'Euro (€)',
