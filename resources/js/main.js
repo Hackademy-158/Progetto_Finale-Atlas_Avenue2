@@ -1,33 +1,34 @@
 //setinterval()
 
-let counter = 0;
+function incremento(element, max, speed) {
+    let counter = 0;
+    let interval = setInterval(() => {
+        if (counter < max) {
+            counter++;
+            element.innerHTML = counter;
+        } else {
+            clearInterval(interval);
+        }
+    }, speed);
+}
 
-let interval = setInterval(()=>{
-    if (counter < 700) {
-        counter++;
-        firstNumber.innerHTML = counter;
-    } else {
-        clearInterval(interval);
-    }
-}, 5);
+let check = false;
+if (firstNumber && secondNumber && thirdNumber) {
+    let observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !check) {
+                incremento(firstNumber, 700, 5);
+                incremento(secondNumber, 600, 3);
+                incremento(thirdNumber, 150, 10);
+                check = true;
+            }
+        });
+    });
 
-let interval2 = setInterval(()=>{
-    if (counter < 600) {
-        counter++;
-        secondNumber.innerHTML = counter;
-    } else {
-        clearInterval(interval2);
-    }
-}, 1.5);
+    observer.observe(thirdNumber);
+}
 
-let interval3 = setInterval(()=>{
-    if (counter < 150) {
-        counter++;
-        thirdNumber.innerHTML = counter;
-    } else {
-        clearInterval(interval3);
-    }
-});
+
 // Sistema di Filtri per il Catalogo
 document.addEventListener('DOMContentLoaded', function() {
     // Elementi DOM
