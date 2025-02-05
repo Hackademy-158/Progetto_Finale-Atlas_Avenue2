@@ -93,13 +93,13 @@
                         <h4>Ricevi consegne puntuali e impeccabili</h4>
                     </div>
                     <div class="col-lg-5" style="padding-top:100px">
-                        <img src="https://picsum.photos/400" alt="">
+                        <img src="{{ asset('img/welcome/') }}" alt="">
                     </div>
             </div>
             <div class="container-fluid position-relative">
                 <div class="row">
                     <div class="col-lg-5" style="padding-top:100px">
-                        <img src="https://picsum.photos/400" alt="">
+                        <img src="{{ asset('img/welcome/') }}" alt="">
                     </div>
                     <div class="col-lg-1 hero-content display-3 fw-bold mb-3 margin-right-0" style="text-align:right">
                         <i class="bi bi-check-circle"></i>
@@ -120,13 +120,13 @@
                             <h4>Vicini o distanti, la scelta è solo tua</h4>
                         </div>
                         <div class="col-lg-5  " style="padding-top:100px">
-                            <img src="https://picsum.photos/400" alt="">
+                            <img src="{{ asset('img/welcome/h24_resized.jpg') }}" alt="">
                         </div>
                 </div>
                 <div class="container-fluid position-relative">
                     <div class="row">
                         <div class="col-lg-5  " style="padding-top:100px">
-                            <img src="https://picsum.photos/400" alt="">
+                            <img src="{{ asset('img/welcome/24oree.png') }}" alt="">
                         </div>
                         <div class="col-lg-1 hero-content display-3 fw-bold mb-3 margin-right-0" style="text-align:right">
                             <i class="bi bi-check-circle"></i>

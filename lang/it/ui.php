@@ -65,18 +65,18 @@ return [
 
 
     // Search Filters
-    'search_filters.title' => 'Filtri di Ricerca',
-    'search_filters.search' => 'Cerca articoli...',
-    'search_filters.category_title' => 'Categoria',
-    'search_filters.category' => 'Tutte le categorie',
-    'search_filters.currency_title' => 'Valuta',
-    'search_filters.currency' => 'Tutte le valute',
-    'search_filters.apply_button' => 'Applica',
-    'search_filters.reset_button' => 'Resetta',
-    'search_filters.price_title' => 'Prezzo',
-    'search_filters.price' => 'Tutti i prezzi',
-    'search_filters.sort_title' => 'Ordina per',
-    'search_filters.sort' => 'Predefinito',
+    'search.filters.title' => 'Filtri di Ricerca',
+    'search.filters.search' => 'Cerca articoli...',
+    'search.filters.category_title' => 'Categoria',
+    'search.filters.category' => 'Tutte le categorie',
+    'search.filters.currency_title' => 'Valuta',
+    'search.filters.currency' => 'Tutte le valute',
+    'search.filters.apply_button' => 'Applica',
+    'search.filters.reset_button' => 'Resetta',
+    'search.filters.price_title' => 'Prezzo',
+    'search.filters.price' => 'Tutti i prezzi',
+    'search.filters.sort_title' => 'Ordina per',
+    'search.filters.sort' => 'Predefinito',
 
     // Currency
     'currency.euro' => 'Euro (€)',
