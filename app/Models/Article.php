@@ -25,10 +25,10 @@ class Article extends Model
     // Funzione per la ricerca tramite determinati campi
     public function toSearchableArray()
     {
-        $array = $this->toArray();
+        // $array = $this->toArray();
 
         return [
-            'id' => $this->getKey(),
+            'id' => $this->id,
             'title' => $this->title,
             'description' => $this->description,
             'category' => $this->category ? $this->category->name : null,
