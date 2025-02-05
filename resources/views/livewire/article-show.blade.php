@@ -18,7 +18,7 @@
                         <div class="carousel-item @if ($loop->first) active @endif">
                             <img src="{{ $image->getUrl(300, 300) }}" class="d-block w-100" alt="Immagine {{ $key + 1 }} dell'articolo '{{ $article->title }}">
                         </div>
-                        @endforeach
+                        @endforeach     
                     </div>
                     @if ($article->images->count() > 1)
                     <button class="carousel-control-prev" type="button" data-bs-target="#articleCarousel" data-bs-slide="prev">
@@ -35,7 +35,7 @@
                 <img src="https://picsum.photos/700/600" class="img-fluid shadow" alt="Nessuna foto inserita dall'utente">
                 @endif
             </div>
-
+            
             
             <!-- Colonna Dettagli -->
             <div class="col-12 col-lg-6">
