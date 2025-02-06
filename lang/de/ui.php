@@ -17,6 +17,7 @@ return [
     'nav.social' => 'Soziale Netzwerke',
 
     // DropDown Menu
+    'account.welcome' => 'Willkommen zurück',
     'nav.dashboard' => 'Kontrollzentrum',
     'nav.revisor_area' => 'Revisor-Bereich',
 

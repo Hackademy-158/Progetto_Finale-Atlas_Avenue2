@@ -96,7 +96,7 @@
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li>
                                 <span class="dropdown-item-text">
-                                    <small class="text-muted">{{ __('ui.nav.welcome') }}</small><br>
+                                    <small class="text-muted">{{ __('ui.account.welcome') }}</small><br>
                                     {{ Auth::user()->name }}
                                 </span>
                             </li>
