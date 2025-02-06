@@ -18,16 +18,16 @@ return [
     // Categories
 
     'categories.title' => 'Categorie',
-    'categories.electronics' => 'Elettronica & Tech',
-    'categories.furniture' => 'Casa & Arredamento',
-    'categories.gaming' => 'Gaming & Console',
-    'categories.books' => 'Libri & Media',
-    'categories.health' => 'Salute & Bellezza',
-    'categories.sports' => 'Sport & Tempo Libero',
-    'categories.food' => 'Cucina',
-    'categories.art' => 'Arte & Collezionismo',
-    'categories.diy' => 'Fai da Te',
-    'categories.fashion' => 'Moda & Accessori',
+    'Elettronica_Tech' => 'Elettronica & Tech',
+    'Casa_Arredamento' => 'Casa & Arredamento',
+    'Gaming_Console' => 'Gaming & Console',
+    'Libri_Media' => 'Libri & Media',
+    'Salute_Bellezza' => 'Salute & Bellezza',
+    'Sport_Tempo_libero' => 'Sport & Tempo Libero',
+    'Cucina_Food' => 'Cucina',
+    'Arte_Collezionismo' => 'Arte & Collezionismo',
+    'Fai_da_te_Bricolage' => 'Fai da Te',
+    'Moda_Accessori' => 'Moda & Accessori',
 
     // DropDown Menu Account
     'account.welcome' => 'Bentornato',
@@ -72,10 +72,9 @@ return [
     'search.filters.category' => 'Tutte le categorie',
     'search.filters.currency_title' => 'Valuta',
     'search.filters.currency' => 'Tutte le valute',
-    'search.filters.apply_button' => 'Applica',
-    'search.filters.reset_button' => 'Resetta',
-    'search.filters.price_title' => 'Prezzo',
-    'search.filters.prices.title' => 'Prezzi',
+    'search.filters.apply_button' => 'Applica Filtri',
+    'search.filters.reset_button' => 'Resetta Filtri',
+    'search.filters.price_title' => 'Range di Prezzo',
     'search.filters.price' => 'Tutti i prezzi',
     'search.filters.sort_title' => 'Ordina per',
     'search.filters.sort' => 'Predefinito',
@@ -138,17 +137,6 @@ return [
     'article.create_data_secure' => 'I tuoi dati sono al sicuro con noi',
 
 
-
-
-
-
-
-
-
-
-
-
-
     // Features
     'features.one_click' => 'Quello che desideri in un click!',
     'features.big_click' => 'CLICK!',
@@ -193,5 +181,24 @@ return [
     'stats.satisfied_clients' => 'Clienti Soddisfatti',
     'stats.partners' => 'Partner',
     'stats.positive_reviews' => 'Recensioni Positive',
+
+    'register.title' => 'Registrati',
+    'register.name' => 'Nome Utente',
+    'register.confirm_password' => 'Conferma Password',
+    'register.placeholderName' => 'Scrivi il tuo nome',
+    'register.placeholderEmail' => 'esempio@esempio.com',
+    'register.placeholderPassword' => 'Inserisci password',
+    'register.placeholderConfirmPassword' => 'Conferma password',
+    'register.buttonShow' => 'Mostra Password',
+    'register.already' => 'Sei già registrato?',
+
+    // Login
+    'login.title' => 'Accedi',
+    'login.name' => 'Nome Utente',
+    'login.password' => 'Password',
+    'login.placeholderName' => 'Enter your username',
+    'login.placeholderPassword' => 'Enter your password',
+    'login.buttonShow' => 'Show Password',
+    'login.forgot' => 'Forgot Password?',
 
 ];
