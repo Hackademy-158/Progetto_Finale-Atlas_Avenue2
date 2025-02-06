@@ -19,7 +19,7 @@ class RemoveFaces implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    private $article_image_id;
+    public $article_image_id;
 
     /**
      * Create a new job instance.
