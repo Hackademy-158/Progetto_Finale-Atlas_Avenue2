@@ -184,7 +184,7 @@
                             <a class="text-body" href="/features">{{__('ui.misc.features')}}</a>
                         </li>
                         <li>
-                            <a class="text-body" href="/pricing">{{__('ui.search.filters.prices.title' )}}</a>
+                            <a class="text-body" href="/pricing">{{__('ui.search.filters.price_title' )}}</a>
                         </li>
                         <li>
                             <a class="text-body" href="/faqs">{{__('ui.features.frequent_questions')}}</a>
@@ -200,10 +200,10 @@
                     <ul class="list-unstyled mb-0">
                         @guest
                             <li>
-                                <a class="text-body" href="{{ route('login') }}">Accedi</a>
+                                <a class="text-body" href="{{ route('login') }}">{{__('ui.login.title')}}</a>
                             </li>
                             <li>
-                                <a class="text-body" href="{{ route('register') }}">Registrati</a>
+                                <a class="text-body" href="{{ route('register') }}">{{__('ui.register.title')}}</a>
                             </li>
                         @endguest
                         @auth
@@ -265,8 +265,8 @@
         {{ date('Y') }} Copyright:
         <a class="text-reset fw-bold" href="/">Buystream</a>
         <small class="d-block mt-1 text-muted">
-            <a class="text-reset fw-light" href="/">Terms of service</a> and
-            <a class="text-reset fw-light" href="/">Privacy policy</a>
+            <a class="text-reset fw-light" href="/">{{__('ui.terms.of.use')}}</a> &
+            <a class="text-reset fw-light" href="/">{{__('ui.privacy.policy')}}</a>
         </small>
     </div>
 </footer>

@@ -34,7 +34,7 @@ return [
     'account.revisor_area' => 'Area del Revisor',
     'account.dashboard' => 'Pannello di Controllo',
     'account.logout' => 'Disconnetti',
-    
+
 
 
     // Home Page
@@ -74,7 +74,7 @@ return [
     'search.filters.currency' => 'Tutte le valute',
     'search.filters.apply_button' => 'Applica Filtri',
     'search.filters.reset_button' => 'Resetta Filtri',
-    'search.filters.price_title' => 'Range di Prezzo',
+    'search.filters.price_title' => 'I nostri prezzi',
     'search.filters.price' => 'Tutti i prezzi',
     'search.filters.sort_title' => 'Ordina per',
     'search.filters.sort' => 'Predefinito',
@@ -153,13 +153,16 @@ return [
     'features.support_green' => 'H24',
     'features.support_description' => 'Domande? Il nostro team di assistenza è disponibile H24',
     'features.frequent_questions' => 'Domande Frequenti',
-
+    //Footer
     // About
     'about.title' => 'Chi Siamo?',
     'about.our_story' => 'La Nostra Storia',
     'about.our_team' => 'Il Nostro Team',
     'about.our_mission' => 'La Nostra Missione',
     'about.work_with_us' => 'Lavora con Noi',
+    //EOF
+    'terms.of.use' => 'Termini',
+    'privacy.policy' => 'Condizioni',
 
     // Contact
     'contact.support' => 'Supporto',
@@ -200,5 +203,7 @@ return [
     'login.placeholderPassword' => 'Enter your password',
     'login.buttonShow' => 'Show Password',
     'login.forgot' => 'Forgot Password?',
+
+
 
 ];

@@ -60,13 +60,16 @@ return [
     'features.support_green' => 'H24',
     'features.support_description' => 'Fragen? Unser Supportteam ist rund um die Uhr für Sie da',
     'features.frequent_questions' => 'Häufig gestellte Fragen',
-
+    //Footer
     // About
     'about.title' => 'Wer sind wir?',
     'about.our_story' => 'Unsere Geschichte',
     'about.our_team' => 'Unser Team',
     'about.our_mission' => 'Unsere Mission',
     'about.work_with_us' => 'Arbeiten Sie mit uns',
+    //EOF
+    'terms.of.use' => 'Geschäftsbedingungen',
+    'privacy.policy' => 'Datenschutzrichtlinie',
 
     // Contact
     'contact.support' => 'Support',

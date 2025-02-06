@@ -70,8 +70,7 @@ return [
     'search.filters.currency' => 'All Currencies',
     'search.filters.apply_button' => 'Apply',
     'search.filters.reset_button' => 'Reset',
-    'search.filters.price_title' => 'Price',
-    'search.filters.price_title' => 'prices',
+    'search.filters.price_title' => 'Prices',
     'search.filters.price' => 'All Prices',
     'search.filters.sort_title' => 'Sort By',
     'search.filters.sort' => 'Default',
@@ -135,13 +134,19 @@ return [
     'features.support_description' => 'Questions? Our support team is available 24/7',
     'features.frequent_questions' => 'FAQ',
 
-
+    //Footer
     // About
     'about.title' => 'Who Are We?',
     'about.our_story' => 'Our Story',
     'about.our_team' => 'Our Team',
     'about.our_mission' => 'Our Mission',
     'about.work_with_us' => 'Work with Us',
+    //EOF
+    'terms.of.use' => 'Terms of use',
+    'privacy.policy' => 'Privacy Policy',
+    
+
+
 
     // Contact
     'contact.support' => 'Support',
