@@ -136,17 +136,6 @@ return [
     'article.create_data_secure' => 'I tuoi dati sono al sicuro con noi',
 
 
-
-
-
-
-
-
-
-
-
-
-
     // Features
     'features.one_click' => 'Quello che desideri in un click!',
     'features.quality_work' => 'Lavoro di Qualità',
@@ -185,5 +174,24 @@ return [
     'stats.satisfied_clients' => 'Clienti Soddisfatti',
     'stats.partners' => 'Partner',
     'stats.positive_reviews' => 'Recensioni Positive',
+
+    'register.title' => 'Registrati',
+    'register.name' => 'Nome Utente',
+    'register.confirm_password' => 'Conferma Password',
+    'register.placeholderName' => 'Scrivi il tuo nome',
+    'register.placeholderEmail' => 'esempio@esempio.com',
+    'register.placeholderPassword' => 'Inserisci password',
+    'register.placeholderConfirmPassword' => 'Conferma password',
+    'register.buttonShow' => 'Mostra Password',
+    'register.already' => 'Sei già registrato?',
+
+    // Login
+    'login.title' => 'Accedi',
+    'login.name' => 'Nome Utente',
+    'login.password' => 'Password',
+    'login.placeholderName' => 'Enter your username',
+    'login.placeholderPassword' => 'Enter your password',
+    'login.buttonShow' => 'Show Password',
+    'login.forgot' => 'Forgot Password?',
 
 ];

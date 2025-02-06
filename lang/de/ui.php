@@ -119,6 +119,24 @@ return [
     'currency.pound' => 'Pfund (£)',
     'currency.yen' => 'Yen (¥)',
 
+    'register.title' => 'Registriert',
+    'register.name' => 'Nutzername',
+    'register.confirm_password' => 'Passwort bestätigen',
+    'register.placeholderName' => 'Benutzername eingeben',
+    'register.placeholderEmail' => 'beispiel@beispiel.com',
+    'register.placeholderPassword' => 'Passwort eingeben',
+    'register.placeholderConfirmPassword' => 'Confirm your password',
+    'register.buttonShow' => 'Show Password',
+    'register.already' => 'Already registered?',
+
+    // Login
+    'login.title' => 'Login',
+    'login.name' => 'Nutzername',
+    'login.password' => 'Password',
+    'login.placeholderName' => 'Benutzername eingeben',
+    'login.placeholderPassword' => 'Passwort eingeben',
+    'login.buttonShow' => 'Show Password',
+    'login.forgot' => 'Forgot Password?',
 ];
 
 ?>

@@ -155,6 +155,26 @@ return [
     'stats.satisfied_clients' => 'Satisfied Clients',
     'stats.partners' => 'Partners',
     'stats.positive_reviews' => 'Positive Reviews',
+
+    // Register
+    'register.title' => 'Registered',
+    'register.name' => 'Username',
+    'register.confirm_password' => 'Confirm Password',
+    'register.placeholderName' => 'Enter your username',
+    'register.placeholderEmail' => 'exapmle@example.com',
+    'register.placeholderPassword' => 'Enter your password',
+    'register.placeholderConfirmPassword' => 'Confirm your password',
+    'register.buttonShow' => 'Show Password',
+    'register.already' => 'Already registered?',
+
+    // Login
+    'login.title' => 'Login',
+    'login.name' => 'Username',
+    'login.password' => 'Password',
+    'login.placeholderName' => 'Enter your username',
+    'login.placeholderPassword' => 'Enter your password',
+    'login.buttonShow' => 'Show Password',
+    'login.forgot' => 'Forgot Password?',
 ];
 
 ?>
