@@ -10,13 +10,13 @@
             <!-- Sidebar with Filters -->
             <div class="col-md-3 mb-4">
                 <div class="sidebar-filter bg-light p-4 rounded shadow-sm" style="width: 400px">
-                    <h5 class="mb-4 text-black">Filtri di Ricerca</h5>
+                    <h5 class="mb-4 text-black">{{ __('ui.search.filters.title') }}</h5>
 
                     <!-- Search -->
                     <div class="search-wrapper mb-4 d-flex align-items-center">
                         <form action="{{ route('article.search') }}" method="GET" class="d-flex w-100">
                             <input type="text" class="search-input" id="search" name="query"
-                                placeholder="Cerca articoli..." value="{{ request('query') }}">
+                                placeholder="{{ __('ui.search.filters.search') }}" value="{{ request('query') }}">
                             <button type="submit" class="search-button d-flex align-items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" viewBox="0 0 16 16">
@@ -29,12 +29,13 @@
 
                     <!-- Category -->
                     <div class="filter-group">
-                        <label for="categoryDropdown" class="text-black">Categoria</label>
+                        <label for="categoryDropdown"
+                            class="text-black">{{ __('ui.search.filters.category_title') }}</label>
                         <div class="dropdown">
                             <button
                                 class="dropdown-menu text-black w-100 d-flex justify-content-between align-items-center"
                                 type="button" id="categoryDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span>Tutte le categorie</span>
+                                <span>{{ __('ui.search.filters.category') }}</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" viewBox="0 0 16 16">
                                     <path
@@ -42,7 +43,8 @@
                                 </svg>
                             </button>
                             <ul class="dropdown-menu w-100" aria-labelledby="categoryDropdown">
-                                <li><a class="dropdown-item" href="#" data-value="">Tutte le categorie</a></li>
+                                <li><a class="dropdown-item" href="#"
+                                        data-value="">{{ __('ui.search.filters.category') }}</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
@@ -62,7 +64,7 @@
                     <!-- Price Range -->
                     <form id="filterForm" action="{{ route('article.index') }}" method="GET">
                         <div class="filter-group">
-                            <label>Range di Prezzo</label>
+                            <label>{{ __('ui.search.filters.price_title') }}</label>
                             <div class="range-container">
                                 <div class="range-values">
                                     <span class="min-value">0€</span>
@@ -89,13 +91,13 @@
 
                     <!-- Currency -->
                     <div class="filter-group">
-                        <label for="currency">Valuta</label>
+                        <label for="currency">{{ __('ui.search.filters.currency_title') }}</label>
                         <select id="currency" name="currency">
-                            <option value="">Tutte le valute</option>
-                            <option value="EUR">Euro (€)</option>
-                            <option value="USD">Dollaro ($)</option>
-                            <option value="GBP">Sterlina (£)</option>
-                            <option value="JPY">Yen (¥)</option>
+                            <option value="">{{ __('ui.search.filters.currency') }}</option>
+                            <option value="EUR">{{ __('ui.currency.euro') }}</option>
+                            <option value="USD">{{ __('ui.currency.dollar') }}</option>
+                            <option value="GBP">{{ __('ui.currency.pound') }}</option>
+                            <option value="JPY">{{ __('ui.currency.yen') }}</option>
                         </select>
                     </div>
 
@@ -103,11 +105,11 @@
                     <div class="mt-4 d-flex gap-2">
                         <button type="submit" class="applyFilters flex-grow-1">
                             <i class="bi bi-filter"></i>
-                            Applica Filtri
+                            {{ __('ui.search.filters.apply_button') }}
                         </button>
                         <button id="resetFilters" class="resetFilters flex-grow-1">
                             <i class="bi bi-arrow-counterclockwise"></i>
-                            Resetta Filtri
+                            {{ __('ui.search.filters.reset_button') }}
                         </button>
                     </div>
                 </div>
@@ -117,7 +119,7 @@
             <div class="col-md-9">
                 <div class="row">
                     <div class="col-12 text-center mt-5 mb-5">
-                        <h1>Articoli</h1>
+                        <h1>{{ __('ui.articles.title') }}</h1>
                     </div>
                 </div>
 
