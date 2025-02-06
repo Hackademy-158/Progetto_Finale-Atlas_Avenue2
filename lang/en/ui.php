@@ -34,11 +34,11 @@ return [
 
 
     // Home Page
-
     'home.show_more' => 'Discover More',
     'home.latest_articles' => 'Latest Published Articles',
     'home.no_articles' => 'No articles are currently available.',
     'home.create_article' => 'Create One!',
+
     // Hero Section
 
     //Title

@@ -5,11 +5,11 @@
             <div class="row align-items-center vh-100">
                 <div class="col-12 col-lg-7 offset-lg-1 text-center text-lg-start">
                     <h1 class="display-3 fw-bold mb-3" data-aos="zoom-in" data-aos-delay="300">
-                        {{ __('ui.nav.your') }}<span class="highlight">{{ __('ui.nav.flow') }}</span>,<br>
-                        {{ __('ui.nav.your') }}<span class="highlight">{{ __('ui.nav.shopping') }}</span>
+                        {{ __('ui.hero.your') }}<span class="highlight">{{ __('ui.hero.flow') }}</span>,<br>
+                        {{ __('ui.hero.your') }}<span class="highlight">{{ __('ui.hero.shopping') }}</span>
                     </h1>
                     <p class="hero-subtitle mb-4 ml-lg-0 lead" data-aos="fade-up" data-aos-delay="500">
-                        {{ __('ui.hero.sub_title') }}
+                        {{ __('ui.hero.discover_new_way') }}
                     </p>
                     <div class="d-flex justify-content-center justify-content-lg-start">
                         <a href="{{ route('article.create') }}" class="hero-button" data-aos="zoom-in"

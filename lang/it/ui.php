@@ -37,11 +37,11 @@ return [
 
 
     // Home Page
-
     'home.show_more' => 'Scopri di Più',
     'home.latest_articles' => 'Ultimi Articoli Pubblicati',
     'home.no_articles' => 'Non ci sono articoli al momento disponibili.',
     'home.create_article' => 'Creane Uno!',
+
     // Hero Section
 
     //Title
