@@ -66,7 +66,7 @@ class RemoveFaces implements ShouldQueue
 
             $image->watermark(
                 base_path('public/img/blur2.png'),
-                AlignPosition::TopLeft,
+                
                 paddingX: $bounds[0][0],
                 paddingY: $bounds[0][1],
                 width: $w,
