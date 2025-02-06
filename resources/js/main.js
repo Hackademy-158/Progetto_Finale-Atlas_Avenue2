@@ -28,16 +28,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const STEP = 100;
 
     // Gestione Dropdown Categoria
-    dropdownItems.forEach(item => {
-        item.addEventListener('click', (e) => {
-            e.preventDefault();
-            const value = e.target.dataset.value;
-            const text = e.target.textContent.trim();
-            selectedCategory = value;
-            dropdownCategoria.querySelector('span').textContent = text;
-            applicaFiltri();
-        });
-    });
+    // dropdownItems.forEach(item => {
+    //     item.addEventListener('click', (e) => {
+    //         e.preventDefault();
+    //         const value = e.target.dataset.value;
+    //         const text = e.target.textContent.trim();
+    //         selectedCategory = value;
+    //         dropdownCategoria.querySelector('span').textContent = text;
+    //         applicaFiltri();
+    //     });
+    // });
 
     // Gestione Ricerca per Categoria
     searchButton.addEventListener('click', () => {
