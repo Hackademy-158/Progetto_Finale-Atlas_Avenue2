@@ -19,7 +19,7 @@ class RemoveFaces implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    private $article_image_id;
+    public $article_image_id;
 
     /**
      * Create a new job instance.
@@ -66,7 +66,7 @@ class RemoveFaces implements ShouldQueue
 
             $image->watermark(
                 base_path('public/img/blur2.png'),
-                AlignPosition::TopLeft,
+                
                 paddingX: $bounds[0][0],
                 paddingY: $bounds[0][1],
                 width: $w,
