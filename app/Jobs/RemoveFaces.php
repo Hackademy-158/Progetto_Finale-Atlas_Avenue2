@@ -18,15 +18,9 @@ use Google\Cloud\Vision\V1\ImageAnnotatorClient;
 class RemoveFaces implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
-<<<<<<< HEAD
 
-    public $article_image_id;
-
-=======
-    
     private $article_image_id;
-    
->>>>>>> efcaa72d711a57902d23a549f8cdee5f52248b3b
+
     /**
      * Create a new job instance.
      */
@@ -70,9 +64,8 @@ class RemoveFaces implements ShouldQueue
 
             $image = SpatieImage::load($srcPath);
 
-<<<<<<< HEAD
             $image->watermark(
-                base_path('public/img/article/covers'),
+                base_path('public/img/blur2.png'),
                 AlignPosition::TopLeft,
                 paddingX: $bounds[0][0],
                 paddingY: $bounds[0][1],
@@ -81,18 +74,6 @@ class RemoveFaces implements ShouldQueue
                 fit: Fit::Stretch
 
             );
-=======
-        $image->watermark(
-            base_path('public/img/blur2.png'),
-            AlignPosition:: TopLeft,
-            paddingX: $bounds[0][0],
-            paddingY: $bounds[0][1],
-            width: $w,
-            height: $h,
-            fit: Fit::Stretch
-        
-        );
->>>>>>> efcaa72d711a57902d23a549f8cdee5f52248b3b
 
 
             $image->save($srcPath);
