@@ -100,93 +100,90 @@
                                                     @endif
                                                 </div>
                                             </div>
-                                            {{-- <div class="col-md-8 ps-3">
-                                        <div class="card-body">
-                                            <h5 class="">Ratings</h5>
-                                            <div class="row justify-content-center">
-                                                <div class="col-2">
-                                                    <div class="text-center mx-auto {{ $image->adult }}">
+                                            <div class="col-md-8 ps-3">
+                                                <div class="card-body">
+                                                    <h5 class="">Ratings</h5>
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-2">
+                                                            <div class="text-center mx-auto {{ $image->adult }}">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-10">adult</div>
+                                                    </div>
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-2">
+                                                            <div class=" text-center mx-auto {{ $image->violence }}">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-10">violence</div>
+                                                    </div>
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-2">
+                                                            <div class=" text-center mx-auto {{ $image->spoof }}">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-10">spoof</div>
+                                                    </div>
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-2">
+                                                            <div class=" text-center mx-auto {{ $image->racy }}">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-10">racy</div>
+                                                    </div>
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-2">
+                                                            <div class=" text-center mx-auto {{ $image->medical }}">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-10">medical</div>
                                                     </div>
                                                 </div>
-                                                <div class="col-10">adult</div>
                                             </div>
-                                            <div class="row justify-content-center">
-                                                <div class="col-2">
-                                                    <div class=" text-center mx-auto {{ $image->violence }}">
-                                                    </div>
-                                                </div>
-                                                <div class="col-10">violence</div>
-                                            </div>
-                                            <div class="row justify-content-center">
-                                                <div class="col-2">
-                                                    <div class=" text-center mx-auto {{ $image->spoof }}">
-                                                    </div>
-                                                </div>
-                                                <div class="col-10">spoof</div>
-                                            </div>
-                                            <div class="row justify-content-center">
-                                                <div class="col-2">
-                                                    <div class=" text-center mx-auto {{ $image->racy }}">
-                                                    </div>
-                                                </div>
-                                                <div class="col-10">racy</div>
-                                            </div>
-                                            <div class="row justify-content-center">
-                                                <div class="col-2">
-                                                    <div class=" text-center mx-auto {{ $image->medical }}">
-                                                    </div>
-                                                </div>
-                                                <div class="col-10">medical</div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
-                        </div> --}}
-                                        @endforeach
-                                    @else
-                                        @for ($i = 0; $i < 6; $i++)
-                                            <img src="https://picsum.photos/300/200" class="img-fluid rounded"
-                                                alt="Placeholder">
-                                        @endfor
-                                    @endif
-                                </div>
-                                <div class="col-md-8">
-                                    <h5>{{ $article_to_check->title }}</h5>
-                                    <p>{{ Str::limit($article_to_check->description, 150) }}</p>
-                                    <div class="mb-3">
-                                        <span class="badge bg-secondary">{{ $article_to_check->category->name }}</span>
-                                        <span class="badge bg-info">€{{ $article_to_check->price }}</span>
-                                    </div>
-                                    <div class="d-flex gap-2">
-                                        <form action="{{ route('revisor.accept', ['article' => $article_to_check]) }}"
-                                            method="POST">
-                                            @csrf
-                                            @method('PATCH')
-                                            <button type="submit" class="btn btn-success">
-                                                <i class="bi bi-check-lg"></i> Approva
-                                            </button>
-                                        </form>
-                                        <form action="{{ route('revisor.reject', ['article' => $article_to_check]) }}"
-                                            method="POST">
-                                            @csrf
-                                            @method('PATCH')
-                                            <button type="submit" class="btn btn-danger">
-                                                <i class="bi bi-x-lg"></i> Rifiuta
-                                            </button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        @else
-                            <div class="text-center py-4">
-                                <i class="bi bi-check-circle text-success" style="font-size: 3rem;"></i>
-                                <p class="mt-3">Non ci sono annunci da revisionare al momento.</p>
-                            </div>
-                        @endif
+                    </div>
+                    @endforeach
+                @else
+                    @for ($i = 0; $i < 6; $i++)
+                        <img src="https://picsum.photos/300/200" class="img-fluid rounded" alt="Placeholder">
+                    @endfor
+                    @endif
+                </div>
+                <div class="col-md-8">
+                    <h5>{{ $article_to_check->title }}</h5>
+                    <p>{{ Str::limit($article_to_check->description, 150) }}</p>
+                    <div class="mb-3">
+                        <span class="badge bg-secondary">{{ $article_to_check->category->name }}</span>
+                        <span class="badge bg-info">€{{ $article_to_check->price }}</span>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <form action="{{ route('revisor.accept', ['article' => $article_to_check]) }}" method="POST">
+                            @csrf
+                            @method('PATCH')
+                            <button type="submit" class="btn btn-success">
+                                <i class="bi bi-check-lg"></i> Approva
+                            </button>
+                        </form>
+                        <form action="{{ route('revisor.reject', ['article' => $article_to_check]) }}" method="POST">
+                            @csrf
+                            @method('PATCH')
+                            <button type="submit" class="btn btn-danger">
+                                <i class="bi bi-x-lg"></i> Rifiuta
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
+        @else
+            <div class="text-center py-4">
+                <i class="bi bi-check-circle text-success" style="font-size: 3rem;"></i>
+                <p class="mt-3">Non ci sono annunci da revisionare al momento.</p>
+            </div>
+            @endif
         </div>
+    </div>
+    </div>
+    </div>
     </div>
 </x-layout>
