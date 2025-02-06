@@ -124,10 +124,10 @@
                     <!--Grid column-->
                     <div class="col-12 col-md-6 text-center text-md-start mb-3 mb-md-0">
                         <p class="lead mb-2">
-                            <strong>Scopri le migliori offerte di Buystream!</strong>
+                            <strong>{{__('ui.newsletter.title')}}</strong>
                         </p>
                         <p class="text-muted mb-3">
-                            Inserisci la tua email per ricevere sconti esclusivi, anteprime di prodotti e offerte personalizzate.
+                            {{__('ui.newsletter.description')}}
                         </p>
                     </div>
                     <!--Grid column-->
@@ -157,20 +157,20 @@
             <div class="row">
                 <!--Grid column-->
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Navigazione</h5>
+                    <h5 class="text-uppercase">{{__('ui.misc.navigation')}}</h5>
 
                     <ul class="list-unstyled mb-0">
                         <li>
-                            <a class="text-body" href="/">Home</a>
+                            <a class="text-body" href="/">{{__('ui.nav.home')}}</a>
                         </li>
                         <li>
-                            <a class="text-body" href="/features">Caratteristiche</a>
+                            <a class="text-body" href="/features">{{__('ui.misc.features')}}</a>
                         </li>
                         <li>
-                            <a class="text-body" href="/pricing">Prezzi</a>
+                            <a class="text-body" href="/pricing">{{__('ui.search.filters.prices.title' )}}</a>
                         </li>
                         <li>
-                            <a class="text-body" href="/faqs">Domande Frequenti</a>
+                            <a class="text-body" href="/faqs">{{__('ui.features.frequent_questions')}}</a>
                         </li>
                     </ul>
                 </div>
@@ -183,15 +183,15 @@
                     <ul class="list-unstyled mb-0">
                         @guest
                         <li>
-                            <a class="text-body" href="{{ route('login') }}">Accedi</a>
+                            <a class="text-body" href="{{ route('login') }}">{{__('ui.nav.login')}}</a>
                         </li>
                         <li>
-                            <a class="text-body" href="{{ route('register') }}">Registrati</a>
+                            <a class="text-body" href="{{ route('register') }}">{{__('ui.nav.register')}}</a>
                         </li>
                         @endguest
                         @auth
                         <li>
-                            <a class="text-body" href="{{ route('become.revisor') }}">Diventa Revisore</a>
+                            <a class="text-body" href="{{ route('become.revisor') }}">{{__('ui.misc.become_revisor')}}</a>
                         </li>
                         @endauth
                     </ul>
@@ -200,20 +200,20 @@
 
                 <!--Grid column-->
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Chi Siamo</h5>
+                    <h5 class="text-uppercase">{{__('ui.about.title')}}</h5>
 
                     <ul class="list-unstyled mb-0">
                         <li>
-                            <a class="text-body" href="/about">La Nostra Storia</a>
+                            <a class="text-body" href="/about">{{__('ui.about.our_story')}}</a>
                         </li>
                         <li>
-                            <a class="text-body" href="/team">Il Nostro Team</a>
+                            <a class="text-body" href="/team">{{__('ui.about.our_team')}}</a>
                         </li>
                         <li>
-                            <a class="text-body" href="/mission">La Nostra Missione</a>
+                            <a class="text-body" href="/mission">{{__('ui.about.our_mission')}}</a>
                         </li>
                         <li>
-                            <a class="text-body" href="/careers">Lavora con Noi</a>
+                            <a class="text-body" href="/careers">{{__('ui.about.work_with_us')}}</a>
                         </li>
                     </ul>
                 </div>
@@ -221,17 +221,17 @@
 
                 <!--Grid column-->
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Supporto</h5>
+                    <h5 class="text-uppercase">{{__('ui.contact.support')}}</h5>
 
                     <ul class="list-unstyled mb-0">
                         <li>
-                            <a class="text-body" href="/contact">Contattaci</a>
+                            <a class="text-body" href="/contact">{{__('ui.contact.contact_us')}}</a>
                         </li>
                         <li>
-                            <a class="text-body" href="/faq">Domande Frequenti</a>
+                            <a class="text-body" href="/faq">{{__('ui.features.frequent_questions')}}</a>
                         </li>
                         <li>
-                            <a class="text-body" href="/help">Centro Assistenza</a>
+                            <a class="text-body" href="/help">{{__('ui.contact.support_center')}}</a>
                         </li>
                     </ul>
                 </div>

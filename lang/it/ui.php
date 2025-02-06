@@ -34,6 +34,7 @@ return [
     'account.revisor_area' => 'Area del Revisor',
     'account.dashboard' => 'Pannello di Controllo',
     'account.logout' => 'Disconnetti',
+    
 
 
     // Home Page
@@ -74,6 +75,7 @@ return [
     'search.filters.apply_button' => 'Applica',
     'search.filters.reset_button' => 'Resetta',
     'search.filters.price_title' => 'Prezzo',
+    'search.filters.prices.title' => 'Prezzi',
     'search.filters.price' => 'Tutti i prezzi',
     'search.filters.sort_title' => 'Ordina per',
     'search.filters.sort' => 'Predefinito',
@@ -149,14 +151,20 @@ return [
 
     // Features
     'features.one_click' => 'Quello che desideri in un click!',
-    'features.quality_work' => 'Lavoro di Qualità',
+    'features.big_click' => 'CLICK!',
+    'features.quality_work' => 'Lavoro di',
+    'features.quality_green' => 'Qualità',
     'features.timely_delivery' => 'Ricevi consegne puntuali e impeccabili',
-    'features.protected_payments' => 'Pagamenti Protetti',
+    'features.protected_payments' => 'Pagamenti',
+    'features.payment_green' => 'protetti',
     'features.transaction_unlock' => 'Transazioni sbloccate alla consegna approvata',
-    'features.local_global' => 'Locale o Globale',
+    'features.local_global' => 'Locale o',
+    'features.local_green' => 'Globale',
     'features.choice_yours' => 'Vicini o distanti, la scelta è solo tua',
-    'features.support' => 'Assistenza H24',
+    'features.support' => 'Assistenza',
+    'features.support_green' => 'H24',
     'features.support_description' => 'Domande? Il nostro team di assistenza è disponibile H24',
+    'features.frequent_questions' => 'Domande Frequenti',
 
     // About
     'about.title' => 'Chi Siamo?',

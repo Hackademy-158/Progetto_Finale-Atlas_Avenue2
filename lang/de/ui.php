@@ -46,14 +46,20 @@ return [
 
     // Features
     'features.one_click' => 'Was Sie wollen, mit einem Klick!',
-    'features.quality_work' => 'Qualitätsarbeit',
+    'features.big_click' => 'KLICK!',
+    'features.quality_work' => 'Werk von',
+    'features.quality_green' => 'Qualität',
     'features.timely_delivery' => 'Pünktliche und einwandfreie Lieferungen',
-    'features.protected_payments' => 'Geschützte Zahlungen',
+    'features.protected_payments' => 'Zahlungen',
+    'features.payment_green' => 'geschützt',
     'features.transaction_unlock' => 'Transaktionen nach Lieferungsfreigabe freigeschaltet',
-    'features.local_global' => 'Lokal oder Global',
+    'features.local_global' => 'Lokal oder',
+    'features.local_green' => 'Global',
     'features.choice_yours' => 'Nah oder fern, die Wahl ist Ihre',
-    'features.support' => '24/7 Support',
+    'features.support' => 'Unterstützung',
+    'features.support_green' => 'H24',
     'features.support_description' => 'Fragen? Unser Supportteam ist rund um die Uhr für Sie da',
+    'features.frequent_questions' => 'Häufig gestellte Fragen',
 
     // About
     'about.title' => 'Wer sind wir?',
@@ -107,6 +113,7 @@ return [
     'search.filters.title' => 'Suchfilter',
     'search.filters.search' => 'Artikel suchen...',
     'search.filters.category_title' => 'Kategorie',
+    'search.filters.price_title' => 'Preise',
     'search.filters.category' => 'Alle Kategorien',
     'search.filters.currency_title' => 'Währung',
     'search.filters.currency' => 'Alle Währungen',

@@ -10,7 +10,7 @@
             <!-- Sidebar with Filters -->
             <div class="col-md-3 mb-4">
                 <div class="sidebar-filter bg-light p-4 rounded shadow-sm" style="width: 400px">
-                    <h5 class="mb-4 text-black">Filtri di Ricerca</h5>
+                    <h5 class="mb-4 text-black">{{__('ui.search.filters.title')}}</h5>
 
                     <!-- Search -->
                     <div class="search-wrapper mb-4 d-flex align-items-center">
