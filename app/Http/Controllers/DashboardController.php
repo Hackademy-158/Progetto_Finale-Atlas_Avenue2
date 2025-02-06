@@ -13,7 +13,7 @@ class DashboardController extends Controller
     {
         $user = auth()->user();
         $articles = $user->articles()->latest()->take(5)->get();
-        
+
         return view('dashboard.index', compact('user', 'articles'));
     }
 
@@ -42,9 +42,9 @@ class DashboardController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'email' => [
-                'required', 
-                'email', 
-                'max:255', 
+                'required',
+                'email',
+                'max:255',
                 Rule::unique('users')->ignore($user->id)
             ],
             'password' => 'nullable|min:8|confirmed',

@@ -134,7 +134,7 @@
                 @endauth
 
                 <li class="nav-item">
-                    <x-_locale/>
+                    <x-_locale />
                 </li>
 
                 {{-- Account Menu per chi è non loggato --}}

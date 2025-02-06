@@ -1,33 +1,3 @@
-//setinterval()
-
-function incremento(element, max, speed) {
-    let counter = 0;
-    let interval = setInterval(() => {
-        if (counter < max) {
-            counter++;
-            element.innerHTML = counter;
-        } else {
-            clearInterval(interval);
-        }
-    }, speed);
-}
-
-let check = false;
-if (firstNumber && secondNumber && thirdNumber) {
-    let observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && !check) {
-                incremento(firstNumber, 700, 5);
-                incremento(secondNumber, 600, 3);
-                incremento(thirdNumber, 150, 10);
-                check = true;
-            }
-        });
-    });
-
-    observer.observe(thirdNumber);
-}
-
 
 // Sistema di Filtri per il Catalogo
 document.addEventListener('DOMContentLoaded', function() {
@@ -440,10 +410,37 @@ document.addEventListener('DOMContentLoaded', function () {
     updateSlider();
     updatePriceFilter();
 });
+//setinterval()
 
+function incremento(element, max, speed) {
+    let counter = 0;
+    let interval = setInterval(() => {
+        if (counter < max) {
+            counter++;
+            element.innerHTML = counter;
+        } else {
+            clearInterval(interval);
+        }
+    }, speed);
+}
+
+let check = false;
+if (firstNumber && secondNumber && thirdNumber) {
+    let observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !check) {
+                incremento(firstNumber, 700, 5);
+                incremento(secondNumber, 600, 3);
+                incremento(thirdNumber, 150, 10);
+                check = true;
+            }
+        });
+    });
+    
+    observer.observe(thirdNumber);
+}
 
 //mostra la password
-
 document.getElementById('togglePassword').addEventListener('click', function () {
     const passwordField = document.getElementById('password');
     const toggleButton = this;
@@ -456,4 +453,9 @@ document.getElementById('togglePassword').addEventListener('click', function () 
         toggleButton.textContent = 'Mostra Password';
     }
 });
+
+
+
+
+
 

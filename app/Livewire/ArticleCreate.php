@@ -61,9 +61,9 @@ class ArticleCreate extends Component
     public function store()
     {
         $this->validate();
-        
+
         $user = Auth::user();
-        
+
         $this->article = Article::create([
             'title' => $this->title,
             'price' => $this->price,
@@ -84,14 +84,14 @@ class ArticleCreate extends Component
 
                 // Nuovo codice
                 RemoveFaces::withChain([
-                    new ResizeImage($newImage->path, 800, 800), 
+                    new ResizeImage($newImage->path, 800, 800),
                     new GoogleVisionSafeSearch($newImage->id),
                     new GoogleVisionLabelImage($newImage->id),
                 ])->dispatch($newImage->id);
             }
             File::deleteDirectory(storage_path('/app/livewire-tmp'));
         }
-        
+
         session()->flash('status', 'Articolo creato con successo!');
         $this->cleanForm();
         $this->reset();
@@ -114,7 +114,7 @@ class ArticleCreate extends Component
     {
 
         if ($this->validate([
-            'temporary_images.*' => 'image|max:2048',
+            'temporary_images.*' => 'image|max:5000',
             'temporary_images' => 'max:6',
         ])) {
             foreach ($this->temporary_images as $image) {

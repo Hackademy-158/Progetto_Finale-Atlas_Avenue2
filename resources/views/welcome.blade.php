@@ -30,7 +30,7 @@
     <div class="container mt-4">
         <div class="row">
             <div class="col-12 text-center mt-5 mb-5">
-                <h1>Ultimi articoli pubblicati</h1>
+                <h1>{{ __('ui.home.latest_articles') }}</h1>
             </div>
         </div>
     </div>
@@ -98,56 +98,55 @@
                     <div class="col-lg-5" style="padding-top:100px">
                         <img src="{{ asset('img/welcome/') }}" alt="">
                     </div>
-            </div>
-            
-
                 </div>
+
+
+            </div>
+            <div class="container-fluid position-relative">
+                <div class="row">
+                    <div class="col-lg-5" style="padding-top:100px">
+                        <img src="https://picsum.photos/400" alt="">
+                    </div>
+                    <div class="col-lg-1 hero-content display-3 fw-bold mb-3 margin-right-0" style="text-align:right">
+                        <i class="bi bi-check-circle"></i>
+                    </div>
+
+                    <div class=" col-lg-5 hero-content" style="margin-left:0; padding-left:0">
+                        <h3 class="display-3 fw-bold mb-3">Pagamenti<span class="text-success"> protetti</span></h3>
+                        <h4>Transazioni sbloccate alla approvata consegna</h4>
+                    </div>
+                </div>
+
                 <div class="container-fluid position-relative">
                     <div class="row">
-                        <div class="col-lg-5" style="padding-top:100px">
-                            <img src="https://picsum.photos/400" alt="">
-                        </div>
                         <div class="col-lg-1 hero-content display-3 fw-bold mb-3 margin-right-0"
                             style="text-align:right">
                             <i class="bi bi-check-circle"></i>
                         </div>
-
                         <div class=" col-lg-5 hero-content" style="margin-left:0; padding-left:0">
-                            <h3 class="display-3 fw-bold mb-3">Pagamenti<span class="text-success"> protetti</span></h3>
-                            <h4>Transazioni sbloccate alla approvata consegna</h4>
+                            <h3 class="display-3 fw-bold mb-3">Locale o <span class="text-success">globale</span>
+                            </h3>
+                            <h4>Vicini o distanti, la scelta è solo tua</h4>
+                        </div>
+                        <div class="col-lg-5  " style="padding-top:100px">
+                            <img src="https://picsum.photos/400" alt="">
                         </div>
                     </div>
-
                     <div class="container-fluid position-relative">
                         <div class="row">
+                            <div class="col-lg-5  " style="padding-top:100px">
+                                <img src="{{ asset('img/welcome/24oree.png') }}" alt="">
+                            </div>
                             <div class="col-lg-1 hero-content display-3 fw-bold mb-3 margin-right-0"
                                 style="text-align:right">
                                 <i class="bi bi-check-circle"></i>
                             </div>
                             <div class=" col-lg-5 hero-content" style="margin-left:0; padding-left:0">
-                                <h3 class="display-3 fw-bold mb-3">Locale o <span class="text-success">globale</span>
+                                <h3 class="display-3 fw-bold mb-3">Assistenza<span class="text-success"> H24</span>
                                 </h3>
-                                <h4>Vicini o distanti, la scelta è solo tua</h4>
-                            </div>
-                            <div class="col-lg-5  " style="padding-top:100px">
-                                <img src="https://picsum.photos/400" alt="">
+                                <h4>Domande? Il nostro team di assistenza è disponibile H24</h4>
                             </div>
                         </div>
-                        <div class="container-fluid position-relative">
-                            <div class="row">
-                                <div class="col-lg-5  " style="padding-top:100px">
-                                    <img src="{{ asset('img/welcome/24oree.png') }}" alt="">
-                                </div>
-                                <div class="col-lg-1 hero-content display-3 fw-bold mb-3 margin-right-0"
-                                    style="text-align:right">
-                                    <i class="bi bi-check-circle"></i>
-                                </div>
-                                <div class=" col-lg-5 hero-content" style="margin-left:0; padding-left:0">
-                                    <h3 class="display-3 fw-bold mb-3">Assistenza<span class="text-success"> H24</span>
-                                    </h3>
-                                    <h4>Domande? Il nostro team di assistenza è disponibile H24</h4>
-                                </div>
-                            </div>
     </section>
     <!-- SEZIONE NUMERI INCREMENTALI gestiti con js in main.js-->
     <section>

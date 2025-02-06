@@ -1,4 +1,4 @@
-<div class="container py-5">
+{{-- <div class="container py-5">
     <nav aria-label="breadcrumb" class="mb-4">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('article.index') }}" style="color: #198754">Home</a></li>
@@ -92,12 +92,12 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 
 
 
 
-{{-- <div class="container col-12 py-5">
+<div class="container col-12 py-5">
     <div class="row justify-content-center">
         <div class="col-12 col-md-6">
             <form wire:submit="update">
@@ -134,8 +134,8 @@
                 <div class="mb-3">
                     <label for="price" class="form-label">Prezzo:</label>
                     <div class="input-group">
-                        <input type="number" class="form-control" step="0.01" id="price"
-                            wire:model.live="price" placeholder="0.00">
+                        <input type="number" class="form-control" step="0.01" id="price" wire:model.live="price"
+                            placeholder="0.00">
                         <select class="form-select" id="currency" wire:model.live="currency">
                             <option value="EUR">EUR</option>
                             <option value="USD">USD</option>
@@ -156,4 +156,4 @@
             </form>
         </div>
     </div>
-</div> --}}
+</div>
