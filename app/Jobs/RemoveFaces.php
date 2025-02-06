@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Models\Image;
+use Spatie\Image\Image as SpatieImage;
 use Spatie\Image\Enums\Fit;
 use Spatie\Image\Enums\AlignPosition;
 use Illuminate\Queue\SerializesModels;
@@ -13,11 +14,12 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Google\Cloud\Vision\V1\ImageAnnotatorClient;
 
 
+
 class RemoveFaces implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
     
-    public $article_image_id;
+    private $article_image_id;
     
     /**
     * Create a new job instance.
@@ -63,7 +65,7 @@ class RemoveFaces implements ShouldQueue
             $image = SpatieImage::load($srcPath);
 
         $image->watermark(
-            base_path('resources/img/smile.png'),
+            base_path('public/img/blur2.png'),
             AlignPosition:: TopLeft,
             paddingX: $bounds[0][0],
             paddingY: $bounds[0][1],

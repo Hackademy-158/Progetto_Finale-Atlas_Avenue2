@@ -14,7 +14,6 @@ use App\Jobs\GoogleVisionLabelImage;
 use App\Jobs\GoogleVisionSafeSearch;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
-use App\Http\Requests\StoreArticleRequest;
 
 class ArticleCreate extends Component
 {
@@ -82,10 +81,10 @@ class ArticleCreate extends Component
                 // dispatch(new ResizeImage($newImage->path, 300, 300));
                 // dispatch(new GoogleVisionSafeSearch($newImage->id));
                 // dispatch(new GoogleVisionLabelImage($newImage->id));
+
                 // Nuovo codice
-                
                 RemoveFaces::withChain([
-                    new ResizeImage($newImage->path, 300, 300), 
+                    new ResizeImage($newImage->path, 800, 800), 
                     new GoogleVisionSafeSearch($newImage->id),
                     new GoogleVisionLabelImage($newImage->id),
                 ])->dispatch($newImage->id);
