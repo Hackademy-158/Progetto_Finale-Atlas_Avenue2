@@ -50,7 +50,7 @@
                                 </li>
                                 @foreach ($categories as $category)
                                     <li><a class="dropdown-item" href="#"
-                                            data-value="{{ $category->id }}">{{ $category->name }}</a></li>
+                                            data-value="{{ $category->id }}">{{ __('ui.' . $category->name) }}</a></li>
                                     @if (!$loop->last)
                                         <li>
                                             <hr class="dropdown-divider">

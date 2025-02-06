@@ -18,16 +18,16 @@ return [
     // Categories
 
     'categories.title' => 'Categorie',
-    'categories.electronics' => 'Elettronica & Tech',
-    'categories.furniture' => 'Casa & Arredamento',
-    'categories.gaming' => 'Gaming & Console',
-    'categories.books' => 'Libri & Media',
-    'categories.health' => 'Salute & Bellezza',
-    'categories.sports' => 'Sport & Tempo Libero',
-    'categories.food' => 'Cucina',
-    'categories.art' => 'Arte & Collezionismo',
-    'categories.diy' => 'Fai da Te',
-    'categories.fashion' => 'Moda & Accessori',
+    'Elettronica_Tech' => 'Elettronica & Tech',
+    'Casa_Arredamento' => 'Casa & Arredamento',
+    'Gaming_Console' => 'Gaming & Console',
+    'Libri_Media' => 'Libri & Media',
+    'Salute_Bellezza' => 'Salute & Bellezza',
+    'Sport_Tempo_libero' => 'Sport & Tempo Libero',
+    'Cucina_Food' => 'Cucina',
+    'Arte_Collezionismo' => 'Arte & Collezionismo',
+    'Fai_da_te_Bricolage' => 'Fai da Te',
+    'Moda_Accessori' => 'Moda & Accessori',
 
     // DropDown Menu Account
     'account.welcome' => 'Bentornato',

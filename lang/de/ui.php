@@ -23,16 +23,16 @@ return [
 
     // Categories
     'categories.title' => 'Kategorien',
-    'categories.electronics' => 'Elektronik & Technik',
-    'categories.furniture' => 'Heim & Möbel',
-    'categories.gaming' => 'Gaming & Konsolen',
-    'categories.books' => 'Bücher & Medien',
-    'categories.health' => 'Gesundheit & Schönheit',
-    'categories.sports' => 'Sport & Freizeit',
-    'categories.food' => 'Kochen',
-    'categories.art' => 'Kunst & Sammlerstücke',
-    'categories.diy' => 'Selbermachen',
-    'categories.fashion' => 'Mode & Accessoires',
+    'Elettronica_Tech' => 'Elektronik & Technik',
+    'Casa_Arredamento' => 'Heim & Möbel',
+    'Gaming_Console' => 'Gaming & Konsolen',
+    'Libri_Media' => 'Bücher & Medien',
+    'Salute_Bellezza' => 'Gesundheit & Schönheit',
+    'Sport_Tempo_libero' => 'Sport & Freizeit',
+    'Cucina_Food' => 'Kochen',
+    'Arte_Collezionismo' => 'Kunst & Sammlerstücke',
+    'Fai_da_te_Bricolage' => 'Selbermachen',
+    'Moda_Accessori' => 'Mode & Accessoires',
 
     // Home Page
     'home.welcome' => 'Willkommen zurück',
@@ -120,5 +120,3 @@ return [
     'currency.yen' => 'Yen (¥)',
 
 ];
-
-?>
