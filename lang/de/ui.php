@@ -23,16 +23,16 @@ return [
 
     // Categories
     'categories.title' => 'Kategorien',
-    'categories.electronics' => 'Elektronik & Technik',
-    'categories.furniture' => 'Heim & Möbel',
-    'categories.gaming' => 'Gaming & Konsolen',
-    'categories.books' => 'Bücher & Medien',
-    'categories.health' => 'Gesundheit & Schönheit',
-    'categories.sports' => 'Sport & Freizeit',
-    'categories.food' => 'Kochen',
-    'categories.art' => 'Kunst & Sammlerstücke',
-    'categories.diy' => 'Selbermachen',
-    'categories.fashion' => 'Mode & Accessoires',
+    'Elettronica_Tech' => 'Elektronik & Technik',
+    'Casa_Arredamento' => 'Heim & Möbel',
+    'Gaming_Console' => 'Gaming & Konsolen',
+    'Libri_Media' => 'Bücher & Medien',
+    'Salute_Bellezza' => 'Gesundheit & Schönheit',
+    'Sport_Tempo_libero' => 'Sport & Freizeit',
+    'Cucina_Food' => 'Kochen',
+    'Arte_Collezionismo' => 'Kunst & Sammlerstücke',
+    'Fai_da_te_Bricolage' => 'Selbermachen',
+    'Moda_Accessori' => 'Mode & Accessoires',
 
     // Home Page
     'home.welcome' => 'Willkommen zurück',
@@ -46,14 +46,20 @@ return [
 
     // Features
     'features.one_click' => 'Was Sie wollen, mit einem Klick!',
-    'features.quality_work' => 'Qualitätsarbeit',
+    'features.big_click' => 'KLICK!',
+    'features.quality_work' => 'Werk von',
+    'features.quality_green' => 'Qualität',
     'features.timely_delivery' => 'Pünktliche und einwandfreie Lieferungen',
-    'features.protected_payments' => 'Geschützte Zahlungen',
+    'features.protected_payments' => 'Zahlungen',
+    'features.payment_green' => 'geschützt',
     'features.transaction_unlock' => 'Transaktionen nach Lieferungsfreigabe freigeschaltet',
-    'features.local_global' => 'Lokal oder Global',
+    'features.local_global' => 'Lokal oder',
+    'features.local_green' => 'Global',
     'features.choice_yours' => 'Nah oder fern, die Wahl ist Ihre',
-    'features.support' => '24/7 Support',
+    'features.support' => 'Unterstützung',
+    'features.support_green' => 'H24',
     'features.support_description' => 'Fragen? Unser Supportteam ist rund um die Uhr für Sie da',
+    'features.frequent_questions' => 'Häufig gestellte Fragen',
 
     // About
     'about.title' => 'Wer sind wir?',
@@ -107,6 +113,7 @@ return [
     'search.filters.title' => 'Suchfilter',
     'search.filters.search' => 'Artikel suchen...',
     'search.filters.category_title' => 'Kategorie',
+    'search.filters.price_title' => 'Preise',
     'search.filters.category' => 'Alle Kategorien',
     'search.filters.currency_title' => 'Währung',
     'search.filters.currency' => 'Alle Währungen',
@@ -119,6 +126,22 @@ return [
     'currency.pound' => 'Pfund (£)',
     'currency.yen' => 'Yen (¥)',
 
-];
+    'register.title' => 'Registriert',
+    'register.name' => 'Nutzername',
+    'register.confirm_password' => 'Passwort bestätigen',
+    'register.placeholderName' => 'Benutzername eingeben',
+    'register.placeholderEmail' => 'beispiel@beispiel.com',
+    'register.placeholderPassword' => 'Passwort eingeben',
+    'register.placeholderConfirmPassword' => 'Confirm your password',
+    'register.buttonShow' => 'Show Password',
+    'register.already' => 'Already registered?',
 
-?>
+    // Login
+    'login.title' => 'Login',
+    'login.name' => 'Nutzername',
+    'login.password' => 'Password',
+    'login.placeholderName' => 'Benutzername eingeben',
+    'login.placeholderPassword' => 'Passwort eingeben',
+    'login.buttonShow' => 'Show Password',
+    'login.forgot' => 'Forgot Password?',
+];

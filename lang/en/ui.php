@@ -15,16 +15,16 @@ return [
     // Categories
 
     'categories.title' => 'Categories',
-    'categories.electronics' => 'Electronics & Tech',
-    'categories.furniture' => 'Home & Furniture',
-    'categories.gaming' => 'Gaming & Consoles',
-    'categories.books' => 'Books & Media',
-    'categories.health' => 'Health & Beauty',
-    'categories.sports' => 'Sports & Leisure',
-    'categories.food' => 'Cooking',
-    'categories.art' => 'Art & Collectibles',
-    'categories.diy' => 'DIY',
-    'categories.fashion' => 'Fashion & Accessories',
+    'Elettronica_Tech' => 'Electronics & Tech',
+    'Casa_Arredamento' => 'Home & Furniture',
+    'Gaming_Console' => 'Gaming & Consoles',
+    'Libri_Media' => 'Books & Media',
+    'Salute_Bellezza' => 'Health & Beauty',
+    'Sport_Tempo_libero' => 'Sports & Leisure',
+    'Cucina_Food' => 'Cooking',
+    'Arte_Collezionismo' => 'Art & Collectibles',
+    'Fai_da_te_Bricolage' => 'DIY',
+    'Moda_Accessori' => 'Fashion & Accessories',
 
     // DropDown Menu Account
     'account.welcome' => 'Welcome Back',
@@ -71,6 +71,7 @@ return [
     'search.filters.apply_button' => 'Apply',
     'search.filters.reset_button' => 'Reset',
     'search.filters.price_title' => 'Price',
+    'search.filters.price_title' => 'prices',
     'search.filters.price' => 'All Prices',
     'search.filters.sort_title' => 'Sort By',
     'search.filters.sort' => 'Default',
@@ -119,14 +120,21 @@ return [
 
     // Features
     'features.one_click' => 'What you want in a click!',
-    'features.quality_work' => 'Quality Work',
+    'features.big_click' => 'CLICK!',
+    'features.quality_work' => 'Work',
+    'features.quality_green' => 'Quality',
     'features.timely_delivery' => 'Receive timely and impeccable deliveries',
-    'features.protected_payments' => 'Protected Payments',
+    'features.protected_payments' => 'Payments',
+    'features.payment_green' => 'Protected',
     'features.transaction_unlock' => 'Transactions unlocked upon delivery approval',
     'features.local_global' => 'Local or Global',
+    'features.local_green' => 'Global',
     'features.choice_yours' => 'Near or far, the choice is yours',
-    'features.support' => '24/7 Support',
+    'features.support' => 'Support',
+    'features.support_green' => 'H24',
     'features.support_description' => 'Questions? Our support team is available 24/7',
+    'features.frequent_questions' => 'FAQ',
+
 
     // About
     'about.title' => 'Who Are We?',
@@ -155,6 +163,24 @@ return [
     'stats.satisfied_clients' => 'Satisfied Clients',
     'stats.partners' => 'Partners',
     'stats.positive_reviews' => 'Positive Reviews',
-];
 
-?>
+    // Register
+    'register.title' => 'Registered',
+    'register.name' => 'Username',
+    'register.confirm_password' => 'Confirm Password',
+    'register.placeholderName' => 'Enter your username',
+    'register.placeholderEmail' => 'exapmle@example.com',
+    'register.placeholderPassword' => 'Enter your password',
+    'register.placeholderConfirmPassword' => 'Confirm your password',
+    'register.buttonShow' => 'Show Password',
+    'register.already' => 'Already registered?',
+
+    // Login
+    'login.title' => 'Login',
+    'login.name' => 'Username',
+    'login.password' => 'Password',
+    'login.placeholderName' => 'Enter your username',
+    'login.placeholderPassword' => 'Enter your password',
+    'login.buttonShow' => 'Show Password',
+    'login.forgot' => 'Forgot Password?',
+];

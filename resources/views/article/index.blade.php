@@ -5,7 +5,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
-    <div class="container-fluid vh-100">
+    <div class="container-fluid vh-auto">
         <div class="row">
             <!-- Sidebar with Filters -->
             <div class="col-md-3 mb-4">
@@ -50,7 +50,7 @@
                                 </li>
                                 @foreach ($categories as $category)
                                     <li><a class="dropdown-item" href="#"
-                                            data-value="{{ $category->id }}">{{ $category->name }}</a></li>
+                                            data-value="{{ $category->id }}">{{ __('ui.' . $category->name) }}</a></li>
                                     @if (!$loop->last)
                                         <li>
                                             <hr class="dropdown-divider">
