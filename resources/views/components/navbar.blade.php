@@ -53,7 +53,7 @@
                                 <a class="dropdown-item d-flex align-items-center"
                                     href="{{ route('byCategory', ['category' => $category]) }}">
                                     <span class="dropdown-divider"></span>
-                                    <span>{{ $category->name }}</span>
+                                    <span>{{ __('ui.' . $category->name) }}</span>
                                 </a>
                             </li>
                             @if (!$loop->last)

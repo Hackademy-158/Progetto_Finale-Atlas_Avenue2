@@ -7,7 +7,7 @@
                     <div class="card-body">
                         <div class="d-flex align-items-center mb-3">
                             <div class="rounded-circle overflow-hidden me-3" style="width: 64px; height: 64px;">
-                                <img src="/img/logo-main.png" alt="Profile" class="">
+                                <img src="{{ asset('/img/user/default-user.png') }}" alt="Default User Profile" class="img-fluid">
                             </div>
                             <div>
                                 <h5 class="mb-1">{{ $user->name }}</h5>
@@ -70,40 +70,40 @@
                     </div>
                     <div class="card-body">
                         @if ($articles->count() > 0)
-                            <div class="table-responsive">
-                                <table class="table table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>Titolo</th>
-                                            <th>Prezzo</th>
-                                            <th>Stato</th>
-                                            <th>Data</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($articles as $article)
-                                            <tr>
-                                                <td>{{ $article->title }}</td>
-                                                <td>{{ $article->price }}€</td>
-                                                <td>
-                                                    @if ($article->is_accepted === true)
-                                                        <span class="badge bg-success">Approvato</span>
-                                                    @elseif($article->is_accepted === false)
-                                                        <span class="badge bg-danger">Rifiutato</span>
-                                                    @else
-                                                        <span class="badge bg-warning text-dark">In revisione</span>
-                                                    @endif
-                                                </td>
-                                                <td>{{ $article->created_at->format('d/m/Y') }}</td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Titolo</th>
+                                        <th>Prezzo</th>
+                                        <th>Stato</th>
+                                        <th>Data</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($articles as $article)
+                                    <tr>
+                                        <td>{{ $article->title }}</td>
+                                        <td>{{ $article->price }}€</td>
+                                        <td>
+                                            @if ($article->is_accepted === true)
+                                            <span class="badge bg-success">Approvato</span>
+                                            @elseif($article->is_accepted === false)
+                                            <span class="badge bg-danger">Rifiutato</span>
+                                            @else
+                                            <span class="badge bg-warning text-dark">In revisione</span>
+                                            @endif
+                                        </td>
+                                        <td>{{ $article->created_at->format('d/m/Y') }}</td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                         @else
-                            <div class="text-center py-4">
-                                <p class="text-muted mb-0">Non hai ancora pubblicato articoli</p>
-                            </div>
+                        <div class="text-center py-4">
+                            <p class="text-muted mb-0">Non hai ancora pubblicato articoli</p>
+                        </div>
                         @endif
                     </div>
                 </div>

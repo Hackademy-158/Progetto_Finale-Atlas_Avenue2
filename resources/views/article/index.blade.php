@@ -35,7 +35,7 @@
                             <button
                                 class="dropdown-menu text-black w-100 d-flex justify-content-between align-items-center"
                                 type="button" id="categoryDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span>{{ __('ui.search.filters.category') }}</span>
+                                <span id="dropdownCategory">{{ __('ui.search.filters.category') }}</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" viewBox="0 0 16 16">
                                     <path
@@ -77,13 +77,6 @@
                                     <div class="thumb right"></div>
                                     <input type="hidden" id="min-price" name="min-price" value="0">
                                     <input type="hidden" id="max-price" name="max-price" value="9999">
-                                </div>
-                                <div class="slider-markers">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
                                 </div>
                             </div>
                         </div>
