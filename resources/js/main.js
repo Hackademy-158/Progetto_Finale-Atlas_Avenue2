@@ -28,16 +28,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const STEP = 100;
 
     // Gestione Dropdown Categoria
-    dropdownItems.forEach(item => {
-        item.addEventListener('click', (e) => {
-            e.preventDefault();
-            const value = e.target.dataset.value;
-            const text = e.target.textContent.trim();
-            selectedCategory = value;
-            dropdownCategoria.querySelector('span').textContent = text;
-            applicaFiltri();
-        });
-    });
+    // dropdownItems.forEach(item => {
+    //     item.addEventListener('click', (e) => {
+    //         e.preventDefault();
+    //         const value = e.target.dataset.value;
+    //         const text = e.target.textContent.trim();
+    //         selectedCategory = value;
+    //         dropdownCategoria.querySelector('span').textContent = text;
+    //         applicaFiltri();
+    //     });
+    // });
 
     // Gestione Ricerca per Categoria
     searchButton.addEventListener('click', () => {
@@ -429,9 +429,9 @@ if (firstNumber && secondNumber && thirdNumber) {
     let observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting && !check) {
-                incremento(firstNumber, 700, 5);
-                incremento(secondNumber, 600, 3);
-                incremento(thirdNumber, 150, 10);
+                incremento(firstNumber, 700, 70);
+                incremento(secondNumber, 600, 60);
+                incremento(thirdNumber, 150, 250);
                 check = true;
             }
         });

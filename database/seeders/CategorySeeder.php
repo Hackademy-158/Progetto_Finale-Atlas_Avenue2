@@ -12,16 +12,16 @@ class CategorySeeder extends Seeder
      * Run the database seeds.
      */
     public $categories = [
-        'Elettronica & Tech',     // Dispositivi elettronici, gadget, accessori tech
-        'Casa & Arredamento',     // Mobili, decorazioni, accessori casa
-        'Moda & Accessori',       // Abbigliamento, scarpe, gioielli
-        'Sport & Tempo libero',   // Attrezzature sportive, hobby
-        'Libri & Media',          // Libri, film, musica
-        'Salute & Bellezza',      // Prodotti benessere, cosmetici
-        'Cucina & Food',          // Elettrodomestici cucina, utensili
-        'Fai da te & Bricolage',  // Attrezzi, materiali
-        'Gaming & Console',       // Videogiochi, console, accessori gaming
-        'Arte & Collezionismo'    // Opere d'arte, oggetti da collezione
+        'Elettronica_Tech',     // Dispositivi elettronici, gadget, accessori tech
+        'Casa_Arredamento',     // Mobili, decorazioni, accessori casa
+        'Moda_Accessori',       // Abbigliamento, scarpe, gioielli
+        'Sport_Tempo_libero',   // Attrezzature sportive, hobby
+        'Libri_Media',          // Libri, film, musica
+        'Salute_Bellezza',      // Prodotti benessere, cosmetici
+        'Cucina_Food',          // Elettrodomestici cucina, utensili
+        'Fai_da_te_Bricolage',  // Attrezzi, materiali
+        'Gaming_Console',       // Videogiochi, console, accessori gaming
+        'Arte_Collezionismo'    // Opere d'arte, oggetti da collezione
     ];
 
     public function run(): void
