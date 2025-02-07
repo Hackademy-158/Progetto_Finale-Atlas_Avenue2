@@ -46,8 +46,8 @@
                         <div class="col-12 text-center mt-3 mb-3">
                             <div class="col-12">
                                 @auth
-                                    <p>{{__('ui.home.no_articles')}}</p>
-                                    <a href="{{ route('article.create') }}" style="color:#198754">{{ __('ui.home.create_article')}}</a>
+                                    <p>Non ci sono articoli al momento disponibili.</p>
+                                    <a href="{{ route('article.create') }}" style="color:#198754">Creane Uno!</a>
                                 @endauth
                             </div>
                         </div>
@@ -57,8 +57,8 @@
                             <div class="col-12 text-center mt-3 mb-3">
                                 <div class="col-12">
                                     @guest
-                                        <p>{{__('ui.last_articles.no_articles')}}</p>
-                                        <a href="{{ route('register') }}" style="color:#198754"> {{ __('ui.articles.create_one')}} </a>
+                                        <p>Non ci sono articoli al momento disponibili.</p>
+                                        <a href="{{ route('register') }}" style="color:#198754">Creane uno!</a>
                                     @endguest
                                 </div>
                             </div>
@@ -68,23 +68,12 @@
             @endforelse
         </div>
     </div>
-    @push('scripts')
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                AOS.init({
-                    duration: 1000,
-                    once: true
-                });
-            });
-        </script>
-    @endpush
-
 
     <section>
         <div class="container-fluid position-relative">
             <div class="row">
-                <h1 class=" text-center fw-bold display-3 text-main mt-5 mb-3">{{__('ui.features.one_click')}} <span
-                        class="text-uppercase text-success">{{__('ui.features.big_click')}}</span></h1>
+                <h1 class=" text-center fw-bold display-3 text-main mt-5 mb-3">Quello che desideri in un <span
+                        class="text-uppercase text-success">click</span>!</h1>
             </div>
             <div class="container-fluid position-relative">
                 <div class="row">
@@ -92,11 +81,11 @@
                         <i class="bi bi-check-circle"></i>
                     </div>
                     <div class=" col-lg-5 hero-content" style="margin-left:0; padding-left:0">
-                        <h3 class="display-3 fw-bold mb-3">{{__('ui.features.quality_work')}} <span class="text-success">{{__('ui.features.quality_green')}}</span></h3>
-                        <h4>{{__('ui.features.timely_delivery')}}</h4>
+                        <h3 class="display-3 fw-bold mb-3">Lavoro di <span class="text-success">qualità</span></h3>
+                        <h4>Ricevi consegne puntuali e impeccabili</h4>
                     </div>
                     <div class="col-lg-5" style="padding-top:100px">
-                        <img style="border-radius: 25px" src="{{ asset('img/welcome/Lavoro.jpg') }}" alt="">
+                        <img src="{{ asset('img/welcome/') }}" alt="">
                     </div>
                 </div>
 
@@ -104,16 +93,16 @@
             </div>
             <div class="container-fluid position-relative">
                 <div class="row">
-                    <div class="col-lg-5" style="padding-top:100px; margin-left:30px">
-                        <img style="border-radius: 25px" src="{{ asset('img/welcome/Pagamenti.jpg') }}" alt="">
+                    <div class="col-lg-5" style="padding-top:100px">
+                        <img src="https://picsum.photos/400" alt="">
                     </div>
                     <div class="col-lg-1 hero-content display-3 fw-bold mb-3 margin-right-0" style="text-align:right">
                         <i class="bi bi-check-circle"></i>
                     </div>
 
                     <div class=" col-lg-5 hero-content" style="margin-left:0; padding-left:0">
-                        <h3 class="display-3 fw-bold mb-3">{{__('ui.features.protected_payments')}}<span class="text-success"> {{__('ui.features.payment_green')}}</span></h3>
-                        <h4>{{__('ui.features.transaction_unlock')}}</h4>
+                        <h3 class="display-3 fw-bold mb-3">Pagamenti<span class="text-success"> protetti</span></h3>
+                        <h4>Transazioni sbloccate alla approvata consegna</h4>
                     </div>
                 </div>
 
@@ -124,27 +113,27 @@
                             <i class="bi bi-check-circle"></i>
                         </div>
                         <div class=" col-lg-5 hero-content" style="margin-left:0; padding-left:0">
-                            <h3 class="display-3 fw-bold mb-3">{{__('ui.features.local_global')}} <span class="text-success"> {{__('ui.features.local_green')}}</span>
+                            <h3 class="display-3 fw-bold mb-3">Locale o <span class="text-success">globale</span>
                             </h3>
-                            <h4>{{__('ui.features.choice_yours')}}</h4>
+                            <h4>Vicini o distanti, la scelta è solo tua</h4>
                         </div>
                         <div class="col-lg-5  " style="padding-top:100px">
-                            <img style="border-radius: 25px" src="{{ asset('img/welcome/Globale.jpg') }}" alt="">
+                            <img src="https://picsum.photos/400" alt="">
                         </div>
                     </div>
                     <div class="container-fluid position-relative">
                         <div class="row">
-                            <div class="col-lg-5 mb-3" style="padding-top:100px; margin-left:25px ">
-                                <img style="border-radius: 25px" src="{{ asset('img/welcome/24H.jpg') }}" alt="">
+                            <div class="col-lg-5  " style="padding-top:100px">
+                                <img src="{{ asset('img/welcome/24oree.png') }}" alt="">
                             </div>
                             <div class="col-lg-1 hero-content display-3 fw-bold mb-3 margin-right-0"
                                 style="text-align:right">
                                 <i class="bi bi-check-circle"></i>
                             </div>
                             <div class=" col-lg-5 hero-content" style="margin-left:0; padding-left:0">
-                                <h3 class="display-3 fw-bold mb-3">{{__('ui.features.support')}}<span class="text-success"> {{__('ui.features.support_green')}}</span>
+                                <h3 class="display-3 fw-bold mb-3">Assistenza<span class="text-success"> H24</span>
                                 </h3>
-                                <h4>{{__('ui.features.support_description')}}</h4>
+                                <h4>Domande? Il nostro team di assistenza è disponibile H24</h4>
                             </div>
                         </div>
     </section>
@@ -153,24 +142,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center mt-5 mb-5">
-                    <h2>{{__('ui.stats.title')}}</h2>
+                    <h2>I numeri di BuyStream</h2>
                 </div>
             </div>
             <div class="row">
                 <div class="col-4 text-center">
-                    <img style="border-radius: 15px" src="{{ asset('img/welcome/Soddisfatta.jpg') }}" />
+                    <img src="https://picsum.photos/200" />
                     <h3 id="firstNumber"></h3>
-                    <p>{{__('ui.stats.satisfied_clients')}}</p>
+                    <p>Clienti soddisfatti</p>
                 </div>
                 <div class="col-4 text-center">
-                    <img style="border-radius: 15px" src="{{ asset('img/welcome/Pollice.jpg') }}" />
+                    <img src="https://picsum.photos/200" />
                     <h3 id="secondNumber"></h3>
-                    <p>{{__('ui.stats.positive_reviews')}}</p>
+                    <p>Recensioni positive</p>
                 </div>
                 <div class="col-4 text-center">
-                    <img style="border-radius: 15px" src="{{ asset('img/welcome/Partner.jpg') }}" />
+                    <img src="https://picsum.photos/200" />
                     <h3 id="thirdNumber"></h3>
-                    <p>{{__('ui.stats.partners')}}</p>
+                    <p>Partner</p>
                 </div>
             </div>
         </div>
@@ -185,7 +174,7 @@
         <div class="spacer"></div>
         <div class="row">
             <div class="col-sm-12 mt-5 mb-5">
-                <h3 class="text-center text-uppercase">{{__('ui.about.title')}}</h3>
+                <h3 class="text-center text-uppercase">Chi siamo?</h3>
             </div>
         </div>
         <div class="spacer"></div>
@@ -194,7 +183,7 @@
             <div class="col-sm-6 col-md-2 text-center mx-4 mb-5">
                 <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
                 <div class="spacer"></div>
-                <h3 class="text-success">Danilo</h3>
+                <h3 class="">Danilo</h3>
                 <p>Full Stack Developer</p>
                 <i class="bi bi-facebook  margin-right-20"></i>
                 <i class="bi bi-linkedin  margin-right-20"></i>
@@ -203,7 +192,7 @@
             <div class="col-sm-6 col-md-2 text-center mx-4">
                 <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
                 <div class="spacer"></div>
-                <h3 class="text-success">Alessio</h3>
+                <h3 class="">Alessio</h3>
                 <p>Full Stack Developer</p>
                 <i class="bi bi-facebook  margin-right-20"></i>
                 <i class="bi bi-linkedin  margin-right-20"></i>
@@ -212,7 +201,7 @@
             <div class="col-sm-6 col-md-2 text-center mx-4">
                 <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
                 <div class="spacer"></div>
-                <h3 class="text-success">Matteo</h3>
+                <h3 class="">Matteo</h3>
                 <p>Full Stack Developer</p>
                 <i class="bi bi-facebook  margin-right-20"></i>
                 <i class="bi bi-linkedin  margin-right-20"></i>
@@ -221,7 +210,7 @@
             <div class="col-sm-6 col-md-2 text-center mx-4">
                 <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
                 <div class="spacer"></div>
-                <h3 class="text-success">Anna</h3>
+                <h3 class="">Anna</h3>
                 <p>Full Stack Developer</p>
                 <i class="bi bi-facebook  margin-right-20"></i>
                 <i class="bi bi-linkedin  margin-right-20"></i>
@@ -230,7 +219,7 @@
             <div class="col-sm-6 col-md-2 text-center">
                 <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
                 <div class="spacer"></div>
-                <h3 class="text-success">Flavio</h3>
+                <h3 class="">Flavio</h3>
                 <p>Full Stack Developer</p>
                 <i class="bi bi-facebook  margin-right-20"></i>
                 <i class="bi bi-linkedin  margin-right-20"></i>
