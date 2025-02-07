@@ -158,17 +158,17 @@
             </div>
             <div class="row">
                 <div class="col-4 text-center">
-                    <img src="https://picsum.photos/200" />
+                    <img src="{{ asset('img/welcome/Soddisfatta.jpg') }}" />
                     <h3 id="firstNumber"></h3>
                     <p>{{__('ui.stats.satisfied_clients')}}</p>
                 </div>
                 <div class="col-4 text-center">
-                    <img src="https://picsum.photos/200" />
+                    <img src="{{ asset('img/welcome/Pollice.jpg') }}" />
                     <h3 id="secondNumber"></h3>
                     <p>{{__('ui.stats.positive_reviews')}}</p>
                 </div>
                 <div class="col-4 text-center">
-                    <img src="https://picsum.photos/200" />
+                    <img src="{{ asset('img/welcome/Partner.jpg') }}" />
                     <h3 id="thirdNumber"></h3>
                     <p>{{__('ui.stats.partners')}}</p>
                 </div>
