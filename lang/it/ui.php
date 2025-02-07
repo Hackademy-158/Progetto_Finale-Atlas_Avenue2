@@ -144,7 +144,7 @@ return [
     'features.quality_green' => 'Qualità',
     'features.timely_delivery' => 'Ricevi consegne puntuali e impeccabili',
     'features.protected_payments' => 'Pagamenti',
-    'features.payment_green' => 'protetti',
+    'features.payment_green' => 'Protetti',
     'features.transaction_unlock' => 'Transazioni sbloccate alla consegna approvata',
     'features.local_global' => 'Locale o',
     'features.local_green' => 'Globale',

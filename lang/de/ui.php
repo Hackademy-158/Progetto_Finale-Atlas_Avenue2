@@ -51,7 +51,7 @@ return [
     'features.quality_green' => 'Qualität',
     'features.timely_delivery' => 'Pünktliche und einwandfreie Lieferungen',
     'features.protected_payments' => 'Zahlungen',
-    'features.payment_green' => 'geschützt',
+    'features.payment_green' => 'Geschützt',
     'features.transaction_unlock' => 'Transaktionen nach Lieferungsfreigabe freigeschaltet',
     'features.local_global' => 'Lokal oder',
     'features.local_green' => 'Global',

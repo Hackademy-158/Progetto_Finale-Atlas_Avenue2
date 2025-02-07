@@ -162,9 +162,9 @@ if (firstNumber && secondNumber && thirdNumber) {
     let observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting && !check) {
-                incremento(firstNumber, 700, 5);
-                incremento(secondNumber, 600, 3);
-                incremento(thirdNumber, 150, 10);
+                incremento(firstNumber, 700, 70);
+                incremento(secondNumber, 600, 60);
+                incremento(thirdNumber, 150, 250);
                 check = true;
             }
         });
