@@ -46,8 +46,9 @@
                         <div class="col-12 text-center mt-3 mb-3">
                             <div class="col-12">
                                 @auth
-                                    <p>{{__('ui.home.no_articles')}}</p>
-                                    <a href="{{ route('article.create') }}" style="color:#198754">{{ __('ui.home.create_article')}}</a>
+                                    <p>{{ __('ui.home.no_articles') }}</p>
+                                    <a href="{{ route('article.create') }}"
+                                        style="color:#198754">{{ __('ui.home.create_article') }}</a>
                                 @endauth
                             </div>
                         </div>
@@ -57,8 +58,9 @@
                             <div class="col-12 text-center mt-3 mb-3">
                                 <div class="col-12">
                                     @guest
-                                        <p>{{__('ui.last_articles.no_articles')}}</p>
-                                        <a href="{{ route('register') }}" style="color:#198754"> {{ __('ui.articles.create_one')}} </a>
+                                        <p>{{ __('ui.last_articles.no_articles') }}</p>
+                                        <a href="{{ route('register') }}" style="color:#198754">
+                                            {{ __('ui.articles.create_one') }} </a>
                                     @endguest
                                 </div>
                             </div>
@@ -83,8 +85,8 @@
     <section>
         <div class="container-fluid position-relative">
             <div class="row">
-                <h1 class=" text-center fw-bold display-3 text-main mt-5 mb-3">{{__('ui.features.one_click')}} <span
-                        class="text-uppercase text-success">{{__('ui.features.big_click')}}</span></h1>
+                <h1 class=" text-center fw-bold display-3 text-main mt-5 mb-3">{{ __('ui.features.one_click') }} <span
+                        class="text-uppercase text-success">{{ __('ui.features.big_click') }}</span></h1>
             </div>
             <div class="container-fluid position-relative">
                 <div class="row">
@@ -92,8 +94,9 @@
                         <i class="bi bi-check-circle"></i>
                     </div>
                     <div class=" col-lg-5 hero-content" style="margin-left:0; padding-left:0">
-                        <h3 class="display-3 fw-bold mb-3">{{__('ui.features.quality_work')}} <span class="text-success">{{__('ui.features.quality_green')}}</span></h3>
-                        <h4>{{__('ui.features.timely_delivery')}}</h4>
+                        <h3 class="display-3 fw-bold mb-3">{{ __('ui.features.quality_work') }} <span
+                                class="text-success">{{ __('ui.features.quality_green') }}</span></h3>
+                        <h4>{{ __('ui.features.timely_delivery') }}</h4>
                     </div>
                     <div class="col-lg-5" style="padding-top:100px">
                         <img src="{{ asset('img/welcome/Lavoro.jpg') }}" alt="">
@@ -112,8 +115,9 @@
                     </div>
 
                     <div class=" col-lg-5 hero-content" style="margin-left:0; padding-left:0">
-                        <h3 class="display-3 fw-bold mb-3">{{__('ui.features.protected_payments')}}<span class="text-success"> {{__('ui.features.payment_green')}}</span></h3>
-                        <h4>{{__('ui.features.transaction_unlock')}}</h4>
+                        <h3 class="display-3 fw-bold mb-3">{{ __('ui.features.protected_payments') }}<span
+                                class="text-success"> {{ __('ui.features.payment_green') }}</span></h3>
+                        <h4>{{ __('ui.features.transaction_unlock') }}</h4>
                     </div>
                 </div>
 
@@ -124,9 +128,10 @@
                             <i class="bi bi-check-circle"></i>
                         </div>
                         <div class=" col-lg-5 hero-content" style="margin-left:0; padding-left:0">
-                            <h3 class="display-3 fw-bold mb-3">{{__('ui.features.local_global')}} <span class="text-success"> {{__('ui.features.local_green')}}</span>
+                            <h3 class="display-3 fw-bold mb-3">{{ __('ui.features.local_global') }} <span
+                                    class="text-success"> {{ __('ui.features.local_green') }}</span>
                             </h3>
-                            <h4>{{__('ui.features.choice_yours')}}</h4>
+                            <h4>{{ __('ui.features.choice_yours') }}</h4>
                         </div>
                         <div class="col-lg-5  " style="padding-top:100px">
                             <img src="{{ asset('img/welcome/Globale.jpg') }}" alt="">
@@ -142,9 +147,10 @@
                                 <i class="bi bi-check-circle"></i>
                             </div>
                             <div class=" col-lg-5 hero-content" style="margin-left:0; padding-left:0">
-                                <h3 class="display-3 fw-bold mb-3">{{__('ui.features.support')}}<span class="text-success"> {{__('ui.features.support_green')}}</span>
+                                <h3 class="display-3 fw-bold mb-3">{{ __('ui.features.support') }}<span
+                                        class="text-success"> {{ __('ui.features.support_green') }}</span>
                                 </h3>
-                                <h4>{{__('ui.features.support_description')}}</h4>
+                                <h4>{{ __('ui.features.support_description') }}</h4>
                             </div>
                         </div>
     </section>
@@ -153,24 +159,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center mt-5 mb-5">
-                    <h2>{{__('ui.stats.title')}}</h2>
+                    <h2>{{ __('ui.stats.title') }}</h2>
                 </div>
             </div>
             <div class="row">
-                <div class="col-4 text-center">
-                    <img src="{{ asset('img/welcome/Soddisfatta.jpg') }}" />
+                <div class="col-md-4 col-12 text-center ">
+                    <img src="{{ asset('/img/welcome/icons8-soddisfazione-100.png') }}" style="width: 100px" />
                     <h3 id="firstNumber"></h3>
-                    <p>{{__('ui.stats.satisfied_clients')}}</p>
+                    <p>{{ __('ui.stats.satisfied_clients') }}</p>
                 </div>
-                <div class="col-4 text-center">
-                    <img src="{{ asset('img/welcome/Pollice.jpg') }}" />
+                <div class="col-md-4 col-12 text-center">
+                    <img src="{{ asset('img/welcome/recensioni_positive.png') }}" />
                     <h3 id="secondNumber"></h3>
-                    <p>{{__('ui.stats.positive_reviews')}}</p>
+                    <p>{{ __('ui.stats.positive_reviews') }}</p>
                 </div>
-                <div class="col-4 text-center">
-                    <img src="{{ asset('img/welcome/Partner.jpg') }}" />
+                <div class="col-md-4 col-12 text-center">
+                    <img src="{{ asset('img/welcome/partner.png') }}" />
                     <h3 id="thirdNumber"></h3>
-                    <p>{{__('ui.stats.partners')}}</p>
+                    <p>{{ __('ui.stats.partners') }}</p>
                 </div>
             </div>
         </div>
@@ -185,7 +191,7 @@
         <div class="spacer"></div>
         <div class="row">
             <div class="col-sm-12 mt-5 mb-5">
-                <h3 class="text-center text-uppercase">{{__('ui.about.title')}}</h3>
+                <h3 class="text-center text-uppercase">{{ __('ui.about.title') }}</h3>
             </div>
         </div>
         <div class="spacer"></div>
