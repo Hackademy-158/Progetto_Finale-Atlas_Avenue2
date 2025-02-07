@@ -96,7 +96,7 @@
                         <h4>{{__('ui.features.timely_delivery')}}</h4>
                     </div>
                     <div class="col-lg-5" style="padding-top:100px">
-                        <img src="{{ asset('img/welcome/Lavoro.jpg') }}" alt="">
+                        <img style="border-radius: 25px" src="{{ asset('img/welcome/Lavoro.jpg') }}" alt="">
                     </div>
                 </div>
 
@@ -105,7 +105,7 @@
             <div class="container-fluid position-relative">
                 <div class="row">
                     <div class="col-lg-5" style="padding-top:100px; margin-left:30px">
-                        <img src="{{ asset('img/welcome/Pagamenti.jpg') }}" alt="">
+                        <img style="border-radius: 25px" src="{{ asset('img/welcome/Pagamenti.jpg') }}" alt="">
                     </div>
                     <div class="col-lg-1 hero-content display-3 fw-bold mb-3 margin-right-0" style="text-align:right">
                         <i class="bi bi-check-circle"></i>
@@ -129,13 +129,13 @@
                             <h4>{{__('ui.features.choice_yours')}}</h4>
                         </div>
                         <div class="col-lg-5  " style="padding-top:100px">
-                            <img src="{{ asset('img/welcome/Globale.jpg') }}" alt="">
+                            <img style="border-radius: 25px" src="{{ asset('img/welcome/Globale.jpg') }}" alt="">
                         </div>
                     </div>
                     <div class="container-fluid position-relative">
                         <div class="row">
                             <div class="col-lg-5 mb-3" style="padding-top:100px; margin-left:25px ">
-                                <img src="{{ asset('img/welcome/24H.jpg') }}" alt="">
+                                <img style="border-radius: 25px" src="{{ asset('img/welcome/24H.jpg') }}" alt="">
                             </div>
                             <div class="col-lg-1 hero-content display-3 fw-bold mb-3 margin-right-0"
                                 style="text-align:right">
@@ -158,17 +158,17 @@
             </div>
             <div class="row">
                 <div class="col-4 text-center">
-                    <img src="{{ asset('img/welcome/Soddisfatta.jpg') }}" />
+                    <img style="border-radius: 15px" src="{{ asset('img/welcome/Soddisfatta.jpg') }}" />
                     <h3 id="firstNumber"></h3>
                     <p>{{__('ui.stats.satisfied_clients')}}</p>
                 </div>
                 <div class="col-4 text-center">
-                    <img src="{{ asset('img/welcome/Pollice.jpg') }}" />
+                    <img style="border-radius: 15px" src="{{ asset('img/welcome/Pollice.jpg') }}" />
                     <h3 id="secondNumber"></h3>
                     <p>{{__('ui.stats.positive_reviews')}}</p>
                 </div>
                 <div class="col-4 text-center">
-                    <img src="{{ asset('img/welcome/Partner.jpg') }}" />
+                    <img style="border-radius: 15px" src="{{ asset('img/welcome/Partner.jpg') }}" />
                     <h3 id="thirdNumber"></h3>
                     <p>{{__('ui.stats.partners')}}</p>
                 </div>
@@ -194,7 +194,7 @@
             <div class="col-sm-6 col-md-2 text-center mx-4 mb-5">
                 <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
                 <div class="spacer"></div>
-                <h3 class="">Danilo</h3>
+                <h3 class="text-success">Danilo</h3>
                 <p>Full Stack Developer</p>
                 <i class="bi bi-facebook  margin-right-20"></i>
                 <i class="bi bi-linkedin  margin-right-20"></i>
@@ -203,7 +203,7 @@
             <div class="col-sm-6 col-md-2 text-center mx-4">
                 <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
                 <div class="spacer"></div>
-                <h3 class="">Alessio</h3>
+                <h3 class="text-success">Alessio</h3>
                 <p>Full Stack Developer</p>
                 <i class="bi bi-facebook  margin-right-20"></i>
                 <i class="bi bi-linkedin  margin-right-20"></i>
@@ -212,7 +212,7 @@
             <div class="col-sm-6 col-md-2 text-center mx-4">
                 <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
                 <div class="spacer"></div>
-                <h3 class="">Matteo</h3>
+                <h3 class="text-success">Matteo</h3>
                 <p>Full Stack Developer</p>
                 <i class="bi bi-facebook  margin-right-20"></i>
                 <i class="bi bi-linkedin  margin-right-20"></i>
@@ -221,7 +221,7 @@
             <div class="col-sm-6 col-md-2 text-center mx-4">
                 <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
                 <div class="spacer"></div>
-                <h3 class="">Anna</h3>
+                <h3 class="text-success">Anna</h3>
                 <p>Full Stack Developer</p>
                 <i class="bi bi-facebook  margin-right-20"></i>
                 <i class="bi bi-linkedin  margin-right-20"></i>
@@ -230,7 +230,7 @@
             <div class="col-sm-6 col-md-2 text-center">
                 <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
                 <div class="spacer"></div>
-                <h3 class="">Flavio</h3>
+                <h3 class="text-success">Flavio</h3>
                 <p>Full Stack Developer</p>
                 <i class="bi bi-facebook  margin-right-20"></i>
                 <i class="bi bi-linkedin  margin-right-20"></i>
