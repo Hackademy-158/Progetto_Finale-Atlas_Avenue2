@@ -96,7 +96,7 @@
                         <h4>{{__('ui.features.timely_delivery')}}</h4>
                     </div>
                     <div class="col-lg-5" style="padding-top:100px">
-                        <img src="{{ asset('img/welcome/') }}" alt="">
+                        <img src="{{ asset('img/welcome/Lavoro.jpg') }}" alt="">
                     </div>
                 </div>
 
@@ -104,8 +104,8 @@
             </div>
             <div class="container-fluid position-relative">
                 <div class="row">
-                    <div class="col-lg-5" style="padding-top:100px">
-                        <img src="https://picsum.photos/400" alt="">
+                    <div class="col-lg-5" style="padding-top:100px; margin-left:30px">
+                        <img src="{{ asset('img/welcome/Pagamenti.jpg') }}" alt="">
                     </div>
                     <div class="col-lg-1 hero-content display-3 fw-bold mb-3 margin-right-0" style="text-align:right">
                         <i class="bi bi-check-circle"></i>
@@ -129,13 +129,13 @@
                             <h4>{{__('ui.features.choice_yours')}}</h4>
                         </div>
                         <div class="col-lg-5  " style="padding-top:100px">
-                            <img src="https://picsum.photos/400" alt="">
+                            <img src="{{ asset('img/welcome/Globale.jpg') }}" alt="">
                         </div>
                     </div>
                     <div class="container-fluid position-relative">
                         <div class="row">
-                            <div class="col-lg-5  " style="padding-top:100px">
-                                <img src="{{ asset('img/welcome/24oree.png') }}" alt="">
+                            <div class="col-lg-5 mb-3" style="padding-top:100px; margin-left:25px ">
+                                <img src="{{ asset('img/welcome/24H.jpg') }}" alt="">
                             </div>
                             <div class="col-lg-1 hero-content display-3 fw-bold mb-3 margin-right-0"
                                 style="text-align:right">

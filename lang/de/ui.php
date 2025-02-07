@@ -45,7 +45,7 @@ return [
     'home.create_article' => 'Erstellen Sie einen!',
 
     // Features
-    'features.one_click' => 'Was Sie wollen, mit einem Klick!',
+    'features.one_click' => 'Was Sie wollen, mit einem',
     'features.big_click' => 'KLICK!',
     'features.quality_work' => 'Werk von',
     'features.quality_green' => 'Qualität',

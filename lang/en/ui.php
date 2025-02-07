@@ -118,7 +118,7 @@ return [
 
 
     // Features
-    'features.one_click' => 'What you want in a click!',
+    'features.one_click' => 'What you want in a',
     'features.big_click' => 'CLICK!',
     'features.quality_work' => 'Work',
     'features.quality_green' => 'Quality',
