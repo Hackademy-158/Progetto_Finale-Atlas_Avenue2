@@ -140,13 +140,6 @@ document.addEventListener("DOMContentLoaded", function () {
         element.addEventListener("mouseleave", resetMarkers);
     });
 });
-<<<<<<< HEAD
-=======
-
-
-
-//setinterval()
->>>>>>> b2f06677936027bbcd1f0b559ab7919297854f9e
 
 //setinterval() incremento all'intersezione con l'osservatore
 function incremento(element, max, speed) {
@@ -187,12 +180,8 @@ if (firstNumber && secondNumber && thirdNumber) {
         threshold: 0.5
     });
 
-<<<<<<< HEAD
 
     observer.observe(firstNumber);
-=======
-    observer.observe(thirdNumber);
->>>>>>> b2f06677936027bbcd1f0b559ab7919297854f9e
 }
 
 //mostra la password
