@@ -652,7 +652,6 @@ a.nav-link.dropdown-toggle {
     mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
     mask-size: 100% 100%;
     mask-repeat: no-repeat;
-    mask-position: center;
     background-color: var(--neutral-100) !important;
 }
 
@@ -821,26 +820,6 @@ e coerenti con il design della navbar
 @media (min-width: 2561px) {
     .hero-section {
         min-height: calc(100vh - var(--body-padding-top-large-desktop));
-    }
-}
-
-@media screen and (max-width: 768px) {  
-    .simbol{
-        margin-bottom: 40px !important;
-    }
-    
-    .AltTitSot{
-        align-items: center !important;
-    }
-    
-    .sottotitolo {
-        padding-top: 8px !important;
-    }
-    
-    .titolo{
-        font-size: 25px !important;
-        padding-right: 10px !important;
-        text-align: end !important;
     }
 }
 
