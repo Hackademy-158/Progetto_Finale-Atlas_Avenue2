@@ -2746,7 +2746,7 @@ input[type="range"]:hover::-moz-range-thumb {
     .form-select:hover {
         background-color: var(--neutral-100) !important;
         border-color: var(--neutral-300) !important;
-        color: var(--neutral-700) !important;
+        color:  #000 !important;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
     }
     
