@@ -46,14 +46,8 @@
                         <div class="col-12 text-center mt-3 mb-3">
                             <div class="col-12">
                                 @auth
-<<<<<<< HEAD
-                                    <p>{{ __('ui.home.no_articles') }}</p>
-                                    <a href="{{ route('article.create') }}"
-                                        style="color:#198754">{{ __('ui.home.create_article') }}</a>
-=======
                                     <p>Non ci sono articoli al momento disponibili.</p>
                                     <a href="{{ route('article.create') }}" style="color:#198754">Creane Uno!</a>
->>>>>>> 107b22f2f2449302da38d6579244124dad42413f
                                 @endauth
                             </div>
                         </div>
@@ -63,14 +57,8 @@
                             <div class="col-12 text-center mt-3 mb-3">
                                 <div class="col-12">
                                     @guest
-<<<<<<< HEAD
-                                        <p>{{ __('ui.last_articles.no_articles') }}</p>
-                                        <a href="{{ route('register') }}" style="color:#198754">
-                                            {{ __('ui.articles.create_one') }} </a>
-=======
                                         <p>Non ci sono articoli al momento disponibili.</p>
                                         <a href="{{ route('register') }}" style="color:#198754">Creane uno!</a>
->>>>>>> 107b22f2f2449302da38d6579244124dad42413f
                                     @endguest
                                 </div>
                             </div>
@@ -84,13 +72,8 @@
     <section>
         <div class="container-fluid position-relative">
             <div class="row">
-<<<<<<< HEAD
-                <h1 class=" text-center fw-bold display-3 text-main mt-5 mb-3">{{ __('ui.features.one_click') }} <span
-                        class="text-uppercase text-success">{{ __('ui.features.big_click') }}</span></h1>
-=======
                 <h1 class=" text-center fw-bold display-3 text-main mt-5 mb-3">Quello che desideri in un <span
                         class="text-uppercase text-success">click</span>!</h1>
->>>>>>> 107b22f2f2449302da38d6579244124dad42413f
             </div>
             <div class="container-fluid position-relative">
                 <div class="row">
@@ -98,14 +81,8 @@
                         <i class="bi bi-check-circle"></i>
                     </div>
                     <div class=" col-lg-5 hero-content" style="margin-left:0; padding-left:0">
-<<<<<<< HEAD
-                        <h3 class="display-3 fw-bold mb-3">{{ __('ui.features.quality_work') }} <span
-                                class="text-success">{{ __('ui.features.quality_green') }}</span></h3>
-                        <h4>{{ __('ui.features.timely_delivery') }}</h4>
-=======
                         <h3 class="display-3 fw-bold mb-3">Lavoro di <span class="text-success">qualità</span></h3>
                         <h4>Ricevi consegne puntuali e impeccabili</h4>
->>>>>>> 107b22f2f2449302da38d6579244124dad42413f
                     </div>
                     <div class="col-lg-5" style="padding-top:100px">
                         <img src="{{ asset('img/welcome/') }}" alt="">
@@ -124,14 +101,8 @@
                     </div>
 
                     <div class=" col-lg-5 hero-content" style="margin-left:0; padding-left:0">
-<<<<<<< HEAD
-                        <h3 class="display-3 fw-bold mb-3">{{ __('ui.features.protected_payments') }}<span
-                                class="text-success"> {{ __('ui.features.payment_green') }}</span></h3>
-                        <h4>{{ __('ui.features.transaction_unlock') }}</h4>
-=======
                         <h3 class="display-3 fw-bold mb-3">Pagamenti<span class="text-success"> protetti</span></h3>
                         <h4>Transazioni sbloccate alla approvata consegna</h4>
->>>>>>> 107b22f2f2449302da38d6579244124dad42413f
                     </div>
                 </div>
 
@@ -142,16 +113,9 @@
                             <i class="bi bi-check-circle"></i>
                         </div>
                         <div class=" col-lg-5 hero-content" style="margin-left:0; padding-left:0">
-<<<<<<< HEAD
-                            <h3 class="display-3 fw-bold mb-3">{{ __('ui.features.local_global') }} <span
-                                    class="text-success"> {{ __('ui.features.local_green') }}</span>
-                            </h3>
-                            <h4>{{ __('ui.features.choice_yours') }}</h4>
-=======
                             <h3 class="display-3 fw-bold mb-3">Locale o <span class="text-success">globale</span>
                             </h3>
                             <h4>Vicini o distanti, la scelta è solo tua</h4>
->>>>>>> 107b22f2f2449302da38d6579244124dad42413f
                         </div>
                         <div class="col-lg-5  " style="padding-top:100px">
                             <img src="https://picsum.photos/400" alt="">
@@ -167,16 +131,9 @@
                                 <i class="bi bi-check-circle"></i>
                             </div>
                             <div class=" col-lg-5 hero-content" style="margin-left:0; padding-left:0">
-<<<<<<< HEAD
-                                <h3 class="display-3 fw-bold mb-3">{{ __('ui.features.support') }}<span
-                                        class="text-success"> {{ __('ui.features.support_green') }}</span>
-                                </h3>
-                                <h4>{{ __('ui.features.support_description') }}</h4>
-=======
                                 <h3 class="display-3 fw-bold mb-3">Assistenza<span class="text-success"> H24</span>
                                 </h3>
                                 <h4>Domande? Il nostro team di assistenza è disponibile H24</h4>
->>>>>>> 107b22f2f2449302da38d6579244124dad42413f
                             </div>
                         </div>
     </section>
@@ -185,7 +142,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center mt-5 mb-5">
-<<<<<<< HEAD
                     <h2>{{ __('ui.stats.title') }}</h2>
                 </div>
             </div>
@@ -204,7 +160,6 @@
                     <img src="{{ asset('img/welcome/partner.png') }}" />
                     <h3 id="thirdNumber"></h3>
                     <p>{{ __('ui.stats.partners') }}</p>
-=======
                     <h2>I numeri di BuyStream</h2>
                 </div>
             </div>
@@ -223,7 +178,6 @@
                     <img src="https://picsum.photos/200" />
                     <h3 id="thirdNumber"></h3>
                     <p>Partner</p>
->>>>>>> 107b22f2f2449302da38d6579244124dad42413f
                 </div>
             </div>
         </div>
@@ -238,11 +192,7 @@
         <div class="spacer"></div>
         <div class="row">
             <div class="col-sm-12 mt-5 mb-5">
-<<<<<<< HEAD
                 <h3 class="text-center text-uppercase">{{ __('ui.about.title') }}</h3>
-=======
-                <h3 class="text-center text-uppercase">Chi siamo?</h3>
->>>>>>> 107b22f2f2449302da38d6579244124dad42413f
             </div>
         </div>
         <div class="spacer"></div>
