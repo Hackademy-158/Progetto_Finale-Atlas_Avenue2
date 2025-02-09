@@ -1,15 +1,13 @@
 <x-layout>
     @auth
-        <div class="position-absolute top-0 start-0 w-100"
-            style="min-height: 100vh; background-image: url('{{ asset('img/article/article-create-bg-view.png') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-            <div class="container-fluid h-100">
-                <div class="row justify-content-center align-items-center h-100">
-                    <div class="col-12 col-lg-9 col-xl-8 mx-auto article-create-column">
-                            <livewire:article-create />
-                    </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <livewire:article-create />
                 </div>
             </div>
-        </div>  
+        </div>
+
     @endauth
     @guest
         <div class="container">
