@@ -141,10 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
-
-//setinterval()
-
+//setinterval() incremento all'intersezione con l'osservatore
 function incremento(element, max, speed) {
     let counter = 0;
     let interval = setInterval(() => {
@@ -158,19 +155,33 @@ function incremento(element, max, speed) {
 }
 
 let check = false;
+
+
+const firstNumber = document.querySelector('#firstNumber');
+const secondNumber = document.querySelector('#secondNumber');
+const thirdNumber = document.querySelector('#thirdNumber');
+
+
 if (firstNumber && secondNumber && thirdNumber) {
+
     let observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
+
             if (entry.isIntersecting && !check) {
+
                 incremento(firstNumber, 700, 70);
                 incremento(secondNumber, 600, 60);
-                incremento(thirdNumber, 150, 250);
+                incremento(thirdNumber, 250, 250);
                 check = true;
             }
         });
+    }, 
+    {
+        threshold: 0.5
     });
 
-    observer.observe(thirdNumber);
+
+    observer.observe(firstNumber);
 }
 
 //mostra la password

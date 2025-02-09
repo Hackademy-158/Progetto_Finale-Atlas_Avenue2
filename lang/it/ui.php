@@ -138,7 +138,7 @@ return [
 
 
     // Features
-    'features.one_click' => 'Quello che desideri in un',
+    'features.one_click' => 'Quello che desideri in un ',
     'features.big_click' => 'CLICK!',
     'features.quality_work' => 'Lavoro di',
     'features.quality_green' => 'Qualità',

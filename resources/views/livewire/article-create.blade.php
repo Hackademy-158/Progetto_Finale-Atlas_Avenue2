@@ -8,7 +8,7 @@
             </div>
         </div>
         <div class="col-12 col-md-6 bg-light p-4 p-lg-5 form-custom mt-5">
-            <h2 class="mb-4 text-2xl md:text-3xl font-bold">Crea un Nuovo Annuncio</h2>
+            <h2 class="mb-4 text-main font-bold">Crea un Nuovo Annuncio</h2>
             <div class="mb-3 text-sm text-gray-600">
                 <i class="bi bi-pencil-square me-2"></i>Compila tutti i campi per pubblicare il tuo articolo
             </div>
@@ -86,8 +86,8 @@
 
                     <div class="col-12 mb-3">
                         <label for="description" class="form-label text-sm">Descrizione Dettagliata</label>
-                        <textarea class="form-control custom-input text-sm w-full focus:ring-2 focus:ring-primary focus:border-transparent"
-                            id="description" wire:model.live="description" rows="4"
+                        <textarea class="form-control overflow-auto custom-input text-sm focus:ring-2 focus:ring-primary focus:border-transparent"
+                            id="description" wire:model.live="description" rows="2" style="resize:none"
                             placeholder="Inserisci una descrizione esauriente del tuo articolo..."></textarea>
                         @error('description')
                             <span class="text-danger small mt-1 text-xs">{{ $message }}</span>

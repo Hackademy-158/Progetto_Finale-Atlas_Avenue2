@@ -8,7 +8,7 @@
     <div class="container-fluid vh-auto">
         <div class="row">
             <!-- Sidebar with Filters -->
-            <div class="col-md-3 mb-4">
+            <div class="col-12 col-md-3 mb-4">
                 <div class="sidebar-filter bg-light p-4 rounded shadow-sm" style="width: 400px">
                     <h5 class="mb-4 text-black">{{ __('ui.search.filters.title') }}</h5>
 
@@ -109,7 +109,7 @@
             </div>
 
             <!-- Newest Articles -->
-            <div class="col-md-9">
+            <div class="col-12 col-md-9">
                 <div class="row">
                     <div class="col-12 text-center mt-5 mb-5">
                         <h1>{{ __('ui.articles.title') }}</h1>
@@ -129,7 +129,7 @@
                 <!-- No Results Message -->
                 <div id="no-results" class="row d-none">
                     <div class="col-12 text-center mt-3">
-                        <div class="alert alert-info">
+                        <div class="alert alert-success">
                             <p>Nessun articolo trovato con i filtri selezionati.</p>
                         </div>
                     </div>
