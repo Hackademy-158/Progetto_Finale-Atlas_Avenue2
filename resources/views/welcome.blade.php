@@ -222,7 +222,7 @@
         <div class="spacer"></div>
         <div class="row justify-content-center mb-4">
             <div class="col-sm-6 col-md-4 col-lg-2 text-center">
-                <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
+                <img src="{{ asset('img/welcome/Danilo.png') }}" class="rounded-circle team-pic" alt="Danilo">
                 <div class="spacer"></div>
                 <h3 class="text-success">Danilo</h3>
                 <p>Full Stack Developer</p>
@@ -231,7 +231,7 @@
                 <i class="bi bi-instagram"></i>
             </div>
             <div class="col-sm-6 col-md-4 col-lg-2 text-center">
-                <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
+                <img class="rounded-circle team-pic" src="{{ asset('img/welcome/Alessio.png') }}"  alt="Alessio" >
                 <div class="spacer"></div>
                 <h3 class="text-success">Alessio</h3>
                 <p>Full Stack Developer</p>
@@ -240,7 +240,7 @@
                 <i class="bi bi-instagram "></i>
             </div>
             <div class="col-sm-6 col-md-4 col-lg-2 text-center">
-                <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
+                <img src="{{ asset('img/welcome/Matteoo.png') }}"  class="rounded-circle team-pic" alt="Matteo">
                 <div class="spacer"></div>
                 <h3 class="text-success">Matteo</h3>
                 <p>Full Stack Developer</p>
@@ -249,7 +249,7 @@
                 <i class="bi bi-instagram "></i>
             </div>
             <div class="col-sm-6 col-md-4 col-lg-2 text-center">
-                <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
+                <img src="{{ asset('img/welcome/Anna.png') }}" class="rounded-circle team-pic" alt="Anna">
                 <div class="spacer"></div>
                 <h3 class="text-success">Anna</h3>
                 <p>Full Stack Developer</p>
@@ -258,7 +258,7 @@
                 <i class="bi bi-instagram "></i>
             </div>
             <div class="col-sm-6 col-md-4 col-lg-2 text-center">
-                <img src="https://lipsum.app//id/07/150x150/" class="rounded-circle team-pic" alt="Cinque Terre">
+                <img src="{{ asset('img/welcome/Flavio.png') }}" class="rounded-circle team-pic" alt="Cinque Terre">
                 <div class="spacer"></div>
                 <h3 class="text-success">Flavio</h3>
                 <p>Full Stack Developer</p>
