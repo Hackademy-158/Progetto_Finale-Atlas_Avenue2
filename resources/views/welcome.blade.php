@@ -185,19 +185,19 @@
             <div class="row align-items-center flex-column flex-lg-row">
                 <div class="col-4 text-center">
                     <img style="border-radius: 15px" class="img-fluid"
-                        src="{{ asset('img/welcome/Soddisfatta.jpg') }}" />
+                        src="{{ asset('/img/welcome/icons8-soddisfazione-100.png') }}" />
                     <h3 id="firstNumber"></h3>
                     <p>{{ __('ui.stats.satisfied_clients') }}</p>
                 </div>
                 <div class="col-4 text-center">
                     <img style="border-radius: 15px" class="img-fluid"
-                        src="{{ asset('img/welcome/Pollice.jpg') }}" />
+                        src="{{ asset('/img/welcome/recensioni_positive.png') }}" />
                     <h3 id="secondNumber"></h3>
                     <p>{{ __('ui.stats.positive_reviews') }}</p>
                 </div>
                 <div class="col-4 text-center">
                     <img style="border-radius: 15px" class="img-fluid"
-                        src="{{ asset('img/welcome/Partner.jpg') }}" />
+                        src="{{ asset('/img/welcome/partner.png') }}" />
                     <h3 id="thirdNumber"></h3>
                     <p>{{ __('ui.stats.partners') }}</p>
                 </div>

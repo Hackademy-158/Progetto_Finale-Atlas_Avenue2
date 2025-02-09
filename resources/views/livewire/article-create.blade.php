@@ -1,13 +1,7 @@
-<div class="container-fluid px-0">
+<div class="container-fluid px-0 ">
     <div class="row g-0 align-items-stretch rounded-4 overflow-hidden mw-1200 w-100 mx-auto px-3 px-md-0 position-relative"
         style="top: 7rem;">
-        <div class="col-12 col-md-6 mt-5">
-            <div class="cover h-100 position-relative">
-                <img src="{{ asset('img/article/article-create.png') }}" alt="Create Article"
-                    class="img-fluid w-100 h-100 object-cover transition-transform duration-300 hover:scale-105">
-            </div>
-        </div>
-        <div class="col-12 col-md-6 bg-light p-4 p-lg-5 form-custom mt-5">
+        <div class="col-12 col-md-6 bg-light p-4 p-lg-5 form-custom mt-5 mb-5">
             <h2 class="mb-4 text-main font-bold">Crea un Nuovo Annuncio</h2>
             <div class="mb-3 text-sm text-gray-600">
                 <i class="bi bi-pencil-square me-2"></i>Compila tutti i campi per pubblicare il tuo articolo
@@ -17,9 +11,8 @@
                 <div class="row">
                     <div class="col-12 col-md-6 mb-3">
                         <label for="title" class="form-label text-sm">Titolo dell'Annuncio</label>
-                        <input type="text"
-                            class="form-control custom-input w-full text-sm focus:ring-2 focus:ring-primary focus:border-transparent"
-                            id="title" wire:model.live="title" placeholder="es. Libro, iPhone, SmartTV...">
+                        <input type="text" class="form-control custom-input " id="title" wire:model.live="title"
+                            placeholder="es. Libro, iPhone, SmartTV...">
                         @error('title')
                             <span class="text-danger small mt-1 text-xs">{{ $message }}</span>
                         @enderror
@@ -64,29 +57,12 @@
                             <p class="fst-italic text-danger text-xs">{{ $message }}</p>
                         @enderror
                     </div>
-                    @if (!empty($images))
-                        <div class="row">
-                            <div class="col-12">
-                                <p class="text-ms">Photo preview:</p>
-                                <div class="row border border-4 border-success rounded shadow py-4">
-                                    @foreach ($images as $key => $image)
-                                        <div class="col d-flex flex-column align-items-center my-3 mx-2">
-                                            <div class="img-preview mx-auto shadow rounded"
-                                                style="background-image: url({{ $image->temporaryUrl() }});"></div>
-                                            <button type="button" class="btn btn-danger btn-sm mt-2"
-                                                wire:click="removeImage({{ $key }})">
-                                                <i class="bi bi-trash3-fill"></i>
-                                            </button>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-                    @endif
+
 
                     <div class="col-12 mb-3">
                         <label for="description" class="form-label text-sm">Descrizione Dettagliata</label>
-                        <textarea class="form-control overflow-auto custom-input text-sm focus:ring-2 focus:ring-primary focus:border-transparent"
+                        <textarea
+                            class="form-control overflow-auto custom-input text-sm focus:ring-2 focus:ring-primary focus:border-transparent"
                             id="description" wire:model.live="description" rows="2" style="resize:none"
                             placeholder="Inserisci una descrizione esauriente del tuo articolo..."></textarea>
                         @error('description')
@@ -147,6 +123,29 @@
                         Dati al sicuro
                     </span>
                 </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 mt-5">
+            <div class="cover h-100 position-relative">
+                @if (!empty($images))
+                    <div class="row">
+                        <div class="col-12 col-md-6 mx-5">
+                            <p class="text-ms">Photo preview:</p>
+                            <div class="row border border-4 border-success rounded shadow py-4">
+                                @foreach ($images as $key => $image)
+                                    <div class="col d-flex flex-column align-items-center my-3 mx-2">
+                                        <div class="img-preview mx-auto shadow rounded"
+                                            style="background-image: url({{ $image->temporaryUrl() }});"></div>
+                                        <button type="button" class="btn btn-danger btn-sm mt-2"
+                                            wire:click="removeImage({{ $key }})">
+                                            <i class="bi bi-trash3-fill"></i>
+                                        </button>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                @endif
             </div>
         </div>
     </div>
