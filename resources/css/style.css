@@ -445,7 +445,7 @@
 /* Navigation Links */
 .nav-link {
     position: relative;
-    color: var(--neutral-100);
+    color: #198754;
     text-decoration: none;
     padding: 8px 16px;
     display: flex;
@@ -506,7 +506,7 @@ a.nav-link.dropdown-toggle {
 
 .dropdown-item {
     padding: 8px 16px;
-    color: var(--dropdown-text);
+    color: #198754 !important;
     transition: all 0.2s ease-in-out;
     background-color: var(--dropdown-bg) !important;
     border-radius: 4px;
