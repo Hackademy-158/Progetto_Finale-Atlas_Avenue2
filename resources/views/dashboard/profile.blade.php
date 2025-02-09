@@ -7,7 +7,7 @@
                     <div class="card-body">
                         <div class="d-flex align-items-center mb-3">
                             <div class="rounded-circle overflow-hidden me-3" style="width: 64px; height: 64px;">
-                                <img src="{{ asset('storage/media/user/default-user.png') }}" alt="Profile"
+                                <img src="{{ asset('/img/user/default-user.png') }}" alt="Profile"
                                     class="img-fluid">
                             </div>
                             <div>
@@ -17,13 +17,13 @@
                         </div>
                         <hr>
                         <nav class="nav flex-column">
-                            <a class="nav-link active" href="{{ route('dashboard') }}">
+                            <a class="linkDash active" href="{{ route('dashboard') }}">
                                 <i class="bi bi-house me-2 "></i>Dashboard
                             </a>
-                            <a class="nav-link active" href="{{ route('dashboard.articles') }}">
+                            <a class="linkDash active" href="#">
                                 <i class="bi bi-box me-2"></i>I miei articoli
                             </a>
-                            <a class="nav-link active" href="{{ route('dashboard.profile') }}">
+                            <a class="linkDash active" href="{{ route('dashboard.profile') }}">
                                 <i class="bi bi-person me-2"></i>Profilo
                             </a>
                         </nav>

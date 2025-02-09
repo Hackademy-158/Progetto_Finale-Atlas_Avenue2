@@ -1,7 +1,7 @@
 <div class="container-fluid px-0 ">
     <div class="row g-0 align-items-stretch rounded-4 overflow-hidden mw-1200 w-100 mx-auto px-3 px-md-0 position-relative"
         style="top: 7rem;">
-        <div class="col-12 col-md-6 bg-light p-4 p-lg-5 form-custom mt-5 mb-5">
+        <div class="col-12 col-md-6 bg-light p-4 p-lg-5 form-custom mb-5">
             <h2 class="mb-4 text-main font-bold">Crea un Nuovo Annuncio</h2>
             <div class="mb-3 text-sm text-gray-600">
                 <i class="bi bi-pencil-square me-2"></i>Compila tutti i campi per pubblicare il tuo articolo
@@ -125,10 +125,10 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 col-md-6 mt-5">
-            <div class="cover h-100 position-relative">
+        <div class="col-12 col-md-6 mb-5" style="background-color: rgba(197, 194, 191, 0.233)">
+            <div class="cover h-100 position-relative align-items-center">
                 @if (!empty($images))
-                    <div class="row">
+                    <div class="row justify-content-center">
                         <div class="col-12 col-md-6 mx-5">
                             <p class="text-ms">Photo preview:</p>
                             <div class="row border border-4 border-success rounded shadow py-4">

@@ -590,7 +590,7 @@
 .navbar .dropdown-menu {
     border: 1px solid var(--neutral-300) !important;
     box-shadow: 0 2px 10px var(--overlay-shadow) !important;
-    background-color: var(--dropdown-bg) !important;
+    background-color: black !important;
     background: var(--dropdown-bg) !important;
 }
 

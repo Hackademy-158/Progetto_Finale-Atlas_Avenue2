@@ -19,7 +19,7 @@
                             <a class="linkDash active" href="{{ route('dashboard') }}">
                                 <i class="bi bi-house me-2"></i>Dashboard
                             </a>
-                            <a class="linkDash" href="{{ route('dashboard.articles') }}">
+                            <a class="linkDash" href="#">
                                 <i class="bi bi-box me-2"></i>I miei articoli
                             </a>
                             <a class="linkDash" href="{{ route('dashboard.profile') }}">

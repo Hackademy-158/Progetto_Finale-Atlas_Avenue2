@@ -110,6 +110,20 @@
                     @enderror
                 </div>
                 <div class="mb-3">
+                    <label for="category" class="form-label text-sm">Inserisci Immagine</label>
+                    <input type="file" wire:model.live="temporary_images" multiple
+                        class="form-control shadow text-sm @error('temporary_images.*') is-invalid @enderror"
+                        placeholder="Img/">
+                    @error('temporary_images.*')
+                        <p class="fst-italic text-danger text-xs">{{ $message }}</p>
+                    @enderror
+                    @error('temporary_images')
+                        <p class="fst-italic text-danger text-xs">{{ $message }}</p>
+                    @enderror
+                </div>
+                <p>Vecchia Immagine</p>
+                <img src="{{$article->images->isNotEmpty() ? $article->images->first()->getUrl(800, 800) : 'https://picsum.photos/700/600'}}" alt="Immagine di {{$article->title}}" style="width: 100%;" class="mb-3">
+                <div class="mb-3">
                     <label for="description" class="form-label">Descrizione:</label>
                     <input type="text" class="form-control" id="description" wire:model.live="description">
                     @error('description')
