@@ -1,6 +1,7 @@
 <div>
     <x-layout>
         @auth
+        @if ($article->user_id == auth()->user()->id)
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
@@ -19,6 +20,18 @@
                 </div>
             </div>
         </div>
+        @else
+        <div class="container col-12 py-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-6">
+                    <h1 class="text-center">Non puoi modificare questo annuncio</h1>
+                    <div class="d-flex justify-content-center">
+                        <a class="btn btn-secondary mt-3 text-center" href="{{ route('article.show', compact('article')) }}">Indietro</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
         @endauth
         @guest
         <div class="container">
