@@ -4,6 +4,10 @@
             {{ session('success') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
+    @elseif (session('error'))
+        <div class="alert alert-danger text-center">
+            {{ session('error') }}
+        </div>
     @endif
     <div class="container-fluid vh-auto">
         <div class="row">

@@ -10,14 +10,8 @@ use App\Http\Requests\UpdateArticleRequest;
 use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Routing\Controllers\HasMiddleware;
 
-class ArticleController extends Controller //implements HasMiddleware
+class ArticleController extends Controller 
 {
-    // public static function middleware()
-    // {
-    //     return [
-    //         new Middleware('auth', only: ['index'])
-    //     ];
-    // }
     public function index()
     {
         $articles = Article::where('is_accepted', true)->latest()->get();
@@ -44,7 +38,6 @@ class ArticleController extends Controller //implements HasMiddleware
             'description' => $request->description,
             'user_id' => Auth::user()->id,
             'category_id' => $request->category_id,
-            
         ]);
     }
 

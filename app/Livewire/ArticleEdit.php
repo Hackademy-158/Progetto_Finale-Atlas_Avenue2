@@ -125,8 +125,13 @@ class ArticleEdit extends Component
         
     public function destroy()
     {
-        $this->article->delete();
-        return redirect(route('article.index'))->with('success', 'Articolo eliminato con successo!');
+        if (Auth::user()->id == $this->article->user_id) {
+            $this->article->delete();
+            return redirect(route('article.index'))->with('success', 'Articolo eliminato con successo!');
+        } else {
+            return redirect(route('article.index'))->with('error', 'Non hai i permessi per eliminare questo articolo!');
+        }
+
     }
     public function mount()
     {
