@@ -32,7 +32,7 @@
                                         <a class="dropdown-item text-sm hover:bg-primary hover:text-white transition-colors"
                                             href="#"
                                             wire:click.prevent="$set('category_id', {{ $category->id }})">
-                                            {{ $category->name }}
+                                            {{ __('ui.' . $category->name) }}
                                         </a>
                                     </li>
                                 @empty

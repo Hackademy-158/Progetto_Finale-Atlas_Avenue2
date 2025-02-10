@@ -7,8 +7,7 @@
                     <div class="card-body">
                         <div class="d-flex align-items-center mb-3">
                             <div class="rounded-circle overflow-hidden me-3" style="width: 64px; height: 64px;">
-                                <img src="{{ asset('/img/user/default-user.png') }}" alt="Profile"
-                                    class="img-fluid">
+                                <img src="{{ asset('/img/user/default-user.png') }}" alt="Profile" class="img-fluid">
                             </div>
                             <div>
                                 <h5 class="mb-1">{{ $user->name }}</h5>
